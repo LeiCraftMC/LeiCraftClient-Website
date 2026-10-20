@@ -18,13 +18,17 @@ function draw() {
 	const image = new Image();
 	image.crossOrigin = "anonymous";
 	image.onload = () => {
-		const ctx = canvas.value?.getContext("2d");
-		if (!ctx) return;
-		// In the 64×32 cape layout the outer face is the 10×16 block at (1, 1).
+		const el = canvas.value;
+		const ctx = el?.getContext("2d");
+		if (!el || !ctx) return;
+		// In the 64×32 cape layout the outer face is the 10×16 block at (1, 1). HD capes scale that
+		// by `s`; copy it 1:1 so their detail survives (a 10×16 canvas would drop 63 of 64 pixels
+		// of a 512×256 cape). Resizing also clears the canvas and resets the context.
 		const s = image.width / 64;
+		el.width = 10 * s;
+		el.height = 16 * s;
 		ctx.imageSmoothingEnabled = false;
-		ctx.clearRect(0, 0, 10, 16);
-		ctx.drawImage(image, 1 * s, 1 * s, 10 * s, 16 * s, 0, 0, 10, 16);
+		ctx.drawImage(image, s, s, 10 * s, 16 * s, 0, 0, 10 * s, 16 * s);
 		loaded.value = true;
 	};
 	image.src = props.texture;

@@ -22,6 +22,8 @@ const props = withDefaults(
 		cosmetics?: Array<{ texture: string; model: string }>;
 		animation?: "idle" | "walk" | "none";
 		autoRotate?: boolean;
+		/** Start turned away from the camera (a three-quarter back view), e.g. to show off a cape. */
+		back?: boolean;
 		zoom?: number;
 	}>(),
 	{
@@ -32,6 +34,7 @@ const props = withDefaults(
 		cosmetics: () => [],
 		animation: "idle",
 		autoRotate: false,
+		back: false,
 		zoom: 0.9,
 	},
 );
@@ -100,6 +103,11 @@ function applyAnimation() {
 	viewer.autoRotate = props.autoRotate;
 }
 
+function applyFacing() {
+	if (!viewer) return;
+	viewer.playerWrapper.rotation.y = props.back ? Math.PI * 0.8 : 0;
+}
+
 function resize() {
 	if (!viewer || !container.value) return;
 	const { clientWidth, clientHeight } = container.value;
@@ -109,6 +117,9 @@ function resize() {
 }
 
 onMounted(async () => {
+	// A `.client` component renders its template only after it is mounted: without this tick the
+	// refs are still null on a hydrated page and the viewer never starts.
+	await nextTick();
 	if (!canvas.value || !container.value) return;
 
 	viewer = new SkinViewer({
@@ -123,6 +134,7 @@ onMounted(async () => {
 	resizeObserver.observe(container.value);
 
 	applyAnimation();
+	applyFacing();
 	await Promise.all([applySkin(), applyCape()]);
 	await applyCosmetics();
 });
@@ -138,6 +150,7 @@ watch(() => [props.skin, props.slim], applySkin);
 watch(() => [props.cape, props.elytra], applyCape);
 watch(() => JSON.stringify(props.cosmetics), applyCosmetics);
 watch(() => [props.animation, props.autoRotate], applyAnimation);
+watch(() => props.back, applyFacing);
 </script>
 
 <template>

@@ -158,6 +158,7 @@ async function equip() {
 						:slim="previewSlim"
 						:cape="product.type === 'cape' ? (product.texture?.url ?? null) : null"
 						:elytra="showElytra"
+						:back="product.type === 'cape'"
 						:cosmetics="viewerCosmetics"
 						animation="idle"
 					/>

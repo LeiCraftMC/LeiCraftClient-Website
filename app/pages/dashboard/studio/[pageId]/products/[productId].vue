@@ -449,6 +449,7 @@ const viewerCosmetics = computed(() =>
 					:slim="previewSlim"
 					:cape="product.type === 'cape' ? (form.texture?.url ?? null) : null"
 					:elytra="previewElytra"
+					:back="product.type === 'cape'"
 					:cosmetics="viewerCosmetics"
 					animation="idle"
 				/>

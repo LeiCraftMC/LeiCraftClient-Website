@@ -341,6 +341,7 @@ function assetLinks(entry: ModerationProduct) {
 										:slim="previewSlim"
 										:cape="selected.product.type === 'cape' ? (selected.product.texture?.url ?? null) : null"
 										:elytra="previewElytra"
+										:back="selected.product.type === 'cape'"
 										:cosmetics="viewerCosmetics"
 										animation="idle"
 									/>
