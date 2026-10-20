@@ -2296,6 +2296,10 @@ export type GetCatalogCategoriesResponses = {
             name: string;
             description: string;
             page_count: number;
+            /**
+             * Listed, published products of the category
+             */
+            product_count: number;
         }>;
     };
 };
@@ -3169,12 +3173,12 @@ export type PostStudioPagesErrors = {
         message: 'Owner user not found';
     };
     /**
-     * Slug already in use / You already have a community page
+     * Slug already in use / You already have a community page / There is already an official page
      */
     409: {
         success: false;
         code: 409;
-        message: 'Slug already in use / You already have a community page';
+        message: 'Slug already in use / You already have a community page / There is already an official page';
     };
 };
 

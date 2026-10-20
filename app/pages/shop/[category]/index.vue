@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CatalogPage } from "~/utils/types";
+import type { CatalogPage, CatalogPageDetail } from "~/utils/types";
 
 const route = useRoute();
 const category = route.params.category;
@@ -9,23 +9,44 @@ if (!isCategoryID(category)) {
 }
 
 const info = CATEGORY_INFO[category];
+// `official` is one page (the API allows only one): show it here instead of a list of pages.
+const singlePage = isSinglePageCategory(category);
 
-usePageSeo({
-	title: `${info.label} — LeiCraft Client Shop`,
-	description: info.description,
-});
+const { data: page } = await useAPIAsyncData<CatalogPageDetail | null>(
+	`shop-category-${category}-page`,
+	async () => {
+		if (!singlePage) return null;
+		const list = await useAPI((api) => api.getCatalogPages({ query: { category, limit: 1 } }), true);
+		const first = list.success ? list.data[0] : undefined;
+		if (!first) return null;
+		const res = await useAPI(
+			(api) => api.getCatalogPagesByPageId({ path: { pageId: first.id } }),
+			true,
+		);
+		return res.success ? res.data : null;
+	},
+);
 
 const { data: pages } = await useAPIAsyncData<CatalogPage[]>(
 	`shop-category-${category}-pages`,
 	async () => {
+		if (singlePage) return [];
 		const res = await useAPI((api) => api.getCatalogPages({ query: { category, limit: 100 } }), true);
 		return res.success ? res.data : [];
 	},
 );
+
+usePageSeo({
+	title: `${page.value?.name ?? info.label} — LeiCraft Client Shop`,
+	description: page.value?.description || info.description,
+	ogImage: page.value?.banner?.url ?? page.value?.icon?.url,
+});
 </script>
 
 <template>
-	<UContainer class="space-y-10 py-10">
+	<CatalogPageView v-if="page" :page="page" />
+
+	<UContainer v-else class="space-y-10 py-10">
 		<div class="space-y-3">
 			<UBreadcrumb :items="[{ label: 'Shop', to: '/shop' }, { label: info.label }]" />
 			<div class="flex items-center gap-4">
@@ -39,18 +60,27 @@ const { data: pages } = await useAPIAsyncData<CatalogPage[]>(
 			</div>
 		</div>
 
-		<section v-if="pages?.length" class="space-y-4">
-			<h2 class="text-xl font-semibold text-white">
-				{{ category === "community" ? "Creators" : "Pages" }}
-			</h2>
-			<div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-				<CatalogPageCard v-for="page in pages" :key="page.id" :page="page" />
-			</div>
-		</section>
+		<UEmpty
+			v-if="singlePage"
+			icon="i-lucide-hourglass"
+			title="Coming soon"
+			description="The official LeiCraft Client capes and cosmetics are on their way."
+		/>
 
-		<section class="space-y-4">
-			<h2 class="text-xl font-semibold text-white">All items</h2>
-			<CatalogProductBrowser :cache-key="`shop-category-${category}-products`" :category="category" />
-		</section>
+		<template v-else>
+			<section v-if="pages?.length" class="space-y-4">
+				<h2 class="text-xl font-semibold text-white">
+					{{ category === "community" ? "Creators" : "Pages" }}
+				</h2>
+				<div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+					<CatalogPageCard v-for="entry in pages" :key="entry.id" :page="entry" />
+				</div>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="text-xl font-semibold text-white">All items</h2>
+				<CatalogProductBrowser :cache-key="`shop-category-${category}-products`" :category="category" />
+			</section>
+		</template>
 	</UContainer>
 </template>

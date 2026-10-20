@@ -55,11 +55,29 @@ const createForm = reactive<{
 	owner_user_id?: number;
 }>({ category: "community", name: "", slug: "", description: "" });
 
+/** There is only one official page: offer the category until it exists. */
+const hasOfficialPage = computed(
+	() => !!pages.data.value?.some((page) => page.category === "official"),
+);
+
 const categoryItems = computed(() =>
-	(isAdmin.value ? CATEGORY_IDS : (["community"] as const)).map((id) => ({
-		label: CATEGORY_INFO[id].label,
-		value: id,
-	})),
+	(isAdmin.value ? CATEGORY_IDS : (["community"] as const))
+		.filter((id) => !(id === "official" && hasOfficialPage.value))
+		.map((id) => ({
+			label: CATEGORY_INFO[id].label,
+			value: id,
+		})),
+);
+
+// The single official page has a fixed URL (`/shop/official`); its slug is never shown.
+watch(
+	() => createForm.category,
+	(category) => {
+		if (isSinglePageCategory(category)) {
+			createForm.slug = category;
+			slugTouched = true;
+		}
+	},
 );
 
 // Suggest a slug from the name until the user edits it.
@@ -165,7 +183,7 @@ async function create(event: FormSubmitEvent<CreateSchema>) {
 									{{ page.name }}
 								</h3>
 								<p class="text-sm text-slate-400">
-									{{ CATEGORY_INFO[page.category].label }} · /{{ page.slug }}
+									{{ CATEGORY_INFO[page.category].label }} · {{ shopPagePath(page) }}
 								</p>
 							</div>
 						</div>
@@ -222,7 +240,13 @@ async function create(event: FormSubmitEvent<CreateSchema>) {
 			<UFormField label="Name" name="name" required>
 				<UInput v-model="createForm.name" class="w-full" :maxlength="64" />
 			</UFormField>
-			<UFormField label="URL slug" name="slug" required :hint="`/shop/${createForm.category}/${createForm.slug || '…'}`">
+			<UFormField
+				v-if="!isSinglePageCategory(createForm.category)"
+				label="URL slug"
+				name="slug"
+				required
+				:hint="`/shop/${createForm.category}/${createForm.slug || '…'}`"
+			>
 				<UInput v-model="createForm.slug" class="w-full" :maxlength="32" @input="slugTouched = true" />
 			</UFormField>
 			<UFormField label="Description" name="description">

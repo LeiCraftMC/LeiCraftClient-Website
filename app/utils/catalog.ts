@@ -31,8 +31,42 @@ export function isCategoryID(value: unknown): value is CategoryID {
 	return typeof value === "string" && (CATEGORY_IDS as readonly string[]).includes(value);
 }
 
+/**
+ * Categories that are a single page instead of a list of pages: `official` is the LeiCraft Client
+ * team's own shop page (the API allows only one), shown directly at `/shop/official`.
+ */
+export const SINGLE_PAGE_CATEGORIES: readonly CategoryID[] = ["official"];
+
+export function isSinglePageCategory(category: CategoryID) {
+	return SINGLE_PAGE_CATEGORIES.includes(category);
+}
+
 export function shopPagePath(page: { category: CategoryID; slug: string }) {
-	return `/shop/${page.category}/${page.slug}`;
+	return isSinglePageCategory(page.category)
+		? `/shop/${page.category}`
+		: `/shop/${page.category}/${page.slug}`;
+}
+
+/** "12 items" for the single official page, "4 pages" for the other categories. */
+export function categoryCount(category: {
+	id: CategoryID;
+	page_count: number;
+	product_count: number;
+}) {
+	if (isSinglePageCategory(category.id)) {
+		return `${category.product_count} ${category.product_count === 1 ? "item" : "items"}`;
+	}
+	return `${category.page_count} ${category.page_count === 1 ? "page" : "pages"}`;
+}
+
+/** Breadcrumbs from the shop down to a page (the category and the page are one for `official`). */
+export function shopPageBreadcrumbs(page: { category: CategoryID; slug: string; name: string }) {
+	const category = { label: CATEGORY_INFO[page.category].label, to: `/shop/${page.category}` };
+	return [
+		{ label: "Shop", to: "/shop" },
+		category,
+		...(isSinglePageCategory(page.category) ? [] : [{ label: page.name, to: shopPagePath(page) }]),
+	];
 }
 
 /**

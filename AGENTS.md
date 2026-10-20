@@ -41,6 +41,9 @@ https://github.com/LeiCraftMC/Style-Guides.
   never straight from Mojang (no CORS there).
 - Cosmetic variants: pick with `pickVariant()` (`app/utils/catalog.ts`) — the same rule as the
   mod: pinned variant, else the skin model, else `any`, else the first one.
+- `official` is one page, not a list: the API allows a single official page and the site shows
+  it at `/shop/official` (`isSinglePageCategory`, `shopPagePath`, `shopPageBreadcrumbs` in
+  `app/utils/catalog.ts`). Partner and community pages live at `/shop/<category>/<slug>`.
 - Community content goes through review: product edits can send items back to `pending_review`,
   page and collection edits wait in `pending_changes`. Show that state, don't hide it.
 - Composables (`useSeoMeta`, `useAPI`, `useRoute`, …) must not run after an `await` inside a

@@ -48,7 +48,9 @@ bun run api-client:generate
 | Route | Who | What it is |
 | --- | --- | --- |
 | `/` | everyone | Landing page with a 3D preview of the newest cape |
-| `/shop`, `/shop/<category>`, `/shop/<category>/<slug>` | everyone | Catalog: official, partner and community pages |
+| `/shop` | everyone | Catalog overview |
+| `/shop/official` | everyone | The official LeiCraft Client page (there is only one) with its collections and items |
+| `/shop/partner`, `/shop/community`, `/shop/<category>/<slug>` | everyone | Partner and community pages |
 | `/shop/products/<id>`, `/shop/collections/<id>` | everyone | Item and collection pages with 3D preview and "Equip" |
 | `/players`, `/players/<name>` | everyone | Player search and profiles (what a player wears) |
 | `/download` | everyone | Mod download and install guide |

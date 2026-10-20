@@ -54,7 +54,10 @@ export default defineCachedEventHandler(
 
 		const urls = [
 			...STATIC_PATHS.map((path) => ({ loc: `${site}${path}`, lastmod: null as number | null })),
-			...pages.map((page) => ({ loc: `${site}/shop/${page.category}/${page.slug}`, lastmod: null })),
+			// The single official page is `/shop/official` itself (in STATIC_PATHS).
+			...pages
+				.filter((page) => page.category !== "official")
+				.map((page) => ({ loc: `${site}/shop/${page.category}/${page.slug}`, lastmod: null })),
 			...products.map((product) => ({
 				loc: `${site}/shop/products/${product.id}`,
 				lastmod: product.published_at ?? null,

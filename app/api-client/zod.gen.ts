@@ -1223,7 +1223,8 @@ export const zGetCatalogCategoriesResponse = z.object({
         ]),
         name: z.string(),
         description: z.string(),
-        page_count: z.int().gte(-9007199254740991).lte(9007199254740991)
+        page_count: z.int().gte(-9007199254740991).lte(9007199254740991),
+        product_count: z.int().gte(-9007199254740991).lte(9007199254740991)
     }))
 });
 

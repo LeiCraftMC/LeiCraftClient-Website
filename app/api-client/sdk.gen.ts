@@ -431,7 +431,7 @@ export const getPlayersByUuid = <TComposable extends Composable = '$fetch', Defa
 /**
  * List categories
  *
- * The three fixed shop categories — `official` (LeiCraft Client team), `partner` (official partner pages) and `community` (user uploads) — with their number of visible pages.
+ * The three fixed shop categories — `official` (the single page of the LeiCraft Client team), `partner` (official partner pages) and `community` (user uploads) — with their number of visible pages and listed products.
  */
 export const getCatalogCategories = <TComposable extends Composable = '$fetch', DefaultT extends GetCatalogCategoriesResponse = GetCatalogCategoriesResponse>(options: Options<TComposable, GetCatalogCategoriesData, GetCatalogCategoriesResponse, DefaultT>): RequestResult<TComposable, GetCatalogCategoriesResponse | DefaultT, DefaultT> => (options.client ?? client).get<TComposable, GetCatalogCategoriesResponse | DefaultT, unknown, DefaultT>({ url: '/catalog/categories', ...options });
 
@@ -529,7 +529,7 @@ export const getStudioPages = <TComposable extends Composable = '$fetch', Defaul
 /**
  * Create a page
  *
- * Users create their own `community` page (one per user) to upload capes and cosmetics. Admins create `official` and `partner` pages and can assign an owner, who then manages the page and its members.
+ * Users create their own `community` page (one per user) to upload capes and cosmetics. Admins create `partner` pages and the single `official` page (the LeiCraft Client team's shop — there is only one) and can assign an owner, who then manages the page and its members.
  */
 export const postStudioPages = <TComposable extends Composable = '$fetch', DefaultT extends PostStudioPagesResponse = PostStudioPagesResponse>(options: Options<TComposable, PostStudioPagesData, PostStudioPagesResponse, DefaultT>): RequestResult<TComposable, PostStudioPagesResponse | DefaultT, DefaultT> => (options.client ?? client).post<TComposable, PostStudioPagesResponse | DefaultT, PostStudioPagesError, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],

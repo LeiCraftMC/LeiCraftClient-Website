@@ -34,7 +34,7 @@ const { data: categories } = await useAPIAsyncData<Category[]>("shop-categories"
 				</div>
 				<div class="min-w-0">
 					<h2 class="font-semibold text-white group-hover:text-primary-300">{{ category.name }}</h2>
-					<p class="text-sm text-slate-400">{{ category.page_count }} pages</p>
+					<p class="text-sm text-slate-400">{{ categoryCount(category) }}</p>
 				</div>
 				<UIcon name="i-lucide-chevron-right" class="ml-auto text-slate-500" />
 			</NuxtLink>

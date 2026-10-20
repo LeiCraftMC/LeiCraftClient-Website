@@ -34,9 +34,7 @@ usePageSeo({
 		<div class="space-y-3">
 			<UBreadcrumb
 				:items="[
-					{ label: 'Shop', to: '/shop' },
-					{ label: CATEGORY_INFO[data.page.category].label, to: `/shop/${data.page.category}` },
-					{ label: data.page.name, to: shopPagePath(data.page) },
+					...shopPageBreadcrumbs(data.page),
 					{ label: data.collection.name },
 				]"
 			/>

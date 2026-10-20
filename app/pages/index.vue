@@ -143,7 +143,7 @@ const steps = [
 							{{ category.name }}
 						</h3>
 						<p class="mt-1 text-sm text-slate-400">{{ category.description }}</p>
-						<p class="mt-3 text-xs text-slate-500">{{ category.page_count }} pages</p>
+						<p class="mt-3 text-xs text-slate-500">{{ categoryCount(category) }}</p>
 					</NuxtLink>
 				</div>
 			</UContainer>

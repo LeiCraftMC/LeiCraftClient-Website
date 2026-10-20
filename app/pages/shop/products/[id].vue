@@ -142,9 +142,7 @@ async function equip() {
 	<UContainer v-if="product" class="space-y-8 py-10">
 		<UBreadcrumb
 			:items="[
-				{ label: 'Shop', to: '/shop' },
-				{ label: CATEGORY_INFO[product.page.category].label, to: `/shop/${product.page.category}` },
-				{ label: product.page.name, to: shopPagePath(product.page) },
+				...shopPageBreadcrumbs(product.page),
 				{ label: product.name },
 			]"
 		/>

@@ -163,6 +163,7 @@ async function deletePage() {
 						<UInput v-model="form.name" class="w-full" :maxlength="64" />
 					</UFormField>
 					<UFormField
+						v-if="!isSinglePageCategory(page.category)"
 						label="URL slug"
 						required
 						:hint="`/shop/${page.category}/${form.slug || '…'}`"
