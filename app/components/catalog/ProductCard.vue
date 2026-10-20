@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// Imported here: `resolveComponent('NuxtLink')` inside the template is not resolved by Nuxt and
+// renders a dead `<nuxtlink>` element.
+import { NuxtLink } from "#components";
 import type { Product } from "~/utils/types";
 
 const props = withDefaults(
@@ -21,7 +24,7 @@ const target = computed(() =>
 
 <template>
 	<component
-		:is="target ? resolveComponent('NuxtLink') : 'div'"
+		:is="target ? NuxtLink : 'div'"
 		:to="target"
 		:class="[
 			'group block overflow-hidden rounded-xl border bg-slate-900/50 transition hover:-translate-y-0.5',
