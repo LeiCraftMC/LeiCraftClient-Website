@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /auth
+Disallow: /link
+Disallow: /welcome
+
+Sitemap: https://client.leicraftmc.de/sitemap.xml

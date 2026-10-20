@@ -1,0 +1,8 @@
+# Normalize all text files to LF in the repository and the working tree.
+# The org Biome config expects LF; with the machine-global core.autocrlf=true
+# a plain checkout would be CRLF on disk and `biome ci` would fail on every file.
+* text=auto eol=lf
+
+# Binary assets — never normalize
+*.png binary
+*.woff2 binary

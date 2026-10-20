@@ -1,0 +1,14 @@
+# Runs the registry image — CI (.gitlab/ci/build.yml) builds and pushes $CI_REGISTRY_IMAGE:latest
+# from the default branch. Adjust the image name to your registry and project.
+services:
+
+  leicraft-client-website:
+    image: gcr.leicraftmc.de/leicraftmc/leicraftclient/website:latest
+    container_name: leicraft-client-website
+    restart: unless-stopped
+    ports:
+      - "12560:12560"
+    environment:
+      # Public URLs: the browser calls the API directly.
+      LCC_API_URL: https://api.client.leicraftmc.de
+      LCC_APP_URL: https://client.leicraftmc.de

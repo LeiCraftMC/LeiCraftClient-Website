@@ -1,0 +1,42 @@
+{
+	"name": "@leicraftmc/leicraft-client-website",
+	"version": "0.1.0",
+	"private": true,
+	"description": "LeiCraft Client website: shop, wardrobe, creator studio and moderation",
+	"type": "module",
+	"scripts": {
+		"check": "bunx --bun biome check",
+		"check:ci": "bunx --bun biome ci",
+		"format": "bunx --bun biome format --write",
+		"lint": "bunx --bun biome lint",
+		"build": "nuxt build --preset bun",
+		"start": "PORT=12560 bun run .output/server/index.mjs",
+		"dev": "bunx --bun nuxt dev --port 12560",
+		"generate": "bunx --bun nuxt generate",
+		"preview": "bunx --bun nuxt preview",
+		"postinstall": "bunx --bun nuxt prepare",
+		"api-client:generate": "bun scripts/api-client-generate.ts",
+		"typecheck": "bunx --bun nuxt typecheck && bunx --bun tsc -p ./tsconfig/tsconfig.typecheck.json && echo 'Typecheck passed!'",
+		"test": "bun test",
+		"test:ci": "bun test --coverage --reporter=junit --reporter-outfile=./junit.xml"
+	},
+	"dependencies": {
+		"@hey-api/nuxt": "^0.2.1",
+		"@hey-api/openapi-ts": "^0.99.0",
+		"@leicraftmc/skinviewerjs": "../SkinViewerJS/leicraftmc-skinviewerjs-0.2.0.tgz",
+		"@nuxt/ui": "^4.9.0",
+		"nuxt": "^4.6.2",
+		"three": "^0.156.0",
+		"vue": "^3.5.39",
+		"vue-router": "^5.1.0",
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.0",
+		"@iconify-json/lucide": "^1.2.117",
+		"@types/three": "^0.156.0",
+		"bun-types": "^1.4.2",
+		"typescript": "^6.0.3",
+		"vue-tsc": "^3.3.6"
+	}
+}
