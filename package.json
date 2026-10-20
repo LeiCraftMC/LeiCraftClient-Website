@@ -23,7 +23,7 @@
 	"dependencies": {
 		"@hey-api/nuxt": "^0.2.1",
 		"@hey-api/openapi-ts": "^0.99.0",
-		"@leicraftmc/skinviewerjs": "../SkinViewerJS/leicraftmc-skinviewerjs-0.2.0.tgz",
+		"@leicraftmc/skinviewerjs": "^0.2.0",
 		"@nuxt/ui": "^4.9.0",
 		"nuxt": "^4.6.2",
 		"three": "^0.156.0",
