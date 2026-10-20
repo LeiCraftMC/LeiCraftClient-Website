@@ -226,7 +226,7 @@
 
     "@jsdevtools/ono": ["@jsdevtools/ono@7.1.3", "", {}, "sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg=="],
 
-    "@leicraftmc/skinviewerjs": ["@leicraftmc/skinviewerjs@../SkinViewerJS/leicraftmc-skinviewerjs-0.2.0.tgz", { "dependencies": { "@types/three": "^0.156.0", "three": "^0.156.0" } }, "sha512-lm/qnHJ3+2fZi8xJtLDw59+VYB0JROnoqA6nSi/rKmkwrUVH+H2GSRw/V+ys1PdS7l+bKPchpKscVhJd7NP1lw=="],
+    "@leicraftmc/skinviewerjs": ["@leicraftmc/skinviewerjs@0.2.0", "https://git.leicraftmc.de/api/v4/projects/80/packages/npm/@leicraftmc/skinviewerjs/-/@leicraftmc/skinviewerjs-0.2.0.tgz", { "dependencies": { "@types/three": "^0.156.0", "three": "^0.156.0" } }, "sha1-6IuLcVKKs5txxZjXETqgKkuFXss="],
 
     "@lukeed/ms": ["@lukeed/ms@2.0.2", "", {}, "sha512-9I2Zn6+NJLfaGoz9jN3lpwDgAYvfGeNYdbAIjJOqzs4Tpc+VU3Jqq4IofSUBKajiDS8k9fZIg18/z13mpk1bsA=="],
 
