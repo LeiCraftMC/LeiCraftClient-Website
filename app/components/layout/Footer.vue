@@ -60,7 +60,7 @@ const currentYear = new Date().getFullYear();
 						LeiCraft Client
 					</span>
 					<p class="text-base leading-relaxed text-slate-300/80 md:max-w-3xl">
-						Free capes and cosmetics for Minecraft — from the LeiCraft team, our partners and the
+						Free capes and cosmetics for Minecraft — from the LeiCraft Client team, our partners and the
 						community. Seen by everyone who plays with the LeiCraft Client mod.
 					</p>
 					<div class="flex gap-2 pt-2">

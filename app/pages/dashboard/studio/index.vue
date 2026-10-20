@@ -230,7 +230,7 @@ async function create(event: FormSubmitEvent<CreateSchema>) {
 			</UFormField>
 			<UFormField
 				v-if="isAdmin && createForm.category !== 'community'"
-				label="Owner (LeiCraft user id)"
+				label="Owner (LeiCraft Client user id)"
 				name="owner_user_id"
 				description="Optional — the partner who manages this page. Find ids under Users & roles."
 			>

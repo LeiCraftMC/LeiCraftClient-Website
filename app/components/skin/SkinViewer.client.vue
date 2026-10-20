@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * 3D player preview (SkinViewerJS): skin, cape and LeiCraft cosmetics. Client-only — it needs
+ * 3D player preview (SkinViewerJS): skin, cape and LeiCraft Client cosmetics. Client-only — it needs
  * WebGL. Every prop is reactive; cosmetics reload as a whole when the list changes.
  */
 import {

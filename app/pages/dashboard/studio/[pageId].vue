@@ -152,7 +152,7 @@ useSeoMeta({
 						variant="soft"
 						icon="i-lucide-eye-off"
 						title="This page is hidden by the moderators"
-						:description="page.status_note ?? 'It is not visible in the shop. Contact the LeiCraft team on Discord.'"
+						:description="page.status_note ?? 'It is not visible in the shop. Contact the LeiCraft Client team on Discord.'"
 					/>
 					<UAlert
 						v-else-if="page?.category === 'community' && !page.reviewed_at"

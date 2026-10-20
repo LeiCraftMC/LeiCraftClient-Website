@@ -8,7 +8,7 @@ usePageSeo({
 });
 
 const { data: categories } = await useAPIAsyncData<Category[]>("shop-categories", async () => {
-	const res = await useAPI((api) => api.getCatalogCategories({}));
+	const res = await useAPI((api) => api.getCatalogCategories({}), true);
 	return res.success ? res.data : [];
 });
 </script>

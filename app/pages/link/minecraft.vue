@@ -90,7 +90,7 @@ async function confirm() {
 					variant="soft"
 					icon="i-lucide-check"
 					title="Linked!"
-					:description="`${preview.data.account.name} belongs to your account now. Back in the game, the LeiCraft options show it within a few seconds.`"
+					:description="`${preview.data.account.name} belongs to your account now. Back in the game, the LeiCraft Client options show it within a few seconds.`"
 				/>
 				<div class="flex flex-col gap-2">
 					<UButton to="/dashboard/wardrobe" icon="i-lucide-shirt" block>Open wardrobe</UButton>
@@ -104,7 +104,7 @@ async function confirm() {
 					variant="soft"
 					icon="i-lucide-alert-triangle"
 					title="Already linked"
-					description="This Minecraft account belongs to another LeiCraft account. Unlink it there first, or use “Unlink” in the game."
+					description="This Minecraft account belongs to another LeiCraft Client account. Unlink it there first, or use “Unlink” in the game."
 				/>
 			</template>
 

@@ -5,7 +5,7 @@ import type { Category, Product } from "~/utils/types";
 usePageSeo({
 	title: "LeiCraft Client — Free capes and cosmetics for Minecraft",
 	description:
-		"Capes and 3D cosmetics for Minecraft Java, visible to everyone who plays with the LeiCraft Client Fabric mod. Made by the LeiCraft team, our partners and the community.",
+		"Capes and 3D cosmetics for Minecraft Java, visible to everyone who plays with the LeiCraft Client Fabric mod. Made by the LeiCraft Client team, our partners and the community.",
 	jsonLd: {
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
@@ -19,14 +19,15 @@ usePageSeo({
 const user = await useUserInfoStore().use();
 
 const { data: latest } = await useAPIAsyncData<Product[]>("home-latest-products", async () => {
-	const res = await useAPI((api) =>
-		api.getCatalogProducts({ query: { order: "newest", limit: 8 } }),
+	const res = await useAPI(
+		(api) => api.getCatalogProducts({ query: { order: "newest", limit: 8 } }),
+		true,
 	);
 	return res.success ? res.data : [];
 });
 
 const { data: categories } = await useAPIAsyncData<Category[]>("home-categories", async () => {
-	const res = await useAPI((api) => api.getCatalogCategories({}));
+	const res = await useAPI((api) => api.getCatalogCategories({}), true);
 	return res.success ? res.data : [];
 });
 
@@ -44,12 +45,13 @@ const steps = [
 	{
 		icon: "i-lucide-message-circle",
 		title: "Log in with Discord",
-		description: "Your LeiCraft account is your Discord account. No password to remember.",
+		description: "Your LeiCraft Client account is your Discord account. No password to remember.",
 	},
 	{
 		icon: "i-lucide-link",
 		title: "Link in-game",
-		description: "Open the LeiCraft options in the pause menu and click the link — done in seconds.",
+		description:
+			"Open the LeiCraft Client options in the pause menu and click the link — done in seconds.",
 	},
 	{
 		icon: "i-lucide-shirt",
@@ -84,7 +86,7 @@ const steps = [
 						</span>
 					</h1>
 					<p class="max-w-xl text-lg text-slate-400">
-						Show off capes and 3D cosmetics from the LeiCraft team, our partners and the
+						Show off capes and 3D cosmetics from the LeiCraft Client team, our partners and the
 						community. Everyone who plays with the LeiCraft Client sees them — on any server.
 					</p>
 					<div class="flex flex-wrap gap-3">

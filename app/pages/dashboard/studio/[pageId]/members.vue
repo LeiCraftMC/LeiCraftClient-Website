@@ -180,11 +180,11 @@ async function remove() {
 					orientation="horizontal"
 					:items="[
 						{ label: 'Discord user id', value: 'discord_id' },
-						{ label: 'LeiCraft user id', value: 'user_id' },
+						{ label: 'LeiCraft Client user id', value: 'user_id' },
 					]"
 				/>
 			</UFormField>
-			<UFormField :label="addForm.by === 'discord_id' ? 'Discord user id' : 'LeiCraft user id'" required>
+			<UFormField :label="addForm.by === 'discord_id' ? 'Discord user id' : 'LeiCraft Client user id'" required>
 				<UInput
 					v-model="addForm.value"
 					class="w-full"

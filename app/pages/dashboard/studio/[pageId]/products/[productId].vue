@@ -285,7 +285,7 @@ const viewerCosmetics = computed(() =>
 				variant="soft"
 				icon="i-lucide-ban"
 				title="Taken down by a moderator"
-				:description="product.review_note ?? 'Contact the LeiCraft team on Discord if you think this is a mistake.'"
+				:description="product.review_note ?? 'Contact the LeiCraft Client team on Discord if you think this is a mistake.'"
 			/>
 			<UAlert
 				v-else-if="product.status === 'rejected'"

@@ -28,7 +28,7 @@ const faq = [
 	{
 		label: "Do I still need OptiFine or a hosts-file change?",
 		content:
-			"No. The old LeiCraft Client redirected OptiFine's cape server; the new mod talks to the LeiCraft API directly.",
+			"No. The old LeiCraft Client redirected OptiFine's cape server; the new mod talks to the LeiCraft Client API directly.",
 	},
 	{
 		label: "How do I link my Minecraft account?",
@@ -45,7 +45,7 @@ const faq = [
 				<UBadge color="primary" variant="soft" icon="i-lucide-download">Fabric mod</UBadge>
 				<h1 class="text-4xl font-bold text-white">Get the LeiCraft Client</h1>
 				<p class="text-lg text-slate-400">
-					A lightweight Fabric mod: shows LeiCraft capes and 3D cosmetics in the game, links your
+					A lightweight Fabric mod: shows LeiCraft Client capes and 3D cosmetics in the game, links your
 					Minecraft account and comes with an in-game wardrobe.
 				</p>
 				<div class="flex flex-wrap gap-3">

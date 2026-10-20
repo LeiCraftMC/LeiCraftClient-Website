@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /**
  * Who owns an exclusive product (through a grant or a redeem code), plus granting it directly to
- * a user by LeiCraft id, Discord id or Minecraft account.
+ * a user by LeiCraft Client id, Discord id or Minecraft account.
  */
 import type { PostStudioPagesByPageIdProductsByProductIdOwnersData } from "~/api-client";
 import type { ProductOwner } from "~/utils/types";
@@ -39,7 +39,7 @@ const identifierItems: Array<{ label: string; value: Identifier; placeholder: st
 		placeholder: "069a79f4-44e9-4726-a5be-fca90e38aaf5",
 	},
 	{ label: "Discord user id", value: "discord_id", placeholder: "123456789012345678" },
-	{ label: "LeiCraft user id", value: "user_id", placeholder: "42" },
+	{ label: "LeiCraft Client user id", value: "user_id", placeholder: "42" },
 ];
 
 const grantForm = reactive({ identifier: "minecraft_name" as Identifier, value: "", note: "" });

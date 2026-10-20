@@ -9,7 +9,7 @@ if (!Number.isInteger(collectionId) || collectionId <= 0) {
 const { data: result } = await useAPIAsyncData(
 	`shop-collection-${collectionId}`,
 	async () =>
-		await useAPI((api) => api.getCatalogCollectionsByCollectionId({ path: { collectionId } })),
+		await useAPI((api) => api.getCatalogCollectionsByCollectionId({ path: { collectionId } }), true),
 );
 
 if (!result.value?.success) {

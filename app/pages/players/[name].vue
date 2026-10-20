@@ -6,7 +6,7 @@ const name = route.params.name as string;
 
 const { data: result } = await useAPIAsyncData(
 	`player-${name.toLowerCase()}`,
-	async () => await useAPI((api) => api.getPlayersByNameByName({ path: { name } })),
+	async () => await useAPI((api) => api.getPlayersByNameByName({ path: { name } }), true),
 );
 
 if (!result.value?.success) {

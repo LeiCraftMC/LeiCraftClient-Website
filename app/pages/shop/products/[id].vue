@@ -12,7 +12,8 @@ if (!Number.isInteger(productId) || productId <= 0) {
 
 const { data: result } = await useAPIAsyncData(
 	`shop-product-${productId}`,
-	async () => await useAPI((api) => api.getCatalogProductsByProductId({ path: { productId } })),
+	async () =>
+		await useAPI((api) => api.getCatalogProductsByProductId({ path: { productId } }), true),
 );
 
 if (!result.value?.success) {
@@ -250,7 +251,7 @@ async function equip() {
 						</template>
 						<template v-else-if="!accounts?.length">
 							<p class="text-sm text-slate-400">
-								Link a Minecraft account first: open the LeiCraft options in the game's pause menu
+								Link a Minecraft account first: open the LeiCraft Client options in the game's pause menu
 								and click <strong>Link account</strong>.
 							</p>
 							<UButton block variant="soft" to="/dashboard/accounts" icon="i-lucide-link">

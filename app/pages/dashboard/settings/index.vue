@@ -70,7 +70,7 @@ async function onDeleteAccount() {
 				<div class="flex-1">
 					<h4 class="font-medium text-white">Delete account</h4>
 					<p class="mt-1 text-sm text-slate-400">
-						Deletes your LeiCraft account, your community page with its uploads, your exclusive
+						Deletes your LeiCraft Client account, your community page with its uploads, your exclusive
 						items and API keys, and unlinks your Minecraft accounts.
 					</p>
 				</div>

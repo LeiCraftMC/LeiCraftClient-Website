@@ -14,7 +14,10 @@ if (!isCategoryID(category)) {
 const { data: result } = await useAPIAsyncData(
 	`shop-page-${category}-${slug}`,
 	async () =>
-		await useAPI((api) => api.getCatalogPagesBySlugByCategoryBySlug({ path: { category, slug } })),
+		await useAPI(
+			(api) => api.getCatalogPagesBySlugByCategoryBySlug({ path: { category, slug } }),
+			true,
+		),
 );
 
 if (!result.value?.success) {
@@ -38,7 +41,10 @@ usePageSeo({
 const { data: collections } = await useAPIAsyncData<PageCollection[]>(
 	`shop-page-${pageId}-collections`,
 	async () => {
-		const res = await useAPI((api) => api.getCatalogPagesByPageIdCollections({ path: { pageId } }));
+		const res = await useAPI(
+			(api) => api.getCatalogPagesByPageIdCollections({ path: { pageId } }),
+			true,
+		);
 		return res.success ? res.data : [];
 	},
 );

@@ -18,7 +18,7 @@ usePageSeo({
 const { data: pages } = await useAPIAsyncData<CatalogPage[]>(
 	`shop-category-${category}-pages`,
 	async () => {
-		const res = await useAPI((api) => api.getCatalogPages({ query: { category, limit: 100 } }));
+		const res = await useAPI((api) => api.getCatalogPages({ query: { category, limit: 100 } }), true);
 		return res.success ? res.data : [];
 	},
 );
