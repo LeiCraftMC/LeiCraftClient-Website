@@ -22,22 +22,22 @@ Built on the LeiCraftMC Nuxt app template.
 ```bash
 bun install
 cp example.env .env
-bun run dev          # http://localhost:12560
+bun run dev          # http://localhost:12332
 ```
 
-The API must be running (default `http://localhost:12550`, see its README). Discord login
+The API must be running (default `http://localhost:12331`, see its README). Discord login
 redirects to `<LCC_APP_URL>/auth/discord/callback`, so register that URL in the Discord
 application of your API instance.
 
 | Variable | Default | What it is |
 | --- | --- | --- |
-| `LCC_API_URL` | `http://localhost:12550` | Public URL of the API (used by the browser and the server) |
-| `LCC_APP_URL` | `http://localhost:12560` | Public URL of this website (redeem and share links, sitemap) |
+| `LCC_API_URL` | `http://localhost:12331` | Public URL of the API (used by the browser and the server) |
+| `LCC_APP_URL` | `http://localhost:12332` | Public URL of this website (redeem and share links, sitemap) |
 
 ## API client
 
 The typed client in `app/api-client/` is generated from the API's OpenAPI spec. Never edit it by
-hand; regenerate it after API route changes (the API must run on port 12550 with docs enabled):
+hand; regenerate it after API route changes (the API must run on port 12331 with docs enabled):
 
 ```bash
 bun run api-client:generate
@@ -70,7 +70,7 @@ UX only: the API checks every role and page permission on its own.
 
 ## Scripts
 
-- `bun run dev` — dev server on port 12560
+- `bun run dev` — dev server on port 12332
 - `bun run build` — production build (`.output/`, Bun preset; see `docker/` for the image and compose file)
 - `bun run start` — run the built server
 - `bun run check` / `bun run format` — Biome check / format

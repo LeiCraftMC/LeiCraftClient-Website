@@ -13,14 +13,14 @@ WORKDIR /opt/leicraftmc/leicraft-client-website
 
 COPY ./.output ./app/.output
 
-EXPOSE 12560/tcp
+EXPOSE 12332/tcp
 
 ENV NODE_ENV=production
 
 ENV NITRO_HOST=::
-ENV NITRO_PORT=12560
+ENV NITRO_PORT=12332
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s \
-	CMD curl -f http://localhost:12560/ || exit 1
+	CMD curl -f http://localhost:12332/ || exit 1
 
 CMD ["bun", "run", "/opt/leicraftmc/leicraft-client-website/app/.output/server/index.mjs"]

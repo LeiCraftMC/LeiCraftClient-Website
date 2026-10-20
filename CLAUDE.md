@@ -20,7 +20,7 @@ Use them when editing components, composables, or NuxtUI styling.
 ## API client
 
 Run `bun run api-client:generate` after backend route changes (the backend must be running on
-port 12550 with docs enabled). The generated files live in `app/api-client/`.
+port 12331 with docs enabled). The generated files live in `app/api-client/`.
 
 ## Frontend conventions
 

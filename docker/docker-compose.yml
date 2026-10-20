@@ -7,7 +7,7 @@ services:
     container_name: leicraft-client-website
     restart: unless-stopped
     ports:
-      - "12560:12560"
+      - "12332:12332"
     environment:
       # Public URLs: the browser calls the API directly.
       LCC_API_URL: https://api.client.leicraftmc.de

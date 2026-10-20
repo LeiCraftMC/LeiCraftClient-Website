@@ -46,8 +46,8 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		public: {
-			apiUrl: process.env.LCC_API_URL || "http://localhost:12550",
-			appUrl: process.env.LCC_APP_URL || "http://localhost:12560",
+			apiUrl: process.env.LCC_API_URL || "http://localhost:12331",
+			appUrl: process.env.LCC_APP_URL || "http://localhost:12332",
 		},
 	},
 

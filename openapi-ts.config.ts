@@ -5,7 +5,7 @@ import { defineConfig } from "@hey-api/openapi-ts";
 // this file, then patches the output (scripts/patch-api-client.ts).
 // Output goes to app/api-client/ (committed, never hand-edited).
 export default defineConfig({
-	input: "http://localhost:12550/docs/v1/openapi",
+	input: "http://localhost:12331/docs/v1/openapi",
 	output: "app/api-client",
 	plugins: ["@hey-api/client-nuxt", "@hey-api/typescript", "@hey-api/sdk", "zod"],
 });
