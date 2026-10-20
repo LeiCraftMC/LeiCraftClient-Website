@@ -12,15 +12,25 @@ const info = CATEGORY_INFO[category];
 // `official` is one page (the API allows only one): show it here instead of a list of pages.
 const singlePage = isSinglePageCategory(category);
 
+// Two separate fetches on purpose: a second `useAPI` after an `await` inside one handler runs
+// without the Nuxt context on the server (NUXT_E1001).
+const { data: singlePageEntry } = await useAPIAsyncData<CatalogPage | null>(
+	`shop-category-${category}-page-entry`,
+	async () => {
+		if (!singlePage) return null;
+		const res = await useAPI((api) => api.getCatalogPages({ query: { category, limit: 1 } }), true);
+		return res.success ? (res.data[0] ?? null) : null;
+	},
+);
+
+const singlePageId = singlePageEntry.value?.id;
+
 const { data: page } = await useAPIAsyncData<CatalogPageDetail | null>(
 	`shop-category-${category}-page`,
 	async () => {
-		if (!singlePage) return null;
-		const list = await useAPI((api) => api.getCatalogPages({ query: { category, limit: 1 } }), true);
-		const first = list.success ? list.data[0] : undefined;
-		if (!first) return null;
+		if (!singlePageId) return null;
 		const res = await useAPI(
-			(api) => api.getCatalogPagesByPageId({ path: { pageId: first.id } }),
+			(api) => api.getCatalogPagesByPageId({ path: { pageId: singlePageId } }),
 			true,
 		);
 		return res.success ? res.data : null;
