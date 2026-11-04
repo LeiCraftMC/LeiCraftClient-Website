@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
 	compatibilityDate: "2026-08-20",
 	devtools: { enabled: true },
-	modules: ["@nuxt/ui"],
+	modules: ["@nuxt/ui", "@nuxtjs/mdc"],
 	colorMode: {
 		preference: "dark",
 		fallback: "dark",
@@ -10,6 +10,12 @@ export default defineNuxtConfig({
 	},
 	ssr: true,
 	css: ["~/assets/css/main.css"],
+
+	// Release changelogs are markdown (see ReleaseChangelog). Several render on one page, so their
+	// headings don't get anchor links — the page's anchors are the releases (`#v2.0.0`).
+	mdc: {
+		headings: { anchorLinks: false },
+	},
 
 	nitro: {
 		rollupConfig: {

@@ -51,3 +51,6 @@ https://github.com/LeiCraftMC/Style-Guides.
   request fails with `NUXT_E1001`. Top-level `await` in `<script setup>` is fine.
 - `bun run typecheck` skips `.vue` files under Bun; run vue-tsc with Node (see README) before
   finishing UI work.
+- Release changelogs are markdown, rendered with `<ReleaseChangelog>` — `@nuxtjs/mdc` plus Nuxt UI's
+  prose components (no `v-html`, no typography plugin). MDC drops scripts, event handlers and
+  `javascript:` links. Edit them with `<ReleaseChangelogEditor>` (write + live preview).

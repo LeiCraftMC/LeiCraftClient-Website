@@ -35,6 +35,7 @@ const moderationItems: NavigationMenuItem[] = [
 const adminItems: NavigationMenuItem[] = [
 	{ label: "Admin", icon: "i-lucide-shield", type: "label" },
 	{ label: "Users & roles", icon: "i-lucide-users", to: "/dashboard/admin/users" },
+	{ label: "Releases", icon: "i-lucide-package", to: "/dashboard/admin/releases" },
 	{ label: "Audit log", icon: "i-lucide-scroll-text", to: "/dashboard/admin/audit-log" },
 ];
 

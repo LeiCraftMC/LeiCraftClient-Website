@@ -2276,6 +2276,223 @@ export type GetPlayersByUuidResponses = {
 
 export type GetPlayersByUuidResponse = GetPlayersByUuidResponses[keyof GetPlayersByUuidResponses];
 
+export type GetReleasesData = {
+    body?: never;
+    path?: never;
+    query?: {
+        order?: 'newest' | 'oldest';
+        limit?: number;
+        offset?: number;
+    };
+    url: '/releases';
+};
+
+export type GetReleasesErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+};
+
+export type GetReleasesError = GetReleasesErrors[keyof GetReleasesErrors];
+
+export type GetReleasesResponses = {
+    /**
+     * Releases retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Releases retrieved successfully';
+        data: Array<{
+            /**
+             * Mod version without the leading v, e.g. 2.0.0-pre.5
+             */
+            version: string;
+            /**
+             * Display name of the release
+             */
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            /**
+             * Unix ms when the jar became downloadable
+             */
+            published_at: number;
+            /**
+             * Direct download of the mod jar (GitLab package registry permalink of the release asset)
+             */
+            download_url: string;
+            /**
+             * Modrinth version page, when it was published there
+             */
+            modrinth_url: string | null;
+            /**
+             * Website page of this release
+             */
+            page_url: string;
+        }>;
+    };
+};
+
+export type GetReleasesResponse = GetReleasesResponses[keyof GetReleasesResponses];
+
+export type GetReleasesLatestData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/releases/latest';
+};
+
+export type GetReleasesLatestErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * No release published yet
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'No release published yet';
+    };
+};
+
+export type GetReleasesLatestError = GetReleasesLatestErrors[keyof GetReleasesLatestErrors];
+
+export type GetReleasesLatestResponses = {
+    /**
+     * Latest release retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Latest release retrieved successfully';
+        data: {
+            /**
+             * Mod version without the leading v, e.g. 2.0.0-pre.5
+             */
+            version: string;
+            /**
+             * Display name of the release
+             */
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            /**
+             * Unix ms when the jar became downloadable
+             */
+            published_at: number;
+            /**
+             * Direct download of the mod jar (GitLab package registry permalink of the release asset)
+             */
+            download_url: string;
+            /**
+             * Modrinth version page, when it was published there
+             */
+            modrinth_url: string | null;
+            /**
+             * Website page of this release
+             */
+            page_url: string;
+        };
+    };
+};
+
+export type GetReleasesLatestResponse = GetReleasesLatestResponses[keyof GetReleasesLatestResponses];
+
+export type GetReleasesByVersionData = {
+    body?: never;
+    path: {
+        /**
+         * Mod version without the leading v
+         */
+        version: string;
+    };
+    query?: never;
+    url: '/releases/{version}';
+};
+
+export type GetReleasesByVersionErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * Release not found
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'Release not found';
+    };
+};
+
+export type GetReleasesByVersionError = GetReleasesByVersionErrors[keyof GetReleasesByVersionErrors];
+
+export type GetReleasesByVersionResponses = {
+    /**
+     * Release retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Release retrieved successfully';
+        data: {
+            /**
+             * Mod version without the leading v, e.g. 2.0.0-pre.5
+             */
+            version: string;
+            /**
+             * Display name of the release
+             */
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            /**
+             * Unix ms when the jar became downloadable
+             */
+            published_at: number;
+            /**
+             * Direct download of the mod jar (GitLab package registry permalink of the release asset)
+             */
+            download_url: string;
+            /**
+             * Modrinth version page, when it was published there
+             */
+            modrinth_url: string | null;
+            /**
+             * Website page of this release
+             */
+            page_url: string;
+        };
+    };
+};
+
+export type GetReleasesByVersionResponse = GetReleasesByVersionResponses[keyof GetReleasesByVersionResponses];
+
 export type GetCatalogCategoriesData = {
     body?: never;
     path?: never;
@@ -7863,13 +8080,491 @@ export type PutAdminUsersByUserIdResponses = {
 
 export type PutAdminUsersByUserIdResponse = PutAdminUsersByUserIdResponses[keyof PutAdminUsersByUserIdResponses];
 
+export type GetAdminReleasesData = {
+    body?: never;
+    path?: never;
+    query?: {
+        order?: 'newest' | 'oldest';
+        limit?: number;
+        offset?: number;
+    };
+    url: '/admin/releases';
+};
+
+export type GetAdminReleasesErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+};
+
+export type GetAdminReleasesError = GetAdminReleasesErrors[keyof GetAdminReleasesErrors];
+
+export type GetAdminReleasesResponses = {
+    /**
+     * Releases retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Releases retrieved successfully';
+        data: Array<{
+            version: string;
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            status: 'pending' | 'published' | 'failed';
+            download_url: string | null;
+            /**
+             * GitLab pipeline of the tag build (why it failed, build logs)
+             */
+            pipeline_url: string | null;
+            error_message: string | null;
+            modrinth_state: 'skipped' | 'pending' | 'published' | 'failed';
+            modrinth_url: string | null;
+            modrinth_error: string | null;
+            published_at: number | null;
+            created_at: number;
+            created_by: {
+                id: number;
+                display_name: string;
+                avatar_url: string;
+            } | null;
+        }>;
+    };
+};
+
+export type GetAdminReleasesResponse = GetAdminReleasesResponses[keyof GetAdminReleasesResponses];
+
+export type PostAdminReleasesData = {
+    body: {
+        mode: 'gitlab_new';
+        /**
+         * Mod version without the leading v
+         */
+        version: string;
+        title?: string;
+        changelog: string;
+        auto_modrinth?: boolean;
+    } | {
+        mode: 'gitlab_existing';
+        tag: string;
+        title?: string;
+        changelog?: string;
+        auto_modrinth?: boolean;
+    };
+    path?: never;
+    query?: never;
+    url: '/admin/releases';
+};
+
+export type PostAdminReleasesErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * This version already has a release
+     */
+    409: {
+        success: false;
+        code: 409;
+        message: 'This version already has a release';
+    };
+    /**
+     * The GitLab or Modrinth integration is not configured on the server
+     */
+    503: {
+        success: false;
+        code: 503;
+        message: 'The GitLab or Modrinth integration is not configured on the server';
+    };
+};
+
+export type PostAdminReleasesError = PostAdminReleasesErrors[keyof PostAdminReleasesErrors];
+
+export type PostAdminReleasesResponses = {
+    /**
+     * Release published
+     */
+    202: {
+        success: true;
+        code: 202;
+        message: 'Release published';
+        data: {
+            version: string;
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            status: 'pending' | 'published' | 'failed';
+            download_url: string | null;
+            /**
+             * GitLab pipeline of the tag build (why it failed, build logs)
+             */
+            pipeline_url: string | null;
+            error_message: string | null;
+            modrinth_state: 'skipped' | 'pending' | 'published' | 'failed';
+            modrinth_url: string | null;
+            modrinth_error: string | null;
+            published_at: number | null;
+            created_at: number;
+            created_by: {
+                id: number;
+                display_name: string;
+                avatar_url: string;
+            } | null;
+        };
+    };
+};
+
+export type PostAdminReleasesResponse = PostAdminReleasesResponses[keyof PostAdminReleasesResponses];
+
+export type GetAdminReleasesImportCandidatesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/admin/releases/import-candidates';
+};
+
+export type GetAdminReleasesImportCandidatesErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * The GitLab integration is not configured on the server
+     */
+    503: {
+        success: false;
+        code: 503;
+        message: 'The GitLab integration is not configured on the server';
+    };
+};
+
+export type GetAdminReleasesImportCandidatesError = GetAdminReleasesImportCandidatesErrors[keyof GetAdminReleasesImportCandidatesErrors];
+
+export type GetAdminReleasesImportCandidatesResponses = {
+    /**
+     * Import candidates retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Import candidates retrieved successfully';
+        data: Array<{
+            tag: string;
+            version: string;
+            name: string;
+            /**
+             * Release notes on GitLab (markdown) — the changelog default
+             */
+            description: string;
+            released_at: string;
+            /**
+             * The build already attached the jar asset
+             */
+            has_jar: boolean;
+            /**
+             * Already has a release on the website
+             */
+            imported: boolean;
+        }>;
+    };
+};
+
+export type GetAdminReleasesImportCandidatesResponse = GetAdminReleasesImportCandidatesResponses[keyof GetAdminReleasesImportCandidatesResponses];
+
+export type DeleteAdminReleasesByVersionData = {
+    body?: never;
+    path: {
+        /**
+         * Mod version without the leading v
+         */
+        version: string;
+    };
+    query?: never;
+    url: '/admin/releases/{version}';
+};
+
+export type DeleteAdminReleasesByVersionErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * Release not found
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'Release not found';
+    };
+};
+
+export type DeleteAdminReleasesByVersionError = DeleteAdminReleasesByVersionErrors[keyof DeleteAdminReleasesByVersionErrors];
+
+export type DeleteAdminReleasesByVersionResponses = {
+    /**
+     * Release deleted successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Release deleted successfully';
+        data: null;
+    };
+};
+
+export type DeleteAdminReleasesByVersionResponse = DeleteAdminReleasesByVersionResponses[keyof DeleteAdminReleasesByVersionResponses];
+
+export type GetAdminReleasesByVersionData = {
+    body?: never;
+    path: {
+        /**
+         * Mod version without the leading v
+         */
+        version: string;
+    };
+    query?: never;
+    url: '/admin/releases/{version}';
+};
+
+export type GetAdminReleasesByVersionErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * Release not found
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'Release not found';
+    };
+};
+
+export type GetAdminReleasesByVersionError = GetAdminReleasesByVersionErrors[keyof GetAdminReleasesByVersionErrors];
+
+export type GetAdminReleasesByVersionResponses = {
+    /**
+     * Release retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Release retrieved successfully';
+        data: {
+            version: string;
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            status: 'pending' | 'published' | 'failed';
+            download_url: string | null;
+            /**
+             * GitLab pipeline of the tag build (why it failed, build logs)
+             */
+            pipeline_url: string | null;
+            error_message: string | null;
+            modrinth_state: 'skipped' | 'pending' | 'published' | 'failed';
+            modrinth_url: string | null;
+            modrinth_error: string | null;
+            published_at: number | null;
+            created_at: number;
+            created_by: {
+                id: number;
+                display_name: string;
+                avatar_url: string;
+            } | null;
+        };
+    };
+};
+
+export type GetAdminReleasesByVersionResponse = GetAdminReleasesByVersionResponses[keyof GetAdminReleasesByVersionResponses];
+
+export type PutAdminReleasesByVersionData = {
+    body?: {
+        title?: string;
+        changelog?: string;
+    };
+    path: {
+        /**
+         * Mod version without the leading v
+         */
+        version: string;
+    };
+    query?: never;
+    url: '/admin/releases/{version}';
+};
+
+export type PutAdminReleasesByVersionErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * Release not found
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'Release not found';
+    };
+};
+
+export type PutAdminReleasesByVersionError = PutAdminReleasesByVersionErrors[keyof PutAdminReleasesByVersionErrors];
+
+export type PutAdminReleasesByVersionResponses = {
+    /**
+     * Release updated successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Release updated successfully';
+        data: {
+            version: string;
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            status: 'pending' | 'published' | 'failed';
+            download_url: string | null;
+            /**
+             * GitLab pipeline of the tag build (why it failed, build logs)
+             */
+            pipeline_url: string | null;
+            error_message: string | null;
+            modrinth_state: 'skipped' | 'pending' | 'published' | 'failed';
+            modrinth_url: string | null;
+            modrinth_error: string | null;
+            published_at: number | null;
+            created_at: number;
+            created_by: {
+                id: number;
+                display_name: string;
+                avatar_url: string;
+            } | null;
+        };
+    };
+};
+
+export type PutAdminReleasesByVersionResponse = PutAdminReleasesByVersionResponses[keyof PutAdminReleasesByVersionResponses];
+
+export type PostAdminReleasesByVersionRetryData = {
+    body?: never;
+    path: {
+        /**
+         * Mod version without the leading v
+         */
+        version: string;
+    };
+    query?: never;
+    url: '/admin/releases/{version}/retry';
+};
+
+export type PostAdminReleasesByVersionRetryErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * Release not found
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'Release not found';
+    };
+};
+
+export type PostAdminReleasesByVersionRetryError = PostAdminReleasesByVersionRetryErrors[keyof PostAdminReleasesByVersionRetryErrors];
+
+export type PostAdminReleasesByVersionRetryResponses = {
+    /**
+     * Release retry started
+     */
+    202: {
+        success: true;
+        code: 202;
+        message: 'Release retry started';
+        data: {
+            version: string;
+            title: string;
+            /**
+             * Changelog, markdown
+             */
+            changelog: string;
+            channel: 'stable' | 'pre-release';
+            status: 'pending' | 'published' | 'failed';
+            download_url: string | null;
+            /**
+             * GitLab pipeline of the tag build (why it failed, build logs)
+             */
+            pipeline_url: string | null;
+            error_message: string | null;
+            modrinth_state: 'skipped' | 'pending' | 'published' | 'failed';
+            modrinth_url: string | null;
+            modrinth_error: string | null;
+            published_at: number | null;
+            created_at: number;
+            created_by: {
+                id: number;
+                display_name: string;
+                avatar_url: string;
+            } | null;
+        };
+    };
+};
+
+export type PostAdminReleasesByVersionRetryResponse = PostAdminReleasesByVersionRetryResponses[keyof PostAdminReleasesByVersionRetryResponses];
+
 export type GetAdminAuditLogsData = {
     body?: never;
     path?: never;
     query?: {
         actor_user_id?: number;
-        action?: 'user.role_change' | 'user.ban' | 'user.unban' | 'user.delete' | 'page.create' | 'page.update' | 'page.delete' | 'page.hide' | 'page.unhide' | 'page.member_add' | 'page.member_update' | 'page.member_remove' | 'page.approve_changes' | 'page.reject_changes' | 'collection.create' | 'collection.update' | 'collection.delete' | 'product.create' | 'product.update' | 'product.publish' | 'product.unpublish' | 'variant.create' | 'variant.update' | 'variant.delete' | 'product.approve' | 'product.reject' | 'product.disable' | 'product.restore' | 'product.delete' | 'product.grant' | 'product.revoke' | 'code.create' | 'code.update' | 'code.delete' | 'report.resolve';
-        target_type?: 'user' | 'page' | 'collection' | 'product' | 'code' | 'report';
+        action?: 'user.role_change' | 'user.ban' | 'user.unban' | 'user.delete' | 'page.create' | 'page.update' | 'page.delete' | 'page.hide' | 'page.unhide' | 'page.member_add' | 'page.member_update' | 'page.member_remove' | 'page.approve_changes' | 'page.reject_changes' | 'collection.create' | 'collection.update' | 'collection.delete' | 'product.create' | 'product.update' | 'product.publish' | 'product.unpublish' | 'variant.create' | 'variant.update' | 'variant.delete' | 'product.approve' | 'product.reject' | 'product.disable' | 'product.restore' | 'product.delete' | 'product.grant' | 'product.revoke' | 'code.create' | 'code.update' | 'code.delete' | 'report.resolve' | 'release.create' | 'release.update' | 'release.delete' | 'release.retry';
+        target_type?: 'user' | 'page' | 'collection' | 'product' | 'code' | 'report' | 'release';
         target_id?: string;
         limit?: number;
         offset?: number;

@@ -1208,6 +1208,73 @@ export const zGetPlayersByUuidResponse = z.object({
     })
 });
 
+export const zGetReleasesQuery = z.object({
+    order: z.enum(['newest', 'oldest']).optional().default('newest'),
+    limit: z.int().gte(1).lte(100).optional().default(10),
+    offset: z.int().gte(0).lte(9007199254740991).optional().default(0)
+});
+
+/**
+ * Releases retrieved successfully
+ */
+export const zGetReleasesResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Releases retrieved successfully'),
+    data: z.array(z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        download_url: z.string(),
+        modrinth_url: z.string().nullable(),
+        page_url: z.string()
+    }))
+});
+
+/**
+ * Latest release retrieved successfully
+ */
+export const zGetReleasesLatestResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Latest release retrieved successfully'),
+    data: z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        download_url: z.string(),
+        modrinth_url: z.string().nullable(),
+        page_url: z.string()
+    })
+});
+
+export const zGetReleasesByVersionPath = z.object({
+    version: z.string().regex(/^\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/)
+});
+
+/**
+ * Release retrieved successfully
+ */
+export const zGetReleasesByVersionResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Release retrieved successfully'),
+    data: z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        download_url: z.string(),
+        modrinth_url: z.string().nullable(),
+        page_url: z.string()
+    })
+});
+
 /**
  * Categories retrieved successfully
  */
@@ -4520,6 +4587,268 @@ export const zPutAdminUsersByUserIdResponse = z.object({
     })
 });
 
+export const zGetAdminReleasesQuery = z.object({
+    order: z.enum(['newest', 'oldest']).optional().default('newest'),
+    limit: z.int().gte(1).lte(200).optional().default(50),
+    offset: z.int().gte(0).lte(9007199254740991).optional().default(0)
+});
+
+/**
+ * Releases retrieved successfully
+ */
+export const zGetAdminReleasesResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Releases retrieved successfully'),
+    data: z.array(z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        status: z.enum([
+            'pending',
+            'published',
+            'failed'
+        ]),
+        download_url: z.string().nullable(),
+        pipeline_url: z.string().nullable(),
+        error_message: z.string().nullable(),
+        modrinth_state: z.enum([
+            'skipped',
+            'pending',
+            'published',
+            'failed'
+        ]),
+        modrinth_url: z.string().nullable(),
+        modrinth_error: z.string().nullable(),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991).nullable(),
+        created_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        created_by: z.object({
+            id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            display_name: z.string(),
+            avatar_url: z.string()
+        }).nullable()
+    }))
+});
+
+export const zPostAdminReleasesBody = z.union([
+    z.object({
+        mode: z.literal('gitlab_new'),
+        version: z.string().regex(/^\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/),
+        title: z.string().max(120).optional(),
+        changelog: z.string().min(1).max(10000),
+        auto_modrinth: z.boolean().optional().default(true)
+    }),
+    z.object({
+        mode: z.literal('gitlab_existing'),
+        tag: z.string().regex(/^v\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/),
+        title: z.string().max(120).optional(),
+        changelog: z.string().max(10000).optional(),
+        auto_modrinth: z.boolean().optional().default(true)
+    })
+]);
+
+/**
+ * Release published
+ */
+export const zPostAdminReleasesResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(202),
+    message: z.literal('Release published'),
+    data: z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        status: z.enum([
+            'pending',
+            'published',
+            'failed'
+        ]),
+        download_url: z.string().nullable(),
+        pipeline_url: z.string().nullable(),
+        error_message: z.string().nullable(),
+        modrinth_state: z.enum([
+            'skipped',
+            'pending',
+            'published',
+            'failed'
+        ]),
+        modrinth_url: z.string().nullable(),
+        modrinth_error: z.string().nullable(),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991).nullable(),
+        created_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        created_by: z.object({
+            id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            display_name: z.string(),
+            avatar_url: z.string()
+        }).nullable()
+    })
+});
+
+/**
+ * Import candidates retrieved successfully
+ */
+export const zGetAdminReleasesImportCandidatesResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Import candidates retrieved successfully'),
+    data: z.array(z.object({
+        tag: z.string(),
+        version: z.string(),
+        name: z.string(),
+        description: z.string(),
+        released_at: z.string(),
+        has_jar: z.boolean(),
+        imported: z.boolean()
+    }))
+});
+
+export const zDeleteAdminReleasesByVersionPath = z.object({
+    version: z.string().regex(/^\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/)
+});
+
+/**
+ * Release deleted successfully
+ */
+export const zDeleteAdminReleasesByVersionResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Release deleted successfully'),
+    data: z.null()
+});
+
+export const zGetAdminReleasesByVersionPath = z.object({
+    version: z.string().regex(/^\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/)
+});
+
+/**
+ * Release retrieved successfully
+ */
+export const zGetAdminReleasesByVersionResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Release retrieved successfully'),
+    data: z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        status: z.enum([
+            'pending',
+            'published',
+            'failed'
+        ]),
+        download_url: z.string().nullable(),
+        pipeline_url: z.string().nullable(),
+        error_message: z.string().nullable(),
+        modrinth_state: z.enum([
+            'skipped',
+            'pending',
+            'published',
+            'failed'
+        ]),
+        modrinth_url: z.string().nullable(),
+        modrinth_error: z.string().nullable(),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991).nullable(),
+        created_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        created_by: z.object({
+            id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            display_name: z.string(),
+            avatar_url: z.string()
+        }).nullable()
+    })
+});
+
+export const zPutAdminReleasesByVersionBody = z.object({
+    title: z.string().max(120).optional(),
+    changelog: z.string().max(10000).optional()
+});
+
+export const zPutAdminReleasesByVersionPath = z.object({
+    version: z.string().regex(/^\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/)
+});
+
+/**
+ * Release updated successfully
+ */
+export const zPutAdminReleasesByVersionResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Release updated successfully'),
+    data: z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        status: z.enum([
+            'pending',
+            'published',
+            'failed'
+        ]),
+        download_url: z.string().nullable(),
+        pipeline_url: z.string().nullable(),
+        error_message: z.string().nullable(),
+        modrinth_state: z.enum([
+            'skipped',
+            'pending',
+            'published',
+            'failed'
+        ]),
+        modrinth_url: z.string().nullable(),
+        modrinth_error: z.string().nullable(),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991).nullable(),
+        created_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        created_by: z.object({
+            id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            display_name: z.string(),
+            avatar_url: z.string()
+        }).nullable()
+    })
+});
+
+export const zPostAdminReleasesByVersionRetryPath = z.object({
+    version: z.string().regex(/^\d+\.\d+\.\d+(-[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/)
+});
+
+/**
+ * Release retry started
+ */
+export const zPostAdminReleasesByVersionRetryResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(202),
+    message: z.literal('Release retry started'),
+    data: z.object({
+        version: z.string(),
+        title: z.string(),
+        changelog: z.string(),
+        channel: z.enum(['stable', 'pre-release']),
+        status: z.enum([
+            'pending',
+            'published',
+            'failed'
+        ]),
+        download_url: z.string().nullable(),
+        pipeline_url: z.string().nullable(),
+        error_message: z.string().nullable(),
+        modrinth_state: z.enum([
+            'skipped',
+            'pending',
+            'published',
+            'failed'
+        ]),
+        modrinth_url: z.string().nullable(),
+        modrinth_error: z.string().nullable(),
+        published_at: z.int().gte(-9007199254740991).lte(9007199254740991).nullable(),
+        created_at: z.int().gte(-9007199254740991).lte(9007199254740991),
+        created_by: z.object({
+            id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            display_name: z.string(),
+            avatar_url: z.string()
+        }).nullable()
+    })
+});
+
 export const zGetAdminAuditLogsQuery = z.object({
     actor_user_id: z.int().gt(0).lte(9007199254740991).optional(),
     action: z.enum([
@@ -4557,7 +4886,11 @@ export const zGetAdminAuditLogsQuery = z.object({
         'code.create',
         'code.update',
         'code.delete',
-        'report.resolve'
+        'report.resolve',
+        'release.create',
+        'release.update',
+        'release.delete',
+        'release.retry'
     ]).optional(),
     target_type: z.enum([
         'user',
@@ -4565,7 +4898,8 @@ export const zGetAdminAuditLogsQuery = z.object({
         'collection',
         'product',
         'code',
-        'report'
+        'report',
+        'release'
     ]).optional(),
     target_id: z.string().min(1).max(64).optional(),
     limit: z.int().gte(1).lte(500).optional().default(100),

@@ -53,7 +53,7 @@ bun run api-client:generate
 | `/shop/partner`, `/shop/community`, `/shop/<category>/<slug>` | everyone | Partner and community pages |
 | `/shop/products/<id>`, `/shop/collections/<id>` | everyone | Item and collection pages with 3D preview and "Equip" |
 | `/players`, `/players/<name>` | everyone | Player search and profiles (what a player wears) |
-| `/download` | everyone | Mod download and install guide |
+| `/download` | everyone | Mod download (latest release, direct jar), all releases with markdown changelogs (`#v<version>` anchors), install guide |
 | `/auth/login`, `/auth/discord/callback` | signed out | Discord login (PKCE) |
 | `/link/minecraft?code=…` | signed in | Target of the clickable link in the mod: links a Minecraft account |
 | `/welcome` | signed in | One-time onboarding (install, link, find a cape) |
@@ -65,6 +65,7 @@ bun run api-client:generate
 | `/dashboard/studio`, `/dashboard/studio/<pageId>/…` | page members, admins | Creator Studio: items, variants, collections, redeem codes, grants, members, page profile |
 | `/dashboard/moderation`, `…/pages`, `…/reports`, `…/users` | moderators, admins | Review queue, page profile reviews, reports, bans |
 | `/dashboard/admin/users`, `/dashboard/admin/audit-log` | admins | Roles, account deletion, audit log |
+| `/dashboard/admin/releases`, `…/new`, `…/<version>` | admins | Publish mod releases (new GitLab release or import an existing one), changelog, build and Modrinth status, retry |
 | `/sitemap.xml` | everyone | Static pages, shop pages and listed items (cached for an hour) |
 
 The access rules are the constants at the top of `app/middleware/auth.global.ts`. The guard is

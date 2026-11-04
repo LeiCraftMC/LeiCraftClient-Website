@@ -7,6 +7,8 @@ import type {
 	GetAccountWardrobeResponses,
 	GetAdminAuditLogsData,
 	GetAdminAuditLogsResponses,
+	GetAdminReleasesImportCandidatesResponses,
+	GetAdminReleasesResponses,
 	GetAdminUsersResponses,
 	GetCatalogCategoriesResponses,
 	GetCatalogCollectionsByCollectionIdResponses,
@@ -20,6 +22,7 @@ import type {
 	GetModerationUsersByUserIdResponses,
 	GetModerationUsersResponses,
 	GetPlayersByUuidResponses,
+	GetReleasesResponses,
 	GetStudioPagesByPageIdCodesResponses,
 	GetStudioPagesByPageIdCollectionsResponses,
 	GetStudioPagesByPageIdMembersResponses,
@@ -27,6 +30,7 @@ import type {
 	GetStudioPagesByPageIdProductsResponses,
 	GetStudioPagesResponses,
 	PostAccountApikeysData,
+	PostAdminReleasesData,
 } from "~/api-client";
 
 export namespace UtilityTypes {
@@ -78,3 +82,11 @@ export type ModeratedUserDetail = GetModerationUsersByUserIdResponses["200"]["da
 export type AdminUser = GetAdminUsersResponses["200"]["data"][number];
 export type AuditLogEntry = GetAdminAuditLogsResponses["200"]["data"][number];
 export type AuditAction = NonNullable<NonNullable<GetAdminAuditLogsData["query"]>["action"]>;
+
+export type PublicRelease = GetReleasesResponses["200"]["data"][number];
+export type ManagedRelease = GetAdminReleasesResponses["200"]["data"][number];
+export type ReleaseStatus = ManagedRelease["status"];
+export type ModrinthState = ManagedRelease["modrinth_state"];
+export type ReleaseImportCandidate =
+	GetAdminReleasesImportCandidatesResponses["200"]["data"][number];
+export type NewRelease = NonNullable<PostAdminReleasesData["body"]>;
