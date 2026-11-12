@@ -2,11 +2,13 @@
 /**
  * Docs consistency (like the LeiOS/Iventworks sites): every sidebar entry in `app/data/docs.ts`
  * has a markdown file and every file is in the sidebar, pages have frontmatter, internal links
- * point at pages that exist, MDC blocks are closed and every icon exists in Lucide.
+ * point at pages (and `#headings`) that exist, MDC blocks are closed and every icon exists in Lucide.
  */
 import { describe, expect, test } from "bun:test";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
+// The slugger @nuxtjs/mdc uses for heading ids (a dependency of it, see `parser/compiler.js`).
+import Slugger from "github-slugger";
 import { docsPagesFlat, docsSourcePath } from "../app/data/docs";
 
 const ROOT = join(import.meta.dir, "..");
@@ -36,6 +38,24 @@ function frontmatter(source: string) {
 	}
 	return data;
 }
+
+/** Heading ids of a markdown page, built like @nuxtjs/mdc does (github-slugger, then tidied). */
+function headingIds(source: string) {
+	const slugger = new Slugger();
+	const withoutCode = source.replace(/```[\s\S]*?```/g, "");
+	return new Set(
+		[...withoutCode.matchAll(/^#{2,6}\s+(.+?)\s*$/gm)].map((match) => {
+			const text = (match[1] as string)
+				.replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // links → their text
+				.replace(/[*_`]/g, ""); // emphasis and code marks
+			return slugger.slug(text).replace(/-+/g, "-").replace(/^-|-$/g, "").replace(/^(\d)/, "_$1");
+		}),
+	);
+}
+
+const headingsByRoute = new Map(
+	markdownFiles.map((file) => [routeOf(file), headingIds(readFileSync(file, "utf8"))]),
+);
 
 /** Whether a site path (no query/hash) is served by a page in `app/pages/`. */
 function pageExists(path: string) {
@@ -101,6 +121,15 @@ describe("docs", () => {
 				].map((match) => match[1] as string);
 				const broken = links.filter((link) => !pageExists(link.replace(/[#?].*$/, "") || "/"));
 				expect(broken).toEqual([]);
+			});
+
+			test("heading anchors exist", () => {
+				const anchors = [
+					...source.matchAll(/\]\(((?:\/docs[^)\s#]*)?)#([^)\s]+)\)/g),
+					...source.matchAll(/\bto:\s*(\/docs\S*?)#(\S+)/g),
+				].map((match) => ({ page: (match[1] as string) || route, id: match[2] as string }));
+				const missing = anchors.filter(({ page, id }) => !headingsByRoute.get(page)?.has(id));
+				expect(missing).toEqual([]);
 			});
 
 			test("MDC blocks are closed", () => {

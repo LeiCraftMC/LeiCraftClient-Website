@@ -90,13 +90,12 @@ onBeforeUnmount(() => clearInterval(timer));
 			</NuxtLink>
 			<p v-else class="text-sm text-slate-500">The newest cape in the shop</p>
 
-			<div v-if="count > 1" class="flex gap-1.5" role="tablist" aria-label="Showcased players">
+			<div v-if="count > 1" class="flex gap-1.5" role="group" aria-label="Showcased players">
 				<button
 					v-for="(player, i) in players"
 					:key="player.uuid"
 					type="button"
-					role="tab"
-					:aria-selected="i === index"
+					:aria-pressed="i === index"
 					:aria-label="`Show ${player.name}`"
 					:class="[
 						'h-1.5 rounded-full transition-all',

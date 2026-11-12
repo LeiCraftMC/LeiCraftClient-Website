@@ -84,7 +84,7 @@ watch(currentPath, () => {
 
 			<DocsToc v-if="toc.length" :links="toc" collapsible class="mb-8 xl:hidden" />
 
-			<article class="docs-content">
+			<article>
 				<slot />
 			</article>
 

@@ -22,7 +22,11 @@ const route = useRoute();
 // `//evil.example`), like the login page.
 const requestedUrl = route.query.url?.toString() ?? "";
 const nextPath =
-	requestedUrl.startsWith("/") && !requestedUrl.startsWith("//") && !requestedUrl.startsWith("/\\")
+	requestedUrl.startsWith("/") &&
+	!requestedUrl.startsWith("//") &&
+	!requestedUrl.startsWith("/\\") &&
+	// Back to this page would loop once onboarding is complete.
+	!/^\/welcome(?:[/?#]|$)/.test(requestedUrl)
 		? requestedUrl
 		: "/dashboard";
 

@@ -81,8 +81,11 @@ const items = ref<WardrobeItem[]>([]);
 const loadingItems = ref(false);
 const hasMore = ref(false);
 const PAGE_SIZE = 48;
+// Bumped per request: a slower answer for an older tab/search must not overwrite a newer one.
+let itemsRequest = 0;
 
 async function fetchItems(offset: number) {
+	const request = ++itemsRequest;
 	loadingItems.value = true;
 	const res = await useAPI((api) =>
 		api.getAccountWardrobe({
@@ -95,6 +98,7 @@ async function fetchItems(offset: number) {
 			},
 		}),
 	);
+	if (request !== itemsRequest) return;
 	loadingItems.value = false;
 
 	if (!res.success) {
@@ -406,8 +410,8 @@ const emptyState = computed(() => {
 								:aria-pressed="hasAccounts ? isEquipped(draft, item.product) : undefined"
 								:class="['text-left', hasAccounts ? 'cursor-pointer' : '']"
 								@click="toggle(item.product)"
-								@keydown.enter.prevent="toggle(item.product)"
-								@keydown.space.prevent="toggle(item.product)"
+								@keydown.enter.self.prevent="toggle(item.product)"
+								@keydown.space.self.prevent="toggle(item.product)"
 							>
 								<CatalogProductCard
 									:product="item.product"
