@@ -824,7 +824,7 @@ export type GetAccountMinecraftResponses = {
             skin_url: string | null;
             skin_model: 'wide' | 'slim';
             /**
-             * Used the LeiCraft Client within the last 30 days
+             * Used the LeiCraftClient within the last 30 days
              */
             uses_client: boolean;
             linked_at: number | null;
@@ -882,7 +882,7 @@ export type GetAccountMinecraftLinkByCodeResponses = {
                 skin_url: string | null;
                 skin_model: 'wide' | 'slim';
                 /**
-                 * Used the LeiCraft Client within the last 30 days
+                 * Used the LeiCraftClient within the last 30 days
                  */
                 uses_client: boolean;
                 linked_at: number | null;
@@ -946,7 +946,7 @@ export type PostAccountMinecraftLinkResponses = {
             skin_url: string | null;
             skin_model: 'wide' | 'slim';
             /**
-             * Used the LeiCraft Client within the last 30 days
+             * Used the LeiCraftClient within the last 30 days
              */
             uses_client: boolean;
             linked_at: number | null;
@@ -1579,7 +1579,7 @@ export type PostClientAuthVerifyResponses = {
                 skin_url: string | null;
                 skin_model: 'wide' | 'slim';
                 /**
-                 * Used the LeiCraft Client within the last 30 days
+                 * Used the LeiCraftClient within the last 30 days
                  */
                 uses_client: boolean;
                 linked_at: number | null;
@@ -1636,7 +1636,7 @@ export type GetClientSessionResponses = {
                 skin_url: string | null;
                 skin_model: 'wide' | 'slim';
                 /**
-                 * Used the LeiCraft Client within the last 30 days
+                 * Used the LeiCraftClient within the last 30 days
                  */
                 uses_client: boolean;
                 linked_at: number | null;
@@ -2261,7 +2261,7 @@ export type PostPlayersLookupResponses = {
              */
             skin_model: 'wide' | 'slim';
             /**
-             * Used the LeiCraft Client within the last 30 days
+             * Used the LeiCraftClient within the last 30 days
              */
             uses_client: boolean;
             cape: {
@@ -2326,7 +2326,7 @@ export type GetPlayersShowcaseResponses = {
         code: 200;
         message: 'Showcase retrieved successfully';
         /**
-         * Random players who wear a cape or cosmetics, recent LeiCraft Client users first
+         * Random players who wear a cape or cosmetics, recent LeiCraftClient users first
          */
         data: Array<{
             uuid: string;
@@ -2336,7 +2336,7 @@ export type GetPlayersShowcaseResponses = {
              */
             skin_model: 'wide' | 'slim';
             /**
-             * Used the LeiCraft Client within the last 30 days
+             * Used the LeiCraftClient within the last 30 days
              */
             uses_client: boolean;
             cape: {
@@ -2419,7 +2419,7 @@ export type GetPlayersByNameByNameResponses = {
              */
             skin_model: 'wide' | 'slim';
             /**
-             * Used the LeiCraft Client within the last 30 days
+             * Used the LeiCraftClient within the last 30 days
              */
             uses_client: boolean;
             cape: {
@@ -2502,7 +2502,7 @@ export type GetPlayersByUuidResponses = {
              */
             skin_model: 'wide' | 'slim';
             /**
-             * Used the LeiCraft Client within the last 30 days
+             * Used the LeiCraftClient within the last 30 days
              */
             uses_client: boolean;
             cape: {
@@ -7947,7 +7947,7 @@ export type GetModerationUsersByUserIdResponses = {
                 skin_url: string | null;
                 skin_model: 'wide' | 'slim';
                 /**
-                 * Used the LeiCraft Client within the last 30 days
+                 * Used the LeiCraftClient within the last 30 days
                  */
                 uses_client: boolean;
                 linked_at: number | null;

@@ -1,24 +1,24 @@
 ---
 title: Install on Quilt
-description: Run LeiCraft Client on Quilt Loader for Minecraft 26.3, with the normal Fabric API and Fabric Language Kotlin.
+description: Run LeiCraftClient on Quilt Loader for Minecraft 26.3, with the normal Fabric API and Fabric Language Kotlin.
 ---
 
-Quilt Loader can load Fabric mods, so LeiCraft Client should run on Quilt too. You install it with the normal Fabric API and Fabric Language Kotlin, not with Quilt's own libraries.
+Quilt Loader can load Fabric mods, so LeiCraftClient should run on Quilt too. You install it with the normal Fabric API and Fabric Language Kotlin, not with Quilt's own libraries.
 
 ::warning
-**Not officially tested.** We build and test LeiCraft Client on Fabric. Quilt should work, but we don't test every release on it. If something breaks, tell us on [Discord](https://discord.com/invite/3cdazADhtv), and use [Fabric](/docs/install/fabric) in the meantime.
+**Not officially tested.** We build and test LeiCraftClient on Fabric. Quilt should work, but we don't test every release on it. If something breaks, tell us on [Discord](https://discord.com/invite/3cdazADhtv), and use [Fabric](/docs/install/fabric) in the meantime.
 ::
 
 ## Good to know first
 
 - **Use Fabric API, not Quilted Fabric API.** Since Minecraft 26.1, the Quilt project no longer makes the Quilt Standard Libraries (QSL), Quilted Fabric API (QFAPI) or Quilt Kotlin Libraries for new Minecraft versions. Quilt Loader itself is still made. On 26.3 you use the normal **Fabric API** and **Fabric Language Kotlin**.
-- **Quilt Loader 0.30.2 or newer.** Quilt Loader tells mods which Fabric Loader version it stands in for, and LeiCraft Client needs Fabric Loader 0.19.5 or newer. Quilt Loader 0.30.2 is the first stable version that matches Fabric Loader 0.19.5. With an older Quilt Loader, the game refuses to start.
+- **Quilt Loader 0.30.2 or newer.** Quilt Loader tells mods which Fabric Loader version it stands in for, and LeiCraftClient needs Fabric Loader 0.19.5 or newer. Quilt Loader 0.30.2 is the first stable version that matches Fabric Loader 0.19.5. With an older Quilt Loader, the game refuses to start.
 
 ## What you need
 
 - A launcher that can create a **Quilt** instance for **Minecraft 26.3**, for example [Prism Launcher](/docs/install/prism-launcher) or the [Modrinth App](/docs/install/modrinth-app). You can also use the Quilt installer from https://quiltmc.org/en/install/ with the official Minecraft Launcher.
 - **Quilt Loader** 0.30.2 or newer.
-- The **LeiCraft Client** jar from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
+- The **LeiCraftClient** jar from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
 - **Fabric API** for 26.3 from [Modrinth](https://modrinth.com/mod/fabric-api).
 - **Fabric Language Kotlin** 1.14.2 or newer from [Modrinth](https://modrinth.com/mod/fabric-language-kotlin).
 
@@ -47,7 +47,7 @@ Make sure the instance uses Quilt Loader **0.30.2 or newer**. In Prism Launcher 
 
 ### Add the three mods
 
-Add **LeiCraft Client**, **Fabric API** and **Fabric Language Kotlin** to the instance's `mods` folder. In Prism Launcher and the Modrinth App, you can use the built-in mod browser, as in the [Prism Launcher](/docs/install/prism-launcher) and [Modrinth App](/docs/install/modrinth-app) guides.
+Add **LeiCraftClient**, **Fabric API** and **Fabric Language Kotlin** to the instance's `mods` folder. In Prism Launcher and the Modrinth App, you can use the built-in mod browser, as in the [Prism Launcher](/docs/install/prism-launcher) and [Modrinth App](/docs/install/modrinth-app) guides.
 
 If the mod browser of your launcher hides Fabric mods in a Quilt instance, download the three jars from Modrinth and add them as files.
 
@@ -57,7 +57,7 @@ Don't install Quilted Fabric API (QFAPI) or QSL together with Fabric API. On 26.
 
 ### Start the game
 
-Start the instance. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraft Client is installed.
+Start the instance. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraftClient is installed.
 ::
 
 ## Next: link your account

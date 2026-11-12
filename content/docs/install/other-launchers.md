@@ -1,14 +1,14 @@
 ---
 title: Other launchers
-description: Install LeiCraft Client with ATLauncher, or with any other launcher that can create a Fabric 26.3 instance.
+description: Install LeiCraftClient with ATLauncher, or with any other launcher that can create a Fabric 26.3 instance.
 ---
 
-LeiCraft Client works with every launcher that can start Minecraft 26.3 with Fabric and has a `mods` folder. This page covers ATLauncher step by step, and then the general recipe for any other launcher.
+LeiCraftClient works with every launcher that can start Minecraft 26.3 with Fabric and has a `mods` folder. This page covers ATLauncher step by step, and then the general recipe for any other launcher.
 
 ## What you need
 
 - A launcher that can create a **Fabric** instance for **Minecraft 26.3**.
-- The **LeiCraft Client** jar from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
+- The **LeiCraftClient** jar from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
 - **Fabric API** for 26.3 from [Modrinth](https://modrinth.com/mod/fabric-api).
 - **Fabric Language Kotlin** 1.14.2 or newer from [Modrinth](https://modrinth.com/mod/fabric-language-kotlin).
 
@@ -28,17 +28,17 @@ LeiCraft Client works with every launcher that can start Minecraft 26.3 with Fab
 
 On the new instance's card, click **Add Mods**. Choose Modrinth as the source and search for each mod, then install it:
 
-- `LeiCraft Client`
+- `LeiCraftClient`
 - `Fabric API`
 - `Fabric Language Kotlin`
 
 ### Or add the jar from our website
 
-If you downloaded the LeiCraft Client jar from the [download page](/download), click **Edit Mods** on the instance's card, then **Add Mod**. Choose the jar and pick **Mod** as the type. Add Fabric API and Fabric Language Kotlin with **Add Mods** as above.
+If you downloaded the LeiCraftClient jar from the [download page](/download), click **Edit Mods** on the instance's card, then **Add Mod**. Choose the jar and pick **Mod** as the type. Add Fabric API and Fabric Language Kotlin with **Add Mods** as above.
 
 ### Start the game
 
-Start the instance. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraft Client is installed.
+Start the instance. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraftClient is installed.
 ::
 
 ## Any other launcher
@@ -56,13 +56,13 @@ Open the instance's folder. Most launchers have a button like "Open folder" for 
 
 ### Add the three mods
 
-Copy the LeiCraft Client jar, Fabric API and Fabric Language Kotlin into the `mods` folder. Don't unzip them.
+Copy the LeiCraftClient jar, Fabric API and Fabric Language Kotlin into the `mods` folder. Don't unzip them.
 
 If your launcher has its own mod browser, you can use it for Fabric API and Fabric Language Kotlin. Make sure it gives you the versions for 26.3 and Fabric.
 
 ### Start the game
 
-Start the instance. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraft Client is installed.
+Start the instance. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraftClient is installed.
 ::
 
 ::warning

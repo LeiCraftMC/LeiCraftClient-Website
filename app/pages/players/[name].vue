@@ -15,7 +15,7 @@ if (!result.value?.success) {
 			(result.value?.code as number | undefined) === 404 ? 404 : (result.value?.code ?? 500),
 		statusMessage:
 			(result.value?.code as number | undefined) === 404
-				? "This player hasn't used the LeiCraft Client yet"
+				? "This player hasn't used the LeiCraftClient yet"
 				: result.value?.message,
 		fatal: true,
 	});
@@ -24,8 +24,8 @@ if (!result.value?.success) {
 const profile = computed(() => (result.value?.success ? result.value.data : null));
 
 usePageSeo({
-	title: `${profile.value?.name} — LeiCraft Client`,
-	description: `The capes and cosmetics ${profile.value?.name} wears with the LeiCraft Client.`,
+	title: `${profile.value?.name} — LeiCraftClient`,
+	description: `The capes and cosmetics ${profile.value?.name} wears with the LeiCraftClient.`,
 });
 
 const { skinURL } = useMinecraftAssets();
@@ -84,7 +84,7 @@ const { data: products } = await useAPILazyAsyncData<ProductDetail[]>(
 						variant="soft"
 						icon="i-lucide-badge-check"
 					>
-						LeiCraft Client player
+						LeiCraftClient player
 					</UBadge>
 				</div>
 			</div>

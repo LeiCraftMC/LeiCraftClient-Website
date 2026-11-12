@@ -3,13 +3,13 @@ title: Cosmetics with Blockbench
 description: Build 3D cosmetics in Blockbench with the OptiFine Player Models plugin, export them and check them against the upload limits.
 ---
 
-LeiCraft Client cosmetics are **OptiFine player-item models**: simple 3D boxes attached to a body part, plus a PNG texture. You make them in [Blockbench](https://www.blockbench.net), a free 3D editor for Minecraft models, with the **OptiFine Player Models** plugin.
+LeiCraftClient cosmetics are **OptiFine player-item models**: simple 3D boxes attached to a body part, plus a PNG texture. You make them in [Blockbench](https://www.blockbench.net), a free 3D editor for Minecraft models, with the **OptiFine Player Models** plugin.
 
 ## What you need
 
 - **Blockbench**, as the desktop app or the web app at [blockbench.net](https://www.blockbench.net). At the time of writing the current version is 5.2.
 - The plugin **OptiFine Player Models** by Ewan Howell (installed from inside Blockbench, see below).
-- A LeiCraft Client community page to upload to. See [Upload and publish](/docs/creators/uploading).
+- A LeiCraftClient community page to upload to. See [Upload and publish](/docs/creators/uploading).
 
 ## Set up Blockbench
 
@@ -73,7 +73,7 @@ At the time of writing, the 3D preview on the website does not support this opti
 Open **File → Export → Export OptiFine Player Model**. Blockbench saves a `.cfg` file (a JSON text file). Save the texture PNG separately: the upload always needs both files.
 
 ::note
-The plugin has a second export, **Create OptiFine Player Model Config**, which asks for a Minecraft username. That one is for testing with OptiFine on your own computer. You don't need it for LeiCraft Client.
+The plugin has a second export, **Create OptiFine Player Model Config**, which asks for a Minecraft username. That one is for testing with OptiFine on your own computer. You don't need it for LeiCraftClient.
 ::
 
 ## What the exported file looks like
@@ -124,7 +124,7 @@ You don't need to edit the file by hand. This shortened example of a Christmas h
 | Nesting depth of groups | at most 16 levels |
 | Texture | PNG, at most 1024×1024 and 2 MB |
 
-When you upload, the model is checked and saved again with only the parts LeiCraft Client understands. A texture path inside the model, `sprites` and any unknown keys are removed. The Creator Studio tells you about each removal in a **Note** message. This is why you always upload the texture as its own file.
+When you upload, the model is checked and saved again with only the parts LeiCraftClient understands. A texture path inside the model, `sprites` and any unknown keys are removed. The Creator Studio tells you about each removal in a **Note** message. This is why you always upload the texture as its own file.
 
 ## Common upload problems
 

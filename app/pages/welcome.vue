@@ -11,8 +11,8 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Welcome | LeiCraft Client",
-	description: "Get started with the LeiCraft Client.",
+	title: "Welcome | LeiCraftClient",
+	description: "Get started with the LeiCraftClient.",
 });
 
 const toast = useToast();
@@ -44,7 +44,7 @@ const steps = [
 	{
 		icon: "i-lucide-download",
 		title: "Install the mod",
-		description: "LeiCraft Client for Fabric — the capes and cosmetics show up in the game with it.",
+		description: "LeiCraftClient for Fabric — the capes and cosmetics show up in the game with it.",
 		to: "/download",
 	},
 	{
@@ -88,7 +88,7 @@ async function complete(to = nextPath) {
 				<UIcon name="i-lucide-party-popper" class="size-7 text-primary-400" />
 			</div>
 			<h1 class="text-2xl font-semibold text-white">
-				Welcome to LeiCraft Client<span v-if="firstName">, {{ firstName }}</span>
+				Welcome to LeiCraftClient<span v-if="firstName">, {{ firstName }}</span>
 			</h1>
 			<p class="mx-auto mt-2 max-w-md text-sm text-slate-400">
 				Three steps to your first cape. You can come back to all of them later from the dashboard.

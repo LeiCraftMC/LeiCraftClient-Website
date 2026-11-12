@@ -30,7 +30,7 @@ export const docsSections: DocsSection[] = [
 			},
 			{
 				to: "/docs/getting-started/introduction",
-				title: "What is LeiCraft Client?",
+				title: "What is LeiCraftClient?",
 				description: "The mod, the website and how everyone sees your cape.",
 				icon: "i-lucide-info",
 			},
@@ -101,7 +101,7 @@ export const docsSections: DocsSection[] = [
 			{
 				to: "/docs/clients/overview",
 				title: "Compatibility",
-				description: "Which clients and loaders run LeiCraft Client.",
+				description: "Which clients and loaders run LeiCraftClient.",
 				icon: "i-lucide-blocks",
 			},
 			{
@@ -142,7 +142,7 @@ export const docsSections: DocsSection[] = [
 			{
 				to: "/docs/using/linking",
 				title: "Link your account",
-				description: "Connect your Minecraft account to your LeiCraft Client account.",
+				description: "Connect your Minecraft account to your LeiCraftClient account.",
 				icon: "i-lucide-link",
 			},
 			{

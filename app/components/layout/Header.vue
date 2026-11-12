@@ -26,7 +26,7 @@ const loginRoute = computed(() =>
 </script>
 
 <template>
-	<UHeader class="backdrop-blur-xl" title="LeiCraft Client">
+	<UHeader class="backdrop-blur-xl" title="LeiCraftClient">
 		<template #title>
 			<ImgAppLogo class="h-8" />
 		</template>

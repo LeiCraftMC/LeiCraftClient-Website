@@ -1,7 +1,7 @@
 # AGENTS.md — operating manual for AI coding agents
 
-You are working on the LeiCraft Client website, a LeiCraftMC Nuxt app (frontend only — the
-LeiCraft Client API is a separate service, the "split-repo" shape; see
+You are working on the LeiCraftClient website, a LeiCraftMC Nuxt app (frontend only — the
+LeiCraftClient API is a separate service, the "split-repo" shape; see
 docs/01-project-structure.md). Follow the LeiCraftMC Style Guides:
 https://github.com/LeiCraftMC/Style-Guides.
 

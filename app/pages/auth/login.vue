@@ -10,8 +10,8 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Login | LeiCraft Client",
-	description: "Log in to LeiCraft Client with your Discord account.",
+	title: "Login | LeiCraftClient",
+	description: "Log in to LeiCraftClient with your Discord account.",
 });
 
 const route = useRoute();
@@ -68,9 +68,9 @@ async function login() {
 			<ImgAppIcon class="size-9" />
 		</div>
 		<div>
-			<h1 class="text-2xl font-semibold text-white">Log in to LeiCraft Client</h1>
+			<h1 class="text-2xl font-semibold text-white">Log in to LeiCraftClient</h1>
 			<p class="mt-2 text-sm text-slate-400">
-				Your LeiCraft Client account is your Discord account. When you log in for the first time, you
+				Your LeiCraftClient account is your Discord account. When you log in for the first time, you
 				also join the LeiCraftMC Discord server.
 			</p>
 		</div>

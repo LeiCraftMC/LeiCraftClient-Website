@@ -23,7 +23,7 @@ if (!result.value?.success) {
 const data = computed(() => (result.value?.success ? result.value.data : null));
 
 usePageSeo({
-	title: `${data.value?.collection.name} — ${data.value?.page.name} — LeiCraft Client Shop`,
+	title: `${data.value?.collection.name} — ${data.value?.page.name} — LeiCraftClient Shop`,
 	description: data.value?.collection.description || `A collection by ${data.value?.page.name}.`,
 	ogImage: data.value?.collection.preview?.url,
 });

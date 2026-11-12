@@ -8,8 +8,8 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Dashboard | LeiCraft Client",
-	description: "Your LeiCraft Client account",
+	title: "Dashboard | LeiCraftClient",
+	description: "Your LeiCraftClient account",
 });
 
 const user = await useUserInfoStore().use();
@@ -47,7 +47,7 @@ const quickActions = [
 			<DashboardPageHeader
 				:title="`Hi, ${user?.display_name ?? 'there'}`"
 				icon="i-lucide-layout-dashboard"
-				description="Your LeiCraft Client account"
+				description="Your LeiCraftClient account"
 			/>
 		</template>
 
@@ -97,7 +97,7 @@ const quickActions = [
 							<div class="min-w-0 flex-1">
 								<p class="truncate font-medium text-white">{{ account.name }}</p>
 								<p class="text-xs text-slate-400">
-									{{ account.uses_client ? "Plays with LeiCraft Client" : "Not seen recently" }}
+									{{ account.uses_client ? "Plays with LeiCraftClient" : "Not seen recently" }}
 								</p>
 							</div>
 							<UIcon name="i-lucide-shirt" class="text-slate-500" />
@@ -108,7 +108,7 @@ const quickActions = [
 						v-else
 						icon="i-lucide-link"
 						title="No Minecraft account linked yet"
-						description="Start the game with the LeiCraft Client mod, open the pause menu → LeiCraftClient → Link account."
+						description="Start the game with the LeiCraftClient mod, open the pause menu → LeiCraftClient → Link account."
 						variant="naked"
 					>
 						<template #actions>

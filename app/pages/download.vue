@@ -2,9 +2,9 @@
 import type { PublicRelease } from "~/utils/types";
 
 usePageSeo({
-	title: "Download — LeiCraft Client",
+	title: "Download — LeiCraftClient",
 	description:
-		"Download the LeiCraft Client Fabric mod for Minecraft Java, with the changelog of every release.",
+		"Download the LeiCraftClient Fabric mod for Minecraft Java, with the changelog of every release.",
 });
 
 /** Fallback while no release is published (or the API is unreachable). */
@@ -54,7 +54,7 @@ const faq = [
 	{
 		label: "Do other players need the mod to see my cape?",
 		content:
-			"Yes — capes and cosmetics are drawn by the mod, so players see them when they play with the LeiCraft Client too. Players with the mod get a small badge in the tab list.",
+			"Yes — capes and cosmetics are drawn by the mod, so players see them when they play with the LeiCraftClient too. Players with the mod get a small badge in the tab list.",
 	},
 	{
 		label: "Does it work on every server?",
@@ -64,12 +64,12 @@ const faq = [
 	{
 		label: "Do I still need OptiFine or a hosts-file change?",
 		content:
-			"No. The old LeiCraft Client redirected OptiFine's cape server; the new mod talks to the LeiCraft Client API directly.",
+			"No. The old LeiCraftClient redirected OptiFine's cape server; the new mod talks to the LeiCraftClient API directly.",
 	},
 	{
 		label: "How do I link my Minecraft account?",
 		content:
-			"Open the pause menu, click LeiCraft Client, then Link account. A link opens in your browser — log in with Discord and confirm. Cracked/offline accounts can't be linked.",
+			"Open the pause menu, click LeiCraftClient, then Link account. A link opens in your browser — log in with Discord and confirm. Cracked/offline accounts can't be linked.",
 	},
 ];
 </script>
@@ -79,9 +79,9 @@ const faq = [
 		<div class="grid items-center gap-8 lg:grid-cols-2">
 			<div class="space-y-5">
 				<UBadge color="primary" variant="soft" icon="i-lucide-download">Fabric mod</UBadge>
-				<h1 class="text-4xl font-bold text-white">Get the LeiCraft Client</h1>
+				<h1 class="text-4xl font-bold text-white">Get the LeiCraftClient</h1>
 				<p class="text-lg text-slate-400">
-					A lightweight Fabric mod: shows LeiCraft Client capes and 3D cosmetics in the game, links your
+					A lightweight Fabric mod: shows LeiCraftClient capes and 3D cosmetics in the game, links your
 					Minecraft account and comes with an in-game wardrobe.
 				</p>
 				<div class="flex flex-wrap gap-3">
@@ -167,7 +167,7 @@ const faq = [
 					<p class="text-sm text-primary-400">2</p>
 					<p class="mt-1 font-medium text-white">Add the mods</p>
 					<p class="mt-1 text-sm text-slate-400">
-						Put the LeiCraft Client jar, Fabric API and Fabric Language Kotlin into your
+						Put the LeiCraftClient jar, Fabric API and Fabric Language Kotlin into your
 						<code>mods</code> folder.
 					</p>
 				</li>

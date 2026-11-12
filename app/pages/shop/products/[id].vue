@@ -27,10 +27,10 @@ if (!result.value?.success) {
 const product = computed(() => (result.value?.success ? result.value.data : null));
 
 usePageSeo({
-	title: `${product.value?.name} — ${product.value?.type === "cape" ? "Cape" : "Cosmetic"} by ${product.value?.page.name} — LeiCraft Client`,
+	title: `${product.value?.name} — ${product.value?.type === "cape" ? "Cape" : "Cosmetic"} by ${product.value?.page.name} — LeiCraftClient`,
 	description:
 		product.value?.description ||
-		`${product.value?.type === "cape" ? "A cape" : "A cosmetic"} for Minecraft from ${product.value?.page.name}, free to wear with the LeiCraft Client.`,
+		`${product.value?.type === "cape" ? "A cape" : "A cosmetic"} for Minecraft from ${product.value?.page.name}, free to wear with the LeiCraftClient.`,
 	ogImage: product.value?.preview?.url ?? product.value?.texture?.url,
 });
 
@@ -188,7 +188,7 @@ async function equip() {
 	};
 	toast.add({
 		title: `Equipped on ${account.name}`,
-		description: "Other LeiCraft Client players see it within a few minutes.",
+		description: "Other LeiCraftClient players see it within a few minutes.",
 		icon: "i-lucide-check",
 		color: "success",
 	});

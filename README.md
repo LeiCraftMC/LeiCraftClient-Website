@@ -1,9 +1,9 @@
-# LeiCraft Client Website
+# LeiCraftClient Website
 
-The website of the LeiCraft Client (https://client.leicraftmc.de): the shop for capes and
+The website of the LeiCraftClient (https://client.leicraftmc.de): the shop for capes and
 cosmetics, player profiles, the wardrobe, the Creator Studio for official, partner and community
 pages, and the moderation and admin area. It talks to the
-[LeiCraft Client API](https://git.leicraftmc.de/LeiCraftMC/LeiCraftClient/API-Server) (https://api.client.leicraftmc.de).
+[LeiCraftClient API](https://git.leicraftmc.de/LeiCraftMC/LeiCraftClient/API-Server) (https://api.client.leicraftmc.de).
 
 Built on the LeiCraftMC Nuxt app template.
 
@@ -51,7 +51,7 @@ bun run api-client:generate
 | `/features`, `/creators`, `/about` | everyone | Marketing pages: features, creator programme, philosophy and open source |
 | `/docs`, `/docs/**` | everyone | Docs: install guides (loaders, launchers, other clients), using the client, creating content |
 | `/shop` | everyone | Catalog overview |
-| `/shop/official` | everyone | The official LeiCraft Client page (there is only one) with its collections and items |
+| `/shop/official` | everyone | The official LeiCraftClient page (there is only one) with its collections and items |
 | `/shop/partner`, `/shop/community`, `/shop/<category>/<slug>` | everyone | Partner and community pages |
 | `/shop/products/<id>`, `/shop/collections/<id>` | everyone | Item and collection pages with 3D preview, "Equip" and "Save to wardrobe" |
 | `/players`, `/players/<name>` | everyone | Player search and profiles (what a player wears) |

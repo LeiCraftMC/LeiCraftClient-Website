@@ -7,7 +7,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "API Keys | LeiCraft Client",
+	title: "API Keys | LeiCraftClient",
 	description: "Manage your API keys",
 });
 

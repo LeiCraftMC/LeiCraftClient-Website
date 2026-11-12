@@ -8,8 +8,8 @@ This page takes you from nothing to wearing your first cape. Each step links to 
 ## Before you start
 
 - **Minecraft Java Edition**, bought and signed in with your Microsoft account. Offline (cracked) accounts can see capes but can't link an account, so they can't wear one.
-- **A Discord account.** Your LeiCraft Client account is your Discord account.
-- **Minecraft 26.3.** LeiCraft Client needs exactly this version. See [Requirements](/docs/getting-started/requirements).
+- **A Discord account.** Your LeiCraftClient account is your Discord account.
+- **Minecraft 26.3.** LeiCraftClient needs exactly this version. See [Requirements](/docs/getting-started/requirements).
 
 ## Pick your launcher
 
@@ -24,7 +24,7 @@ cards:
     to: /docs/install/fabric
   - icon: i-lucide-package
     title: Modrinth App
-    description: Installs LeiCraft Client and its dependencies in a few clicks.
+    description: Installs LeiCraftClient and its dependencies in a few clicks.
     to: /docs/install/modrinth-app
   - icon: i-lucide-boxes
     title: Prism Launcher
@@ -60,7 +60,7 @@ Set up Minecraft 26.3 with Fabric Loader 0.19.5 or newer. Follow the guide for y
 
 Put these three files into your `mods` folder:
 
-- **LeiCraft Client** from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient)
+- **LeiCraftClient** from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient)
 - **Fabric API** for 26.3 from [Modrinth](https://modrinth.com/mod/fabric-api)
 - **Fabric Language Kotlin** 1.14.2 or newer from [Modrinth](https://modrinth.com/mod/fabric-language-kotlin)
 
@@ -86,7 +86,7 @@ Back in the game, the options screen shows **Linked as …** after a few seconds
 2. Click **Save to wardrobe** on its page.
 3. Open your [wardrobe](/dashboard/wardrobe), select the cape and click **Save**. If you linked more than one Minecraft account, first pick the account at the top.
 
-You can also do this in the game: **LeiCraftClient** → **Wardrobe**. Other LeiCraft Client players see your new cape within a few minutes.
+You can also do this in the game: **LeiCraftClient** → **Wardrobe**. Other LeiCraftClient players see your new cape within a few minutes.
 ::
 
 ## What's next

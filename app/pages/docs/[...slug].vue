@@ -19,7 +19,7 @@ if (!page.value) {
 }
 
 usePageSeo({
-	title: path === "/docs" ? "Docs — LeiCraft Client" : `${page.value.title} — LeiCraft Client Docs`,
+	title: path === "/docs" ? "Docs — LeiCraftClient" : `${page.value.title} — LeiCraftClient Docs`,
 	description: page.value.description,
 	canonical: path,
 });

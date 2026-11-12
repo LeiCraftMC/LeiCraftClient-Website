@@ -4,13 +4,13 @@ import { features, homeFaq, howItWorks, MINECRAFT_VERSION, principles } from "~/
 import type { Category, Product } from "~/utils/types";
 
 usePageSeo({
-	title: "LeiCraft Client — Free capes and cosmetics for every Minecraft client",
+	title: "LeiCraftClient — Free capes and cosmetics for every Minecraft client",
 	description:
 		"Free capes and 3D cosmetics for Minecraft Java. A small Fabric mod that runs next to Lunar, NoRisk, Dawn or plain Fabric — everyone with it sees your look, on any server. Upload your own, too.",
 	jsonLd: {
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
-		name: "LeiCraft Client",
+		name: "LeiCraftClient",
 		applicationCategory: "GameApplication",
 		operatingSystem: "Windows, macOS, Linux",
 		offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -75,7 +75,7 @@ const creatorPoints = [
 						</span>
 					</h1>
 					<p class="max-w-xl text-lg text-pretty text-slate-400">
-						LeiCraft Client is a small Fabric mod that adds capes and 3D cosmetics to Minecraft Java — next to
+						LeiCraftClient is a small Fabric mod that adds capes and 3D cosmetics to Minecraft Java — next to
 						Lunar, NoRisk, Dawn or plain Fabric. Everyone who has it sees your look, on any server. Made by
 						our team, our partners and players like you.
 					</p>
@@ -131,7 +131,7 @@ const creatorPoints = [
 				<MarketingSectionHeading
 					badge="Compatibility"
 					title="Keep the client you love"
-					description="LeiCraft Client is not another launcher. It's a regular Fabric mod, so it runs wherever you can add Fabric mods — loaders, launchers and popular clients."
+					description="LeiCraftClient is not another launcher. It's a regular Fabric mod, so it runs wherever you can add Fabric mods — loaders, launchers and popular clients."
 				/>
 				<MarketingCompatibilityGrid />
 				<div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -186,7 +186,7 @@ const creatorPoints = [
 					</h2>
 					<p class="text-lg text-pretty text-slate-400">
 						Draw a cape, model a hat or a pair of wings, and publish it on your own community page. Once a
-						moderator has checked it, every LeiCraft Client player can wear it — for free.
+						moderator has checked it, every LeiCraftClient player can wear it — for free.
 					</p>
 					<div class="flex flex-col gap-3 sm:flex-row">
 						<UButton to="/creators" icon="i-lucide-sparkles" class="justify-center">Start creating</UButton>

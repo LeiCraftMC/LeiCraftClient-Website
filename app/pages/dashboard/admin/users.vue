@@ -10,7 +10,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Users & roles | LeiCraft Client",
+	title: "Users & roles | LeiCraftClient",
 	description: "Manage users and staff roles",
 });
 

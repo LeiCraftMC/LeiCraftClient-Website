@@ -8,7 +8,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Users | Moderation | LeiCraft Client",
+	title: "Users | Moderation | LeiCraftClient",
 	description: "Find and ban users",
 });
 

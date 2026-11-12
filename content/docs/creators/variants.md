@@ -3,7 +3,7 @@ title: Skin-model variants
 description: Make one cosmetic fit wide (Steve) and slim (Alex) arms, or offer several looks, with variants.
 ---
 
-Minecraft skins come in two body models: **wide arms** (Steve, 4 pixels wide) and **slim arms** (Alex, 3 pixels wide). An arm item made for one type floats next to the arm or sinks into it on the other. Variants fix this: you upload one model per skin type, and LeiCraft Client picks the right one for each player automatically.
+Minecraft skins come in two body models: **wide arms** (Steve, 4 pixels wide) and **slim arms** (Alex, 3 pixels wide). An arm item made for one type floats next to the arm or sinks into it on the other. Variants fix this: you upload one model per skin type, and LeiCraftClient picks the right one for each player automatically.
 
 ## What a variant is
 

@@ -1,6 +1,6 @@
 ---
 title: Cape textures
-description: The cape texture format for LeiCraft Client: allowed sizes, the 64×32 layout, the elytra area and HD capes.
+description: The cape texture format for LeiCraftClient: allowed sizes, the 64×32 layout, the elytra area and HD capes.
 ---
 
 A cape is a single PNG image in the standard Minecraft cape layout, the same layout that OptiFine capes use. If you already have a 2:1 cape made for Minecraft or OptiFine, it most likely works as it is. If your file is a cropped cape that is smaller than 64×32 but uses the same pixel layout, place it in the top-left corner of an empty 64×32 image first.
@@ -85,7 +85,7 @@ Check the elytra before you publish. The 3D preview in the item editor has an **
 
 - The mod hands the cape to Minecraft like a normal cape. Minecraft's own cape setting in the skin customization options hides and shows it, and it moves like any vanilla cape.
 - At the time of writing, capes are still images. The mod has no cape animation.
-- Players without LeiCraft Client don't see your cape.
+- Players without LeiCraftClient don't see your cape.
 
 ## Templates and tools
 

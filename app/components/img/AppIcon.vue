@@ -1,7 +1,7 @@
 <template>
 	<img
 		src="/static/logo/client-icon.png"
-		alt="LeiCraft Client"
+		alt="LeiCraftClient"
 		class="rounded-sm"
 		style="image-rendering: pixelated"
 	/>

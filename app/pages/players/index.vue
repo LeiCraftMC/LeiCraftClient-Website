@@ -1,6 +1,6 @@
 <script setup lang="ts">
 usePageSeo({
-	title: "Players — LeiCraft Client",
+	title: "Players — LeiCraftClient",
 	description: "Look up a Minecraft player and see the capes and cosmetics they wear.",
 });
 
@@ -21,7 +21,7 @@ async function search() {
 		<div>
 			<h1 class="text-3xl font-bold text-white">Find a player</h1>
 			<p class="mt-2 text-slate-400">
-				See what someone wears with the LeiCraft Client. Players show up once they played with the
+				See what someone wears with the LeiCraftClient. Players show up once they played with the
 				mod.
 			</p>
 		</div>

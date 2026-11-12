@@ -3,11 +3,11 @@ title: Partner pages
 description: Exclusive items, redeem codes, direct gifts, page members and API keys for partner pages and the official page.
 ---
 
-Partner pages and the official LeiCraft Client page work like community pages, with a few extras: items go live without a review, and you can make **exclusive** items that only selected players get, through redeem codes or direct gifts. This page explains these extras.
+Partner pages and the official LeiCraftClient page work like community pages, with a few extras: items go live without a review, and you can make **exclusive** items that only selected players get, through redeem codes or direct gifts. This page explains these extras.
 
 ## Getting a partner page
 
-The LeiCraft Client admins create partner pages and choose the owner. If you'd like one, ask the team on [Discord](https://discord.com/invite/3cdazADhtv). You need to have logged in to the website once. The page then shows up in the Creator Studio under **My pages**.
+The LeiCraftClient admins create partner pages and choose the owner. If you'd like one, ask the team on [Discord](https://discord.com/invite/3cdazADhtv). You need to have logged in to the website once. The page then shows up in the Creator Studio under **My pages**.
 
 Compared to a community page:
 
@@ -26,7 +26,7 @@ Open the **Members** tab to see who manages the page with you.
 | **Manager** | Edits items, collections, codes and grants |
 | **Owner** | Also manages the members |
 
-To add someone, click **Add member**, choose **Find user by** (**Discord user id** or **LeiCraft Client user id**), enter the id, pick a **Role** and click **Add**. They need to have logged in to the LeiCraft Client website once.
+To add someone, click **Add member**, choose **Find user by** (**Discord user id** or **LeiCraftClient user id**), enter the id, pick a **Role** and click **Add**. They need to have logged in to the LeiCraftClient website once.
 
 Only owners can add members, change roles in the list and remove members. An owner can also leave the page with the remove button next to their own name (**Leave page**). Managers who want to leave ask an owner to remove them.
 
@@ -82,11 +82,11 @@ The codes list shows each code's uses and status: **Active**, **Disabled**, **Ex
 Use a grant to give an exclusive item to one specific player.
 
 1. Open the item and go to the **Owners** card ("Give this item to specific players").
-2. Under **Find user by**, choose **Minecraft name**, **Minecraft UUID**, **Discord user id** or **LeiCraft Client user id**.
+2. Under **Find user by**, choose **Minecraft name**, **Minecraft UUID**, **Discord user id** or **LeiCraftClient user id**.
 3. Enter the **User** and, if you like, a **Note** (only visible to your team).
 4. Click **Grant**.
 
-The player needs a LeiCraft Client account. A Minecraft name or UUID only works once that Minecraft account is linked. For everyone else, use redeem codes.
+The player needs a LeiCraftClient account. A Minecraft name or UUID only works once that Minecraft account is linked. For everyone else, use redeem codes.
 
 The **Owners** list shows everyone who owns the item and whether they got it from a **Code** or a **Grant**. **Revoke** takes the item away again and unequips it from all of their Minecraft accounts.
 

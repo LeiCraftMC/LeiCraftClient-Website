@@ -9,7 +9,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Creator Studio | LeiCraft Client",
+	title: "Creator Studio | LeiCraftClient",
 	description: "Your shop pages",
 });
 
@@ -254,7 +254,7 @@ async function create(event: FormSubmitEvent<CreateSchema>) {
 			</UFormField>
 			<UFormField
 				v-if="isAdmin && createForm.category !== 'community'"
-				label="Owner (LeiCraft Client user id)"
+				label="Owner (LeiCraftClient user id)"
 				name="owner_user_id"
 				description="Optional — the partner who manages this page. Find ids under Users & roles."
 			>

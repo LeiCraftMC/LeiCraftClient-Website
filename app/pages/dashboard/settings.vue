@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Settings | LeiCraft Client",
+	title: "Settings | LeiCraftClient",
 	description: "Manage your account settings",
 });
 

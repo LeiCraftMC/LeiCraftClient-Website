@@ -2,7 +2,7 @@
 import { DISCORD_URL } from "~/data/marketing";
 
 usePageSeo({
-	title: "For creators — LeiCraft Client",
+	title: "For creators — LeiCraftClient",
 	description:
 		"Make capes and 3D cosmetics for Minecraft and publish them on your own community page. Blockbench with the OptiFine Player Models plugin, any image editor, a moderator review — then everyone wears them for free.",
 });

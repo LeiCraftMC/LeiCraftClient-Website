@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * The landing page's 3D player: the real look of one random LeiCraft Client player (`GET
+ * The landing page's 3D player: the real look of one random LeiCraftClient player (`GET
  * /players/showcase` — skin, cape and cosmetics as they wear them), picked anew on every page
  * load. Falls back to the newest cape in the shop while nobody wears anything yet.
  */

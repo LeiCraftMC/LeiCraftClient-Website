@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Inventory | LeiCraft Client",
+	title: "Inventory | LeiCraftClient",
 	description: "Your exclusive items and redeem codes",
 });
 

@@ -13,8 +13,8 @@ const toast = useToast();
 const version = computed(() => String(route.params.version));
 
 useSeoMeta({
-	title: () => `v${version.value} — Releases | LeiCraft Client`,
-	description: "Status, changelog and publishing of a LeiCraft Client release",
+	title: () => `v${version.value} — Releases | LeiCraftClient`,
+	description: "Status, changelog and publishing of a LeiCraftClient release",
 });
 
 const release = await useAPIAsyncData<ManagedRelease | null>(

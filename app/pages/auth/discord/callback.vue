@@ -15,7 +15,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Logging in | LeiCraft Client",
+	title: "Logging in | LeiCraftClient",
 	robots: "noindex",
 });
 

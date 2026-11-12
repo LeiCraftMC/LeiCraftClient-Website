@@ -22,24 +22,24 @@ From top to bottom:
 | **Custom cosmetics** (ON/OFF) | Shows 3D cosmetics on players. |
 | **Discord Rich Presence** (ON/OFF) | Shows on Discord what you are playing. See [Discord Rich Presence](#discord-rich-presence). |
 | **Reload capes & cosmetics** | Loads everyone's capes and cosmetics again now, instead of waiting. Use it after you changed your look on the website. |
-| **LeiCraft Client account** | The account section: a status line and the buttons below. |
+| **LeiCraftClient account** | The account section: a status line and the buttons below. |
 | **Link account** / **New link** | Starts [linking](/docs/using/linking). While the game waits for you on the website, it reads **New link** and makes a fresh link. |
 | **Wardrobe** | Opens the in-game [wardrobe](/docs/using/wardrobe). Greyed out until your account is linked. |
 | **Unlink** | Unlinks this Minecraft account (after you confirm). Only shows when it is linked. |
 | **Retry** | Only shows after an error. Tries to sign in again. |
-| **Account** (ON/OFF) | Signs in to LeiCraft Client with your Minecraft session. Linking and the wardrobe need it. When OFF, the mod only shows other players' capes and cosmetics. |
-| **Open website** | Opens the LeiCraft Client website in your browser. |
+| **Account** (ON/OFF) | Signs in to LeiCraftClient with your Minecraft session. Linking and the wardrobe need it. When OFF, the mod only shows other players' capes and cosmetics. |
+| **Open website** | Opens the LeiCraftClient website in your browser. |
 | **Done** | Closes the screen. |
 
 The switches only change what **you** see. Turning off **Custom capes** doesn't hide your cape from other players. Every change is saved at once in the [config file](#config-file).
 
 ### The account status line
 
-Below **LeiCraft Client account** you see one of these lines:
+Below **LeiCraftClient account** you see one of these lines:
 
 | Status | Meaning |
 | --- | --- |
-| Linked as … | Signed in and linked. The name is your LeiCraft Client (Discord) name. |
+| Linked as … | Signed in and linked. The name is your LeiCraftClient (Discord) name. |
 | Not linked | Signed in, but not linked yet. Click **Link account**. |
 | Waiting for confirmation on the website… | A link is open. Confirm it in your browser. |
 | Connecting… | The mod is signing in. This happens on its own after the game starts. |
@@ -61,7 +61,7 @@ Messages the mod writes to the chat on its own, like the link, start with `[LeiC
 
 ## Tab-list badge
 
-Players who used LeiCraft Client in the last 30 days get the LeiCraft mark in front of their name in the tab list. You only see the badge if you have the mod.
+Players who used LeiCraftClient in the last 30 days get the LeiCraft mark in front of their name in the tab list. You only see the badge if you have the mod.
 
 The badge doesn't depend on capes or cosmetics. It comes from the mod signing in, so you get it with a real Microsoft account and the **Account** switch ON. You don't have to link for it.
 
@@ -87,11 +87,11 @@ It also shows how long you've been there, the LeiCraft logo, and two buttons: **
 
 Once per game start, the mod checks for a newer release. If there is one, the options screen shows a green **Update available: …** button below the version line. It opens the release page on the website, where you can download the new version.
 
-The mod doesn't update itself. Download the new file and put it in your `mods` folder instead of the old one, so that only one LeiCraft Client file is in there. A stable version is only offered stable releases.
+The mod doesn't update itself. Download the new file and put it in your `mods` folder instead of the old one, so that only one LeiCraftClient file is in there. A stable version is only offered stable releases.
 
 ## Window title
 
-The game window's title starts with **LeiCraftClient** and the mod version, followed by Minecraft's normal title, for example `LeiCraftClient <version> | Minecraft* 26.3`. If another mod changes the title, LeiCraft Client leaves it alone.
+The game window's title starts with **LeiCraftClient** and the mod version, followed by Minecraft's normal title, for example `LeiCraftClient <version> | Minecraft* 26.3`. If another mod changes the title, LeiCraftClient leaves it alone.
 
 ## Config file
 
@@ -118,7 +118,7 @@ The settings are saved in `config/leicraftclient.json` inside your game folder (
 | `accountServicesEnabled` | `true` | **Account** |
 | `cacheSeconds` | `600` | How many seconds the mod keeps a player's capes and cosmetics before it asks again. At least `30`. |
 | `websiteUrl` | `https://client.leicraftmc.de` | The website the mod's buttons open. |
-| `apiBaseUrl` | `https://api.client.leicraftmc.de` | The LeiCraft Client server. Don't change it. |
+| `apiBaseUrl` | `https://api.client.leicraftmc.de` | The LeiCraftClient server. Don't change it. |
 | `discordAppId` | `1006198534581796945` | The Discord app for Rich Presence. Don't change it. |
 
 If a value is broken, the mod uses the default. Missing keys are written back on the next start.

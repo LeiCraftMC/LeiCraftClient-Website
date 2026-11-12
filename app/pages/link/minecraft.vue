@@ -12,7 +12,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Link Minecraft account | LeiCraft Client",
+	title: "Link Minecraft account | LeiCraftClient",
 	robots: "noindex",
 });
 
@@ -104,7 +104,7 @@ async function confirm() {
 					variant="soft"
 					icon="i-lucide-alert-triangle"
 					title="Already linked"
-					description="This Minecraft account belongs to another LeiCraft Client account. Unlink it there first, or use “Unlink” in the game."
+					description="This Minecraft account belongs to another LeiCraftClient account. Unlink it there first, or use “Unlink” in the game."
 				/>
 			</template>
 

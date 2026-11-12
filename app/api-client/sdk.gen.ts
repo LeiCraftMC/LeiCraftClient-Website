@@ -436,7 +436,7 @@ export const putClientLoadout = <TComposable extends Composable = '$fetch', Defa
 /**
  * Look up players
  *
- * Render-ready profiles (cape, cosmetics with all variants, LeiCraft Client usage) for up to 100 players in one request — what the mod calls for the players around it. Asset URLs are content-addressed and can be cached forever. Players without a profile are omitted.
+ * Render-ready profiles (cape, cosmetics with all variants, LeiCraftClient usage) for up to 100 players in one request — what the mod calls for the players around it. Asset URLs are content-addressed and can be cached forever. Players without a profile are omitted.
  */
 export const postPlayersLookup = <TComposable extends Composable = '$fetch', DefaultT extends PostPlayersLookupResponse = PostPlayersLookupResponse>(options: Options<TComposable, PostPlayersLookupData, PostPlayersLookupResponse, DefaultT>): RequestResult<TComposable, PostPlayersLookupResponse | DefaultT, DefaultT> => (options.client ?? client).post<TComposable, PostPlayersLookupResponse | DefaultT, PostPlayersLookupError, DefaultT>({
     url: '/players/lookup',
@@ -450,7 +450,7 @@ export const postPlayersLookup = <TComposable extends Composable = '$fetch', Def
 /**
  * Showcase players
  *
- * A few random players who wear a cape or cosmetics, for the website's landing page. Players who used the LeiCraft Client within the last 30 days come first. Same filtering as every public profile (banned users and items that can't show are left out).
+ * A few random players who wear a cape or cosmetics, for the website's landing page. Players who used the LeiCraftClient within the last 30 days come first. Same filtering as every public profile (banned users and items that can't show are left out).
  */
 export const getPlayersShowcase = <TComposable extends Composable = '$fetch', DefaultT extends GetPlayersShowcaseResponse = GetPlayersShowcaseResponse>(options: Options<TComposable, GetPlayersShowcaseData, GetPlayersShowcaseResponse, DefaultT>): RequestResult<TComposable, GetPlayersShowcaseResponse | DefaultT, DefaultT> => (options.client ?? client).get<TComposable, GetPlayersShowcaseResponse | DefaultT, GetPlayersShowcaseError, DefaultT>({ url: '/players/showcase', ...options });
 
@@ -471,7 +471,7 @@ export const getPlayersByUuid = <TComposable extends Composable = '$fetch', Defa
 /**
  * List releases
  *
- * Finished releases of the LeiCraft Client mod, newest first: changelog (markdown), the direct jar download and the Modrinth page — what the download page and the mod's update check consume.
+ * Finished releases of the LeiCraftClient mod, newest first: changelog (markdown), the direct jar download and the Modrinth page — what the download page and the mod's update check consume.
  */
 export const getReleases = <TComposable extends Composable = '$fetch', DefaultT extends GetReleasesResponse = GetReleasesResponse>(options: Options<TComposable, GetReleasesData, GetReleasesResponse, DefaultT>): RequestResult<TComposable, GetReleasesResponse | DefaultT, DefaultT> => (options.client ?? client).get<TComposable, GetReleasesResponse | DefaultT, GetReleasesError, DefaultT>({ url: '/releases', ...options });
 
@@ -492,7 +492,7 @@ export const getReleasesByVersion = <TComposable extends Composable = '$fetch', 
 /**
  * List categories
  *
- * The three fixed shop categories — `official` (the single page of the LeiCraft Client team), `partner` (official partner pages) and `community` (user uploads) — with their number of visible pages and listed products.
+ * The three fixed shop categories — `official` (the single page of the LeiCraftClient team), `partner` (official partner pages) and `community` (user uploads) — with their number of visible pages and listed products.
  */
 export const getCatalogCategories = <TComposable extends Composable = '$fetch', DefaultT extends GetCatalogCategoriesResponse = GetCatalogCategoriesResponse>(options: Options<TComposable, GetCatalogCategoriesData, GetCatalogCategoriesResponse, DefaultT>): RequestResult<TComposable, GetCatalogCategoriesResponse | DefaultT, DefaultT> => (options.client ?? client).get<TComposable, GetCatalogCategoriesResponse | DefaultT, unknown, DefaultT>({ url: '/catalog/categories', ...options });
 
@@ -590,7 +590,7 @@ export const getStudioPages = <TComposable extends Composable = '$fetch', Defaul
 /**
  * Create a page
  *
- * Users create their own `community` page (one per user) to upload capes and cosmetics. Admins create `partner` pages and the single `official` page (the LeiCraft Client team's shop — there is only one) and can assign an owner, who then manages the page and its members.
+ * Users create their own `community` page (one per user) to upload capes and cosmetics. Admins create `partner` pages and the single `official` page (the LeiCraftClient team's shop — there is only one) and can assign an owner, who then manages the page and its members.
  */
 export const postStudioPages = <TComposable extends Composable = '$fetch', DefaultT extends PostStudioPagesResponse = PostStudioPagesResponse>(options: Options<TComposable, PostStudioPagesData, PostStudioPagesResponse, DefaultT>): RequestResult<TComposable, PostStudioPagesResponse | DefaultT, DefaultT> => (options.client ?? client).post<TComposable, PostStudioPagesResponse | DefaultT, PostStudioPagesError, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],

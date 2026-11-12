@@ -16,7 +16,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Wardrobe | LeiCraft Client",
+	title: "Wardrobe | LeiCraftClient",
 	description: "Your capes and cosmetics",
 });
 
@@ -171,7 +171,7 @@ async function save() {
 	draft.value = structuredClone(toRaw(saved.value));
 	toast.add({
 		title: "Saved",
-		description: "Players with the LeiCraft Client see your new look within a few minutes.",
+		description: "Players with the LeiCraftClient see your new look within a few minutes.",
 		icon: "i-lucide-check",
 		color: "success",
 	});
@@ -292,7 +292,7 @@ const emptyState = computed(() => {
 					variant="soft"
 					icon="i-lucide-link"
 					title="Link a Minecraft account to wear these"
-					description="Your wardrobe belongs to your LeiCraft Client account; what you wear belongs to a Minecraft account. Link one from the game: pause menu → LeiCraftClient → Link account."
+					description="Your wardrobe belongs to your LeiCraftClient account; what you wear belongs to a Minecraft account. Link one from the game: pause menu → LeiCraftClient → Link account."
 					:actions="[{ label: 'How to link', to: '/dashboard/accounts', color: 'primary', variant: 'soft' }]"
 				/>
 

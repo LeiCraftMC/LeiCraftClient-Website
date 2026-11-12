@@ -7,7 +7,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Minecraft accounts | LeiCraft Client",
+	title: "Minecraft accounts | LeiCraftClient",
 	description: "Linked Minecraft accounts",
 });
 
@@ -109,7 +109,7 @@ async function onUnlink() {
 				>
 					<ol class="list-decimal space-y-2 pl-5 text-sm text-slate-300">
 						<li>
-							Install the LeiCraft Client mod
+							Install the LeiCraftClient mod
 							(<NuxtLink to="/download" class="text-primary hover:underline">download</NuxtLink>)
 							and start Minecraft with your Microsoft account.
 						</li>

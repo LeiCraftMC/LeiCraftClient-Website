@@ -1,6 +1,6 @@
 ---
 title: Install with the Fabric installer
-description: Set up Fabric for Minecraft 26.3 in the official Minecraft Launcher, then add LeiCraft Client and its two dependencies.
+description: Set up Fabric for Minecraft 26.3 in the official Minecraft Launcher, then add LeiCraftClient and its two dependencies.
 ---
 
 This is the official way to play with Fabric mods in the normal Minecraft Launcher. The Fabric installer adds a Fabric profile to the launcher, and you put the mods into the `mods` folder yourself.
@@ -8,7 +8,7 @@ This is the official way to play with Fabric mods in the normal Minecraft Launch
 ## What you need
 
 - The official **Minecraft Launcher** with Minecraft Java Edition.
-- The **LeiCraft Client** jar from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
+- The **LeiCraftClient** jar from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
 - **Fabric API** for 26.3 from [Modrinth](https://modrinth.com/mod/fabric-api).
 - **Fabric Language Kotlin** 1.14.2 or newer from [Modrinth](https://modrinth.com/mod/fabric-language-kotlin).
 
@@ -113,15 +113,15 @@ If the `mods` folder doesn't exist, open the folder above it (`.minecraft`, or `
 
 Copy these three `.jar` files into the `mods` folder:
 
-- the LeiCraft Client jar,
+- the LeiCraftClient jar,
 - Fabric API,
 - Fabric Language Kotlin.
 
-Don't unzip them. If an older LeiCraft Client jar is already there, delete it, so only one version is in the folder.
+Don't unzip them. If an older LeiCraftClient jar is already there, delete it, so only one version is in the folder.
 
 ### Start the game
 
-Open the Minecraft Launcher, choose **fabric-loader-26.3** again and click **Play**. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraft Client is installed.
+Open the Minecraft Launcher, choose **fabric-loader-26.3** again and click **Play**. Look for the **LeiCraftClient** button on the title screen, below the Realms button. If you see it, LeiCraftClient is installed.
 ::
 
 ## Next: link your account
@@ -131,7 +131,7 @@ You can already see other players' capes and cosmetics. To wear your own, link y
 ## Troubleshooting
 
 - **The game stops with an error about missing or incompatible mods.** Fabric Loader names the mod that is missing. Most often it is **Fabric Language Kotlin** or **Fabric API**. Download the version for 26.3 and put it into the `mods` folder.
-- **There is no LeiCraftClient button.** Check that you started the **fabric-loader-26.3** profile and not the normal release. Check that the LeiCraft Client jar is in the right `mods` folder.
+- **There is no LeiCraftClient button.** Check that you started the **fabric-loader-26.3** profile and not the normal release. Check that the LeiCraftClient jar is in the right `mods` folder.
 - **The profile doesn't show up in the launcher.** Close the launcher, run the installer again and keep **Create profile** checked.
 
 More help: [Troubleshooting](/docs/using/troubleshooting).

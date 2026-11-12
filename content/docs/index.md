@@ -1,9 +1,9 @@
 ---
 title: Documentation
-description: Install LeiCraft Client, link your account, dress up — and make your own capes and cosmetics.
+description: Install LeiCraftClient, link your account, dress up — and make your own capes and cosmetics.
 ---
 
-LeiCraft Client is a free Fabric mod for Minecraft Java Edition. It shows capes and 3D cosmetics
+LeiCraftClient is a free Fabric mod for Minecraft Java Edition. It shows capes and 3D cosmetics
 on every player who uses it — on any server, next to the client you already play with. These docs
 walk you through every step, from the first download to publishing your own designs.
 
@@ -13,7 +13,7 @@ walk you through every step, from the first download to publishing your own desi
 ---
 cards:
   - icon: i-lucide-info
-    title: What is LeiCraft Client?
+    title: What is LeiCraftClient?
     description: The mod, the website, and how everyone sees your cape.
     to: /docs/getting-started/introduction
   - icon: i-lucide-rocket
@@ -68,7 +68,7 @@ cards:
 
 ## Already using another client?
 
-LeiCraft Client is a regular Fabric mod, so it runs inside many clients that let you add Fabric
+LeiCraftClient is a regular Fabric mod, so it runs inside many clients that let you add Fabric
 mods. Check the [compatibility overview](/docs/clients/overview) first.
 
 ::icon-card-grid
@@ -100,7 +100,7 @@ cards:
 cards:
   - icon: i-lucide-link
     title: Link your account
-    description: Connect Minecraft to your LeiCraft Client account — in under a minute.
+    description: Connect Minecraft to your LeiCraftClient account — in under a minute.
     to: /docs/using/linking
   - icon: i-lucide-shirt
     title: Wardrobe

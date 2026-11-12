@@ -16,7 +16,7 @@ You can save up to 500 items. If the wardrobe is full, remove something first.
 
 ## Wardrobe and loadout
 
-- The **wardrobe** belongs to your LeiCraft Client account. All your linked Minecraft accounts share it.
+- The **wardrobe** belongs to your LeiCraftClient account. All your linked Minecraft accounts share it.
 - The **loadout** is what one Minecraft account wears: **1 cape** and **up to 10 cosmetics**. Every linked Minecraft account has its own loadout, so you can wear different things on different accounts.
 
 To wear anything, you need a linked Minecraft account: [Link your account](/docs/using/linking). Without one, you can still save items.
@@ -59,7 +59,7 @@ Open the in-game wardrobe in one of these ways:
 - **LeiCraftClient** (title screen or pause menu) → **Wardrobe**
 - the command `/leicraftclient wardrobe`
 
-It needs a linked account. If the button is greyed out, it says "Link your LeiCraft Client account first". The wardrobe changes the loadout of the Minecraft account you are playing with right now.
+It needs a linked account. If the button is greyed out, it says "Link your LeiCraftClient account first". The wardrobe changes the loadout of the Minecraft account you are playing with right now.
 
 - Switch between the **Capes** and **Cosmetics** tabs, and use the search box to filter.
 - **Capes:** click a cape to choose it, or click **No cape**.

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /**
  * Who owns an exclusive product (through a grant or a redeem code), plus granting it directly to
- * a user by LeiCraft Client id, Discord id or Minecraft account.
+ * a user by LeiCraftClient id, Discord id or Minecraft account.
  */
 import type { PostStudioPagesByPageIdProductsByProductIdOwnersData } from "~/api-client";
 import type { ProductOwner } from "~/utils/types";
@@ -39,7 +39,7 @@ const identifierItems: Array<{ label: string; value: Identifier; placeholder: st
 		placeholder: "069a79f4-44e9-4726-a5be-fca90e38aaf5",
 	},
 	{ label: "Discord user id", value: "discord_id", placeholder: "123456789012345678" },
-	{ label: "LeiCraft Client user id", value: "user_id", placeholder: "42" },
+	{ label: "LeiCraftClient user id", value: "user_id", placeholder: "42" },
 ];
 
 const grantForm = reactive({ identifier: "minecraft_name" as Identifier, value: "", note: "" });
@@ -132,7 +132,7 @@ async function revoke() {
 			</UButton>
 		</form>
 		<p class="text-xs text-slate-500">
-			The user needs a LeiCraft Client account. A Minecraft name or UUID only works once that account is linked.
+			The user needs a LeiCraftClient account. A Minecraft name or UUID only works once that account is linked.
 		</p>
 
 		<div v-if="owners.loading.value && !owners.data.value?.length" class="flex justify-center py-6">

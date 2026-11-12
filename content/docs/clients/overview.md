@@ -1,9 +1,9 @@
 ---
 title: Compatibility with other clients
-description: LeiCraft Client is a Fabric mod, so it runs inside any client or launcher that lets you add Fabric mods for Minecraft 26.3.
+description: LeiCraftClient is a Fabric mod, so it runs inside any client or launcher that lets you add Fabric mods for Minecraft 26.3.
 ---
 
-LeiCraft Client is not a launcher and not a replacement for the client you already use. It's a normal **Fabric mod**. If your client lets you add your own Fabric mods for Minecraft 26.3, you can keep using it and add LeiCraft Client on top.
+LeiCraftClient is not a launcher and not a replacement for the client you already use. It's a normal **Fabric mod**. If your client lets you add your own Fabric mods for Minecraft 26.3, you can keep using it and add LeiCraftClient on top.
 
 ## What every setup needs
 
@@ -12,12 +12,12 @@ Whatever client or launcher you use, the game needs:
 - **Minecraft Java Edition 26.3** — exactly this version.
 - **Fabric Loader 0.19.5 or newer.** Most clients install the loader for you.
 - **Three mods (jar files):**
-  - **LeiCraft Client** — from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
+  - **LeiCraftClient** — from the [download page](/download) or [Modrinth](https://modrinth.com/mod/leicraftclient).
   - **Fabric API** for 26.3 — [Modrinth](https://modrinth.com/mod/fabric-api). Some clients already include it (Lunar Client does).
   - **Fabric Language Kotlin** 1.14.2 or newer — [Modrinth](https://modrinth.com/mod/fabric-language-kotlin).
 
 ::warning
-Fabric Language Kotlin is the one people forget. It is a separate mod and LeiCraft Client does not include it. Don't count on your client to bring it — check that it's installed. Without it, the game won't start.
+Fabric Language Kotlin is the one people forget. It is a separate mod and LeiCraftClient does not include it. Don't count on your client to bring it — check that it's installed. Without it, the game won't start.
 ::
 
 See [Requirements](/docs/getting-started/requirements) for all versions in one place.
@@ -53,7 +53,7 @@ Clients change quickly. This table reflects what we found at the time of writing
 
 ## Badlion Client
 
-Badlion has no feature to add your own mods. Lunar Client bought Badlion in March 2025, and Badlion now launches from the Lunar launcher. To use LeiCraft Client, create a Fabric profile there: [Lunar Client](/docs/clients/lunar-client).
+Badlion has no feature to add your own mods. Lunar Client bought Badlion in March 2025, and Badlion now launches from the Lunar launcher. To use LeiCraftClient, create a Fabric profile there: [Lunar Client](/docs/clients/lunar-client).
 
 ## Your client isn't listed?
 
@@ -62,11 +62,11 @@ Ask two questions:
 1. Can you create a profile or instance for **Minecraft 26.3 with Fabric**?
 2. Can you **add your own mods** — jar files, a `mods` folder, or a Modrinth search?
 
-If both answers are yes, it should work: add the three mods from above. If your client can't do one of them, use one of the launchers in the table for LeiCraft Client. You can still use your usual client for everything else.
+If both answers are yes, it should work: add the three mods from above. If your client can't do one of them, use one of the launchers in the table for LeiCraftClient. You can still use your usual client for everything else.
 
 ## Capes from other clients
 
-Many clients have their own capes and cosmetics. Each system only shows to people who run it: players with LeiCraft Client see LeiCraft capes, players of the other client see that client's capes. If both try to put a cape on the same player, only one can win. [Essential and other cape mods](/docs/clients/other-cape-mods) explains how they share the player, and each client page has a short note.
+Many clients have their own capes and cosmetics. Each system only shows to people who run it: players with LeiCraftClient see LeiCraft capes, players of the other client see that client's capes. If both try to put a cape on the same player, only one can win. [Essential and other cape mods](/docs/clients/other-cape-mods) explains how they share the player, and each client page has a short note.
 
 ## Next steps
 

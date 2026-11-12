@@ -38,7 +38,7 @@ if (!result.value?.success) {
 const page = computed(() => (result.value?.success ? result.value.data : null));
 
 usePageSeo({
-	title: `${page.value?.name} — LeiCraft Client Shop`,
+	title: `${page.value?.name} — LeiCraftClient Shop`,
 	description: page.value?.description || CATEGORY_INFO[category].description,
 	ogImage: page.value?.banner?.url ?? page.value?.icon?.url,
 });

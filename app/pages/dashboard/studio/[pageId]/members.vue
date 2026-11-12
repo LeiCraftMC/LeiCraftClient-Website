@@ -170,7 +170,7 @@ async function remove() {
 	<DashboardModal
 		v-model:open="showAdd"
 		title="Add member"
-		description="They need to have logged in to the LeiCraft Client website once."
+		description="They need to have logged in to the LeiCraftClient website once."
 		icon="i-lucide-user-plus"
 	>
 		<form id="add-member-form" class="space-y-4" @submit.prevent="add">
@@ -180,11 +180,11 @@ async function remove() {
 					orientation="horizontal"
 					:items="[
 						{ label: 'Discord user id', value: 'discord_id' },
-						{ label: 'LeiCraft Client user id', value: 'user_id' },
+						{ label: 'LeiCraftClient user id', value: 'user_id' },
 					]"
 				/>
 			</UFormField>
-			<UFormField :label="addForm.by === 'discord_id' ? 'Discord user id' : 'LeiCraft Client user id'" required>
+			<UFormField :label="addForm.by === 'discord_id' ? 'Discord user id' : 'LeiCraftClient user id'" required>
 				<UInput
 					v-model="addForm.value"
 					class="w-full"

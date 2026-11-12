@@ -28,7 +28,7 @@ export interface CompatibilityEntry {
 	to: string;
 }
 
-/** Where LeiCraft Client runs — a Fabric mod, so anywhere Fabric mods for 26.3 can be added. */
+/** Where LeiCraftClient runs — a Fabric mod, so anywhere Fabric mods for 26.3 can be added. */
 export const compatibility: CompatibilityEntry[] = [
 	{
 		name: "Fabric",
@@ -138,7 +138,7 @@ export const features: MarketingItem[] = [
 		icon: "i-lucide-server",
 		title: "Visible on every server",
 		description:
-			"Everyone who plays with LeiCraft Client sees your look — on any server, in singleplayer, nothing to install server-side.",
+			"Everyone who plays with LeiCraftClient sees your look — on any server, in singleplayer, nothing to install server-side.",
 		to: "/docs/getting-started/introduction",
 	},
 	{
@@ -215,13 +215,13 @@ export const howItWorks: MarketingItem[] = [
 	{
 		icon: "i-lucide-download",
 		title: "Install the mod",
-		description: "Add LeiCraft Client to Fabric, Quilt or the client you already use.",
+		description: "Add LeiCraftClient to Fabric, Quilt or the client you already use.",
 		to: "/docs/getting-started/quick-start",
 	},
 	{
 		icon: "i-lucide-message-circle",
 		title: "Log in with Discord",
-		description: "Your LeiCraft Client account is your Discord account. No password to remember.",
+		description: "Your LeiCraftClient account is your Discord account. No password to remember.",
 		to: "/auth/login",
 	},
 	{
@@ -242,17 +242,17 @@ export const homeFaq = [
 	{
 		label: "Is it really free?",
 		content:
-			"Yes. Every item is free to wear; exclusive items come from redeem codes and gifts by partners and the LeiCraft Client team. There is no store and nothing to buy.",
+			"Yes. Every item is free to wear; exclusive items come from redeem codes and gifts by partners and the LeiCraftClient team. There is no store and nothing to buy.",
 	},
 	{
 		label: "Do I have to switch clients?",
 		content:
-			"No. LeiCraft Client is a Fabric mod, so it runs wherever you can add Fabric mods for the current Minecraft version: plain Fabric or Quilt, launchers like Modrinth App and Prism, and clients like Lunar Client, NoRisk Client and Dawn (Feather). LabyMod follows as soon as it supports the current version.",
+			"No. LeiCraftClient is a Fabric mod, so it runs wherever you can add Fabric mods for the current Minecraft version: plain Fabric or Quilt, launchers like Modrinth App and Prism, and clients like Lunar Client, NoRisk Client and Dawn (Feather). LabyMod follows as soon as it supports the current version.",
 	},
 	{
 		label: "Who can see my cape?",
 		content:
-			"Everyone who plays with the LeiCraft Client mod, on any server and in singleplayer. Players without the mod see your normal skin.",
+			"Everyone who plays with the LeiCraftClient mod, on any server and in singleplayer. Players without the mod see your normal skin.",
 	},
 	{
 		label: "Is it safe for my Minecraft account?",

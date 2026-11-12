@@ -80,11 +80,11 @@ const currentYear = new Date().getFullYear();
 					<span
 						class="inline-block bg-linear-to-tr from-primary-400 to-primary-200 bg-clip-text text-2xl font-bold text-transparent"
 					>
-						LeiCraft Client
+						LeiCraftClient
 					</span>
 					<p class="text-base leading-relaxed text-slate-300/80 md:max-w-3xl">
 						Free capes and 3D cosmetics for Minecraft Java — a small Fabric mod that runs next to the client
-						you already use. Made by the LeiCraft Client team, our partners and the community.
+						you already use. Made by the LeiCraftClient team, our partners and the community.
 					</p>
 					<div class="flex gap-2 pt-2">
 						<UButton

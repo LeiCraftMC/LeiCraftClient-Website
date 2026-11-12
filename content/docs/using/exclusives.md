@@ -3,12 +3,12 @@ title: Exclusive items
 description: What exclusive capes and cosmetics are, how to redeem a code in your inventory, and how gifts from partners work.
 ---
 
-Most items in the shop are free for everyone. **Exclusive** items are special: you get them with a redeem code or as a gift. There is nothing to buy — LeiCraft Client has no payments anywhere.
+Most items in the shop are free for everyone. **Exclusive** items are special: you get them with a redeem code or as a gift. There is nothing to buy — LeiCraftClient has no payments anywhere.
 
 ## What makes an item exclusive
 
 - In the [shop](/shop), exclusive items carry the **Exclusive** badge. All other items say **Free**.
-- Only the official LeiCraft Client page and partner pages can make exclusive items. Items on community pages are always free.
+- Only the official LeiCraftClient page and partner pages can make exclusive items. Items on community pages are always free.
 - On the page of an exclusive item you don't own yet, the shop says that you get it with a redeem code or as a gift, and shows a **Redeem a code** button.
 
 Once you own an exclusive item, it is in your [wardrobe](/docs/using/wardrobe) for good. You equip it like any other item. On the website it's marked **Always yours**, in the game **Owned**.
@@ -72,11 +72,11 @@ In the [wardrobe](/dashboard/wardrobe), turn on **Exclusives only** to see just 
 ## They stay yours
 
 - You can't remove an exclusive item from your wardrobe. It has no trash button, only **Always yours**.
-- Unlinking a Minecraft account doesn't take them away. They belong to your LeiCraft Client account, not to a Minecraft account.
+- Unlinking a Minecraft account doesn't take them away. They belong to your LeiCraftClient account, not to a Minecraft account.
 - The page that gave you an item can take it back. Then it is also taken off all your Minecraft accounts.
 
 ::caution
-If you delete your LeiCraft Client account (dashboard → **Account** → **Delete account**), your exclusive items are deleted with it. You can't get them back.
+If you delete your LeiCraftClient account (dashboard → **Account** → **Delete account**), your exclusive items are deleted with it. You can't get them back.
 ::
 
 Want to make exclusive items, codes or gifts for your own community? See [Partner pages](/docs/creators/partners).

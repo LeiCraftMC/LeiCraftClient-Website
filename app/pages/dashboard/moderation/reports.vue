@@ -7,7 +7,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Reports | Moderation | LeiCraft Client",
+	title: "Reports | Moderation | LeiCraftClient",
 	description: "Reports from players",
 });
 

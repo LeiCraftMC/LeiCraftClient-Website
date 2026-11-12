@@ -2,9 +2,9 @@
 import { DISCORD_URL, principles, SOURCE_URL } from "~/data/marketing";
 
 usePageSeo({
-	title: "Our philosophy — LeiCraft Client",
+	title: "Our philosophy — LeiCraftClient",
 	description:
-		"Why LeiCraft Client exists: free cosmetics for everyone, in every client, made by the community and open source. What we do, what we don't, and where the code lives.",
+		"Why LeiCraftClient exists: free cosmetics for everyone, in every client, made by the community and open source. What we do, what we don't, and where the code lives.",
 });
 
 const doNot = [
@@ -71,7 +71,7 @@ const facts = [
 			badge="Our philosophy"
 			badge-icon="i-lucide-heart"
 			title="Cosmetics for everyone. Not for sale."
-			description="Showing who you are in Minecraft shouldn't cost money, tie you to one client or ask for your password. That's the whole idea behind LeiCraft Client."
+			description="Showing who you are in Minecraft shouldn't cost money, tie you to one client or ask for your password. That's the whole idea behind LeiCraftClient."
 		>
 			<template #title>
 				Cosmetics for everyone.
@@ -91,17 +91,17 @@ const facts = [
 				</div>
 				<div class="space-y-5 text-lg text-pretty text-slate-400">
 					<p>
-						LeiCraft Client started as a cape service for the LeiCraftMC community. The first version
+						LeiCraftClient started as a cape service for the LeiCraftMC community. The first version
 						piggybacked on OptiFine's cape system through a hosts-file trick and a Windows installer. It
 						worked, but it was fragile and only ever worked with OptiFine.
 					</p>
 					<p>
 						Version 2 starts fresh: a real Fabric mod, a new API and this website. It draws capes and 3D
 						cosmetics itself, so it doesn't care which client you use — as long as Fabric mods run, so does
-						LeiCraft Client.
+						LeiCraftClient.
 					</p>
 					<p>
-						And instead of a fixed catalogue, anyone can now publish their own designs. The LeiCraft Client
+						And instead of a fixed catalogue, anyone can now publish their own designs. The LeiCraftClient
 						team runs the official page, partners run theirs, and every player can open a community page.
 						Moderators keep it friendly; everybody gets to wear it.
 					</p>
@@ -115,7 +115,7 @@ const facts = [
 				<MarketingSectionHeading
 					badge="What we stand for"
 					title="Four promises, built into the code"
-					description="Not marketing — these follow from how LeiCraft Client is built."
+					description="Not marketing — these follow from how LeiCraftClient is built."
 				/>
 				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					<MarketingIconCard
@@ -134,7 +134,7 @@ const facts = [
 			<UContainer>
 				<MarketingSectionHeading
 					badge="What we don't do"
-					title="Things LeiCraft Client is built never to need"
+					title="Things LeiCraftClient is built never to need"
 				/>
 				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					<div

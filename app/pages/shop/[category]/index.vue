@@ -47,7 +47,7 @@ const { data: pages } = await useAPIAsyncData<CatalogPage[]>(
 );
 
 usePageSeo({
-	title: `${page.value?.name ?? info.label} — LeiCraft Client Shop`,
+	title: `${page.value?.name ?? info.label} — LeiCraftClient Shop`,
 	description: page.value?.description || info.description,
 	ogImage: page.value?.banner?.url ?? page.value?.icon?.url,
 });
@@ -74,7 +74,7 @@ usePageSeo({
 			v-if="singlePage"
 			icon="i-lucide-hourglass"
 			title="Coming soon"
-			description="The official LeiCraft Client capes and cosmetics are on their way."
+			description="The official LeiCraftClient capes and cosmetics are on their way."
 		/>
 
 		<template v-else>

@@ -9,8 +9,8 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "New release | LeiCraft Client",
-	description: "Publish a release of the LeiCraft Client mod",
+	title: "New release | LeiCraftClient",
+	description: "Publish a release of the LeiCraftClient mod",
 });
 
 const toast = useToast();

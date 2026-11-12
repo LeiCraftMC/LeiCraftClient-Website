@@ -2,9 +2,9 @@
 import type { Category } from "~/utils/types";
 
 usePageSeo({
-	title: "Shop — LeiCraft Client",
+	title: "Shop — LeiCraftClient",
 	description:
-		"Browse free capes and cosmetics for Minecraft: official LeiCraft Client items, partner collections and community creations.",
+		"Browse free capes and cosmetics for Minecraft: official LeiCraftClient items, partner collections and community creations.",
 });
 
 const { data: categories } = await useAPIAsyncData<Category[]>("shop-categories", async () => {

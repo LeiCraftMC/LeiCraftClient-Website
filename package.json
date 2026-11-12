@@ -2,7 +2,7 @@
 	"name": "@leicraftmc/leicraft-client-website",
 	"version": "0.1.0",
 	"private": true,
-	"description": "LeiCraft Client website: shop, wardrobe, creator studio and moderation",
+	"description": "LeiCraftClient website: shop, wardrobe, creator studio and moderation",
 	"type": "module",
 	"scripts": {
 		"check": "bunx --bun biome check",

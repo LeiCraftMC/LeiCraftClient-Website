@@ -2,7 +2,7 @@
 import { MINECRAFT_VERSION } from "~/data/marketing";
 
 usePageSeo({
-	title: "Features — LeiCraft Client",
+	title: "Features — LeiCraftClient",
 	description:
 		"HD capes, 3D cosmetics, a wardrobe on the web and in-game, Discord login, community uploads and exclusive drops — in a small Fabric mod that runs next to your client.",
 });
@@ -38,7 +38,7 @@ const sections: FeatureSection[] = [
 		icon: "i-lucide-blocks",
 		eyebrow: "Compatibility",
 		title: "A mod, not another client",
-		text: `LeiCraft Client is a regular Fabric mod for Minecraft ${MINECRAFT_VERSION}. Keep the launcher and the client you like — add one jar and its two helpers.`,
+		text: `LeiCraftClient is a regular Fabric mod for Minecraft ${MINECRAFT_VERSION}. Keep the launcher and the client you like — add one jar and its two helpers.`,
 		points: [
 			"Fabric and Quilt",
 			"Modrinth App, Prism Launcher, CurseForge, ATLauncher",
@@ -68,7 +68,7 @@ const sections: FeatureSection[] = [
 		eyebrow: "Accounts",
 		title: "No passwords. No risky logins.",
 		text:
-			"Your LeiCraft Client account is your Discord account. The mod proves you own your Minecraft account the same way a server checks you when you join.",
+			"Your LeiCraftClient account is your Discord account. The mod proves you own your Minecraft account the same way a server checks you when you join.",
 		points: [
 			"Log in with Discord — nothing new to remember",
 			"Your Minecraft access token never leaves the game",
@@ -114,7 +114,7 @@ const sections: FeatureSection[] = [
 		title: "The details that make it feel complete",
 		text: "Small things you notice every day.",
 		points: [
-			"A badge in the tab list for players who use LeiCraft Client",
+			"A badge in the tab list for players who use LeiCraftClient",
 			"Discord Rich Presence with your server and a link to your profile",
 			"Update notices in the mod's options when a new version is out",
 			"Public player profiles: see what anyone is wearing",

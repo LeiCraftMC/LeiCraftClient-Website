@@ -8,7 +8,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Pages | Moderation | LeiCraft Client",
+	title: "Pages | Moderation | LeiCraftClient",
 	description: "Review and hide shop pages",
 });
 

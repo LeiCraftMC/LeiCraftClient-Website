@@ -9,7 +9,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Audit log | LeiCraft Client",
+	title: "Audit log | LeiCraftClient",
 	description: "Staff and partner actions",
 });
 

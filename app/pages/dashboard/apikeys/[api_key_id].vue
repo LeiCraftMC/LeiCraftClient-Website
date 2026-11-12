@@ -74,7 +74,7 @@ function getRoutesConfig(): UseSubrouterPathDynamics.RoutesConfig {
 }
 
 const subrouterPathDynamics = useSubrouterPathDynamics({
-	baseTitle: "API Keys | LeiCraft Client",
+	baseTitle: "API Keys | LeiCraftClient",
 	basebreadcrumbItems: [{ label: "API Keys", to: "/dashboard/apikeys" }],
 	routes: getRoutesConfig(),
 });

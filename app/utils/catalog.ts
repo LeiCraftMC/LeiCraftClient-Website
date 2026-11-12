@@ -6,16 +6,16 @@ export const CATEGORY_INFO: Record<
 	{ label: string; short: string; icon: string; description: string }
 > = {
 	official: {
-		label: "LeiCraft Client",
+		label: "LeiCraftClient",
 		short: "Official",
 		icon: "i-lucide-badge-check",
-		description: "Official capes and cosmetics made by the LeiCraft Client team.",
+		description: "Official capes and cosmetics made by the LeiCraftClient team.",
 	},
 	partner: {
 		label: "Partners",
 		short: "Partners",
 		icon: "i-lucide-handshake",
-		description: "Capes and cosmetics from official LeiCraft Client partners.",
+		description: "Capes and cosmetics from official LeiCraftClient partners.",
 	},
 	community: {
 		label: "Community",
@@ -32,7 +32,7 @@ export function isCategoryID(value: unknown): value is CategoryID {
 }
 
 /**
- * Categories that are a single page instead of a list of pages: `official` is the LeiCraft Client
+ * Categories that are a single page instead of a list of pages: `official` is the LeiCraftClient
  * team's own shop page (the API allows only one), shown directly at `/shop/official`.
  */
 export const SINGLE_PAGE_CATEGORIES: readonly CategoryID[] = ["official"];

@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: "Review queue | LeiCraft Client",
+	title: "Review queue | LeiCraftClient",
 	description: "Items waiting for a moderator",
 });
 
