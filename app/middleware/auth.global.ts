@@ -69,7 +69,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
 		const onboardingStore = useOnboardingStore();
 		await onboardingStore.refreshIfNeeded();
 		if (!onboardingStore.completed.value) {
-			return navigateTo(ONBOARDING_ROUTE);
+			// Keep where the user was going (e.g. a `/dashboard/inventory?code=…` link).
+			const next = to.fullPath === HOME_ROUTE ? "" : `?url=${encodeURIComponent(to.fullPath)}`;
+			return navigateTo(`${ONBOARDING_ROUTE}${next}`);
 		}
 	}
 

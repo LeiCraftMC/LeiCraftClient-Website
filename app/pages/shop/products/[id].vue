@@ -96,6 +96,57 @@ const ownsProduct = computed(
 		(inventory.value ?? []).some((item) => item.product.id === productId),
 );
 
+// Wardrobe: free items are saved there (equipping saves them too); owned exclusives always are.
+const wardrobeAPI = useWardrobeAPI();
+const { data: wardrobeStatus } = await useAPILazyAsyncData(
+	`shop-product-${productId}-wardrobe`,
+	async () => {
+		if (!user.value) return null;
+		const res = await wardrobeAPI.status(productId);
+		return res.success ? res.data : null;
+	},
+);
+const changingWardrobe = ref(false);
+
+async function saveToWardrobe() {
+	changingWardrobe.value = true;
+	const res = await wardrobeAPI.save(productId);
+	changingWardrobe.value = false;
+
+	if (!res.success) {
+		toast.add({ title: "Could not save it", description: res.message, color: "error" });
+		return;
+	}
+	wardrobeStatus.value = res.data;
+	toast.add({
+		title: "Saved to your wardrobe",
+		description: "Equip it any time — on the website or in the game's wardrobe.",
+		icon: "i-lucide-bookmark-check",
+		color: "success",
+		actions: [
+			{ label: "Open wardrobe", to: "/dashboard/wardrobe", color: "neutral", variant: "outline" },
+		],
+	});
+}
+
+async function removeFromWardrobe() {
+	changingWardrobe.value = true;
+	const res = await wardrobeAPI.remove(productId);
+	changingWardrobe.value = false;
+
+	if (!res.success) {
+		toast.add({ title: "Could not remove it", description: res.message, color: "error" });
+		return;
+	}
+	wardrobeStatus.value = res.data;
+	toast.add({
+		title: "Removed from your wardrobe",
+		description: "If you were wearing it, it was taken off your Minecraft accounts.",
+		icon: "i-lucide-trash-2",
+		color: "neutral",
+	});
+}
+
 const equipping = ref(false);
 const loadoutAPI = useLoadoutAPI();
 
@@ -129,6 +180,12 @@ async function equip() {
 		toast.add({ title: "Equip failed", description: saved.message, color: "error" });
 		return;
 	}
+	// The API saved it to the wardrobe as well.
+	wardrobeStatus.value = {
+		in_wardrobe: true,
+		owned: product.value.availability === "exclusive",
+		removable: product.value.availability !== "exclusive",
+	};
 	toast.add({
 		title: `Equipped on ${account.name}`,
 		description: "Other LeiCraft Client players see it within a few minutes.",
@@ -248,15 +305,6 @@ async function equip() {
 								Log in with Discord
 							</UButton>
 						</template>
-						<template v-else-if="!accounts?.length">
-							<p class="text-sm text-slate-400">
-								Link a Minecraft account first: open the LeiCraft Client options in the game's pause menu
-								and click <strong>Link account</strong>.
-							</p>
-							<UButton block variant="soft" to="/dashboard/accounts" icon="i-lucide-link">
-								How to link
-							</UButton>
-						</template>
 						<template v-else-if="!ownsProduct">
 							<p class="text-sm text-slate-400">
 								This is an exclusive item. You get it with a redeem code or as a gift from
@@ -267,15 +315,76 @@ async function equip() {
 							</UButton>
 						</template>
 						<template v-else>
-							<UFormField v-if="accountItems.length > 1" label="Minecraft account">
-								<USelect v-model="selectedUUID" :items="accountItems" class="w-full" />
-							</UFormField>
-							<UButton block icon="i-lucide-shirt" :loading="equipping" @click="equip">
-								Equip on {{ selectedAccount?.name }}
+							<template v-if="accounts?.length">
+								<UFormField v-if="accountItems.length > 1" label="Minecraft account">
+									<USelect v-model="selectedUUID" :items="accountItems" class="w-full" />
+								</UFormField>
+								<UButton block icon="i-lucide-shirt" :loading="equipping" @click="equip">
+									Equip on {{ selectedAccount?.name }}
+								</UButton>
+							</template>
+							<p v-else class="text-sm text-slate-400">
+								To wear it in-game, link a Minecraft account: open the LeiCraftClient options in the
+								game's pause menu and click <strong>Link account</strong>. You can already save it to
+								your wardrobe.
+							</p>
+
+							<div
+								v-if="wardrobeStatus?.in_wardrobe"
+								class="flex items-center gap-2 rounded-lg border border-primary-400/30 bg-primary-500/5 px-3 py-2 text-sm"
+							>
+								<UIcon name="i-lucide-bookmark-check" class="shrink-0 text-primary-400" />
+								<span class="text-white">In your wardrobe</span>
+								<UButton
+									v-if="wardrobeStatus.removable"
+									class="ml-auto"
+									size="xs"
+									color="neutral"
+									variant="ghost"
+									icon="i-lucide-trash-2"
+									:loading="changingWardrobe"
+									@click="removeFromWardrobe"
+								>
+									Remove
+								</UButton>
+								<span v-else class="ml-auto flex items-center gap-1 text-xs text-amber-300/80">
+									<UIcon name="i-lucide-lock" />
+									Always yours
+								</span>
+							</div>
+							<UButton
+								v-else
+								block
+								color="neutral"
+								variant="outline"
+								icon="i-lucide-bookmark-plus"
+								:loading="changingWardrobe"
+								@click="saveToWardrobe"
+							>
+								Save to wardrobe
 							</UButton>
-							<UButton block color="neutral" variant="ghost" to="/dashboard/wardrobe">
-								Open wardrobe
-							</UButton>
+
+							<div class="flex gap-2">
+								<UButton
+									class="flex-1 justify-center"
+									color="neutral"
+									variant="ghost"
+									to="/dashboard/wardrobe"
+									icon="i-lucide-shirt"
+								>
+									Open wardrobe
+								</UButton>
+								<UButton
+									v-if="!accounts?.length"
+									class="flex-1 justify-center"
+									color="neutral"
+									variant="ghost"
+									to="/dashboard/accounts"
+									icon="i-lucide-link"
+								>
+									How to link
+								</UButton>
+							</div>
 						</template>
 					</div>
 				</UCard>

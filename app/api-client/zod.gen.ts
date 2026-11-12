@@ -178,8 +178,64 @@ export const zGetAccountWardrobeResponse = z.object({
             slug: z.string(),
             name: z.string()
         }),
-        owned: z.boolean()
+        owned: z.boolean(),
+        removable: z.boolean(),
+        added_at: z.int().gte(-9007199254740991).lte(9007199254740991)
     }))
+});
+
+export const zDeleteAccountWardrobeByProductIdPath = z.object({
+    productId: z.int().gt(0).lte(9007199254740991)
+});
+
+/**
+ * Removed from your wardrobe
+ */
+export const zDeleteAccountWardrobeByProductIdResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Removed from your wardrobe'),
+    data: z.object({
+        in_wardrobe: z.boolean(),
+        owned: z.boolean(),
+        removable: z.boolean()
+    })
+});
+
+export const zGetAccountWardrobeByProductIdPath = z.object({
+    productId: z.int().gt(0).lte(9007199254740991)
+});
+
+/**
+ * Wardrobe status retrieved successfully
+ */
+export const zGetAccountWardrobeByProductIdResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Wardrobe status retrieved successfully'),
+    data: z.object({
+        in_wardrobe: z.boolean(),
+        owned: z.boolean(),
+        removable: z.boolean()
+    })
+});
+
+export const zPutAccountWardrobeByProductIdPath = z.object({
+    productId: z.int().gt(0).lte(9007199254740991)
+});
+
+/**
+ * Saved to your wardrobe
+ */
+export const zPutAccountWardrobeByProductIdResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Saved to your wardrobe'),
+    data: z.object({
+        in_wardrobe: z.boolean(),
+        owned: z.boolean(),
+        removable: z.boolean()
+    })
 });
 
 /**
@@ -867,7 +923,9 @@ export const zGetClientWardrobeResponse = z.object({
             slug: z.string(),
             name: z.string()
         }),
-        owned: z.boolean()
+        owned: z.boolean(),
+        removable: z.boolean(),
+        added_at: z.int().gte(-9007199254740991).lte(9007199254740991)
     }))
 });
 
@@ -1075,6 +1133,54 @@ export const zPostPlayersLookupResponse = z.object({
     success: z.literal(true),
     code: z.literal(200),
     message: z.literal('Player profiles retrieved successfully'),
+    data: z.array(z.object({
+        uuid: z.string(),
+        name: z.string(),
+        skin_model: z.enum(['wide', 'slim']),
+        uses_client: z.boolean(),
+        cape: z.object({
+            product_id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            texture: z.object({
+                id: z.string(),
+                url: z.string()
+            })
+        }).nullable(),
+        cosmetics: z.array(z.object({
+            product_id: z.int().gte(-9007199254740991).lte(9007199254740991),
+            variant_id: z.int().gte(-9007199254740991).lte(9007199254740991).nullable(),
+            variants: z.array(z.object({
+                id: z.int().gte(-9007199254740991).lte(9007199254740991),
+                name: z.string(),
+                skin_model: z.enum([
+                    'any',
+                    'wide',
+                    'slim'
+                ]),
+                model: z.object({
+                    id: z.string(),
+                    url: z.string()
+                }),
+                texture: z.object({
+                    id: z.string(),
+                    url: z.string()
+                }),
+                sort_order: z.int().gte(-9007199254740991).lte(9007199254740991)
+            }))
+        }))
+    }))
+});
+
+export const zGetPlayersShowcaseQuery = z.object({
+    limit: z.int().gte(1).lte(12).optional().default(6)
+});
+
+/**
+ * Showcase retrieved successfully
+ */
+export const zGetPlayersShowcaseResponse = z.object({
+    success: z.literal(true),
+    code: z.literal(200),
+    message: z.literal('Showcase retrieved successfully'),
     data: z.array(z.object({
         uuid: z.string(),
         name: z.string(),

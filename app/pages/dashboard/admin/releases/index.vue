@@ -50,11 +50,7 @@ const columns: TableColumn<ManagedRelease>[] = [
 				title="Releases"
 				icon="i-lucide-package"
 				description="Publish the mod: changelog, GitLab build and Modrinth."
-			>
-				<template #right>
-					<UButton to="/dashboard/admin/releases/new" icon="i-lucide-plus">New release</UButton>
-				</template>
-			</DashboardPageHeader>
+			/>
 		</template>
 
 		<template #body>
@@ -67,6 +63,10 @@ const columns: TableColumn<ManagedRelease>[] = [
 				empty-icon="i-lucide-package"
 				@refresh="releases.refresh()"
 			>
+				<template #header-right>
+					<UButton to="/dashboard/admin/releases/new" icon="i-lucide-plus">New release</UButton>
+				</template>
+
 				<template #version-cell="{ row }">
 					<NuxtLink
 						:to="`/dashboard/admin/releases/${row.original.version}`"

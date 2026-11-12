@@ -292,7 +292,7 @@ export type GetAccountWardrobeData = {
         type?: 'cape' | 'cosmetic';
         search?: string;
         /**
-         * `true`: only exclusive products the user owns
+         * `true`: only the exclusive products the user owns
          */
         owned_only?: 'true' | 'false';
         limit?: number;
@@ -374,11 +374,188 @@ export type GetAccountWardrobeResponses = {
              * Exclusive product the user owns (free products are usable without owning them)
              */
             owned: boolean;
+            /**
+             * Saved free product the user can remove; owned exclusives always stay
+             */
+            removable: boolean;
+            /**
+             * When the product was saved (or, for exclusives, when it was received)
+             */
+            added_at: number;
         }>;
     };
 };
 
 export type GetAccountWardrobeResponse = GetAccountWardrobeResponses[keyof GetAccountWardrobeResponses];
+
+export type DeleteAccountWardrobeByProductIdData = {
+    body?: never;
+    path: {
+        productId: number;
+    };
+    query?: never;
+    url: '/account/wardrobe/{productId}';
+};
+
+export type DeleteAccountWardrobeByProductIdErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * This item is not in your wardrobe
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'This item is not in your wardrobe';
+    };
+    /**
+     * Exclusive items you own always stay in your wardrobe
+     */
+    409: {
+        success: false;
+        code: 409;
+        message: 'Exclusive items you own always stay in your wardrobe';
+    };
+};
+
+export type DeleteAccountWardrobeByProductIdError = DeleteAccountWardrobeByProductIdErrors[keyof DeleteAccountWardrobeByProductIdErrors];
+
+export type DeleteAccountWardrobeByProductIdResponses = {
+    /**
+     * Removed from your wardrobe
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Removed from your wardrobe';
+        data: {
+            in_wardrobe: boolean;
+            /**
+             * Exclusive product the user owns — always in the wardrobe
+             */
+            owned: boolean;
+            removable: boolean;
+        };
+    };
+};
+
+export type DeleteAccountWardrobeByProductIdResponse = DeleteAccountWardrobeByProductIdResponses[keyof DeleteAccountWardrobeByProductIdResponses];
+
+export type GetAccountWardrobeByProductIdData = {
+    body?: never;
+    path: {
+        productId: number;
+    };
+    query?: never;
+    url: '/account/wardrobe/{productId}';
+};
+
+export type GetAccountWardrobeByProductIdErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+};
+
+export type GetAccountWardrobeByProductIdError = GetAccountWardrobeByProductIdErrors[keyof GetAccountWardrobeByProductIdErrors];
+
+export type GetAccountWardrobeByProductIdResponses = {
+    /**
+     * Wardrobe status retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Wardrobe status retrieved successfully';
+        data: {
+            in_wardrobe: boolean;
+            /**
+             * Exclusive product the user owns — always in the wardrobe
+             */
+            owned: boolean;
+            removable: boolean;
+        };
+    };
+};
+
+export type GetAccountWardrobeByProductIdResponse = GetAccountWardrobeByProductIdResponses[keyof GetAccountWardrobeByProductIdResponses];
+
+export type PutAccountWardrobeByProductIdData = {
+    body?: never;
+    path: {
+        productId: number;
+    };
+    query?: never;
+    url: '/account/wardrobe/{productId}';
+};
+
+export type PutAccountWardrobeByProductIdErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+    /**
+     * You do not own this exclusive product
+     */
+    403: {
+        success: false;
+        code: 403;
+        message: 'You do not own this exclusive product';
+    };
+    /**
+     * Product not found
+     */
+    404: {
+        success: false;
+        code: 404;
+        message: 'Product not found';
+    };
+    /**
+     * Your wardrobe is full
+     */
+    409: {
+        success: false;
+        code: 409;
+        message: 'Your wardrobe is full';
+    };
+};
+
+export type PutAccountWardrobeByProductIdError = PutAccountWardrobeByProductIdErrors[keyof PutAccountWardrobeByProductIdErrors];
+
+export type PutAccountWardrobeByProductIdResponses = {
+    /**
+     * Saved to your wardrobe
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Saved to your wardrobe';
+        data: {
+            in_wardrobe: boolean;
+            /**
+             * Exclusive product the user owns — always in the wardrobe
+             */
+            owned: boolean;
+            removable: boolean;
+        };
+    };
+};
+
+export type PutAccountWardrobeByProductIdResponse = PutAccountWardrobeByProductIdResponses[keyof PutAccountWardrobeByProductIdResponses];
 
 export type GetAccountApikeysData = {
     body?: never;
@@ -1661,7 +1838,7 @@ export type GetClientWardrobeData = {
         type?: 'cape' | 'cosmetic';
         search?: string;
         /**
-         * `true`: only exclusive products the user owns
+         * `true`: only the exclusive products the user owns
          */
         owned_only?: 'true' | 'false';
         limit?: number;
@@ -1751,6 +1928,14 @@ export type GetClientWardrobeResponses = {
              * Exclusive product the user owns (free products are usable without owning them)
              */
             owned: boolean;
+            /**
+             * Saved free product the user can remove; owned exclusives always stay
+             */
+            removable: boolean;
+            /**
+             * When the product was saved (or, for exclusives, when it was received)
+             */
+            added_at: number;
         }>;
     };
 };
@@ -2109,6 +2294,81 @@ export type PostPlayersLookupResponses = {
 };
 
 export type PostPlayersLookupResponse = PostPlayersLookupResponses[keyof PostPlayersLookupResponses];
+
+export type GetPlayersShowcaseData = {
+    body?: never;
+    path?: never;
+    query?: {
+        limit?: number;
+    };
+    url: '/players/showcase';
+};
+
+export type GetPlayersShowcaseErrors = {
+    /**
+     * Bad Request: Syntax or validation error in request
+     */
+    400: {
+        success: false;
+        code: 400;
+        message: 'Bad Request: Syntax or validation error in request';
+    };
+};
+
+export type GetPlayersShowcaseError = GetPlayersShowcaseErrors[keyof GetPlayersShowcaseErrors];
+
+export type GetPlayersShowcaseResponses = {
+    /**
+     * Showcase retrieved successfully
+     */
+    200: {
+        success: true;
+        code: 200;
+        message: 'Showcase retrieved successfully';
+        /**
+         * Random players who wear a cape or cosmetics, recent LeiCraft Client users first
+         */
+        data: Array<{
+            uuid: string;
+            name: string;
+            /**
+             * Skin model from the last mod handshake — renderers that know the live skin should use that
+             */
+            skin_model: 'wide' | 'slim';
+            /**
+             * Used the LeiCraft Client within the last 30 days
+             */
+            uses_client: boolean;
+            cape: {
+                product_id: number;
+                texture: {
+                    id: string;
+                    url: string;
+                };
+            } | null;
+            cosmetics: Array<{
+                product_id: number;
+                variant_id: number | null;
+                variants: Array<{
+                    id: number;
+                    name: string;
+                    skin_model: 'any' | 'wide' | 'slim';
+                    model: {
+                        id: string;
+                        url: string;
+                    };
+                    texture: {
+                        id: string;
+                        url: string;
+                    };
+                    sort_order: number;
+                }>;
+            }>;
+        }>;
+    };
+};
+
+export type GetPlayersShowcaseResponse = GetPlayersShowcaseResponses[keyof GetPlayersShowcaseResponses];
 
 export type GetPlayersByNameByNameData = {
     body?: never;

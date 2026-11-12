@@ -1,16 +1,23 @@
 /**
- * /sitemap.xml — the public pages plus every shop page and listed product, read from the public
- * catalog API (no session). Cached for an hour; a failing API yields just the static pages.
+ * /sitemap.xml — the public pages (marketing pages, docs from `app/data/docs.ts`) plus every shop
+ * page and listed product, read from the public catalog API (no session). Cached for an hour; a
+ * failing API yields just the static pages.
  */
+
+import { docsPagesFlat } from "../../app/data/docs";
 
 const STATIC_PATHS = [
 	"/",
+	"/features",
+	"/creators",
+	"/about",
 	"/shop",
 	"/shop/official",
 	"/shop/partner",
 	"/shop/community",
 	"/players",
 	"/download",
+	...docsPagesFlat.map((page) => page.to),
 ];
 
 /** The catalog serves at most 100 entries per request. */

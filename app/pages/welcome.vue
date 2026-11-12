@@ -16,13 +16,22 @@ useSeoMeta({
 });
 
 const toast = useToast();
+const route = useRoute();
+
+// Where the user was going before the first-login redirect; internal paths only (`/…`, not
+// `//evil.example`), like the login page.
+const requestedUrl = route.query.url?.toString() ?? "";
+const nextPath =
+	requestedUrl.startsWith("/") && !requestedUrl.startsWith("//") && !requestedUrl.startsWith("/\\")
+		? requestedUrl
+		: "/dashboard";
 
 const onboardingStore = useOnboardingStore();
 const [user] = await Promise.all([useUserInfoStore().use(), onboardingStore.refreshIfNeeded()]);
 
 // Already onboarded (e.g. opened /welcome directly) → nothing to do here.
 if (onboardingStore.completed.value) {
-	await navigateTo("/dashboard");
+	await navigateTo(nextPath);
 }
 
 const firstName = computed(() => user.value?.display_name?.trim().split(/\s+/)[0] || null);
@@ -37,7 +46,7 @@ const steps = [
 	{
 		icon: "i-lucide-link",
 		title: "Link your Minecraft account",
-		description: "In the game: pause menu → LeiCraft Client → Link account, then confirm here.",
+		description: "In the game: pause menu → LeiCraftClient → Link account, then confirm here.",
 		to: "/dashboard/accounts",
 	},
 	{
@@ -51,7 +60,7 @@ const steps = [
 const finishing = ref(false);
 
 /** Mark onboarding done (so the first-login redirect stops firing), then continue. */
-async function complete(to = "/dashboard") {
+async function complete(to = nextPath) {
 	finishing.value = true;
 	try {
 		await onboardingStore.update({ completed: true });

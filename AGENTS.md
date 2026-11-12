@@ -51,6 +51,18 @@ https://github.com/LeiCraftMC/Style-Guides.
   request fails with `NUXT_E1001`. Top-level `await` in `<script setup>` is fine.
 - `bun run typecheck` skips `.vue` files under Bun; run vue-tsc with Node (see README) before
   finishing UI work.
+- The wardrobe is the user's own collection (`/v1/account/wardrobe`): owned exclusives (always
+  there) plus saved free items. Equipping saves an item; removing one unequips it on every linked
+  account. Product pages offer "Equip" and "Save to wardrobe" (`useWardrobeAPI`).
+- Docs: markdown in `content/docs/`, sidebar in `app/data/docs.ts`, rendered by `useDocsPage`
+  (MDC, not @nuxt/content — see README). Keep `tests/docs.test.ts` green. Only write facts you
+  verified (UI labels from the source, versions from the mod); the docs state the Minecraft version
+  (26.3) — update them, `MINECRAFT_VERSION` in `app/data/marketing.ts` and the download page together.
+- Marketing copy lives in `app/data/marketing.ts`; its compatibility statuses mirror
+  `content/docs/clients/overview.md`.
+- Dashboard pages put actions and filters in the body (DataTable `#header-right`, a row at the top
+  of `DashboardPageBody`, or a `UDashboardToolbar`), never in the navbar's `#right` slot — on phones
+  it pushes the title out (style-guide template pattern).
 - Release changelogs are markdown, rendered with `<ReleaseChangelog>` — `@nuxtjs/mdc` plus Nuxt UI's
   prose components (no `v-html`, no typography plugin). MDC drops scripts, event handlers and
   `javascript:` links. Edit them with `<ReleaseChangelogEditor>` (write + live preview).

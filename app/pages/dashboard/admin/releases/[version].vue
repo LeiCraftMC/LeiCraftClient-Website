@@ -136,20 +136,7 @@ const breadcrumbItems = computed(() => [
 <template>
 	<UDashboardPanel>
 		<template #header>
-			<DashboardPageHeader icon="i-lucide-package" :breadcrumb-items="breadcrumbItems">
-				<template #right>
-					<UButton
-						v-if="release.data.value?.status === 'published'"
-						:to="`/download#${releaseAnchor(version)}`"
-						target="_blank"
-						icon="i-lucide-external-link"
-						color="neutral"
-						variant="outline"
-					>
-						Download page
-					</UButton>
-				</template>
-			</DashboardPageHeader>
+			<DashboardPageHeader icon="i-lucide-package" :breadcrumb-items="breadcrumbItems" />
 		</template>
 
 		<template #body>
@@ -249,6 +236,17 @@ const breadcrumbItems = computed(() => [
 						</dl>
 
 						<div class="flex flex-col gap-2 border-t border-slate-800 px-6 py-4">
+							<UButton
+								v-if="release.data.value.status === 'published'"
+								:to="`/download#${releaseAnchor(version)}`"
+								target="_blank"
+								icon="i-lucide-external-link"
+								color="neutral"
+								variant="outline"
+								block
+							>
+								Download page
+							</UButton>
 							<UButton
 								v-if="release.data.value.download_url"
 								:to="release.data.value.download_url"

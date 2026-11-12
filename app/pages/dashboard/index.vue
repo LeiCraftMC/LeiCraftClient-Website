@@ -108,7 +108,7 @@ const quickActions = [
 						v-else
 						icon="i-lucide-link"
 						title="No Minecraft account linked yet"
-						description="Start the game with the LeiCraft Client mod, open the pause menu → LeiCraft Client → Link account."
+						description="Start the game with the LeiCraft Client mod, open the pause menu → LeiCraftClient → Link account."
 						variant="naked"
 					>
 						<template #actions>

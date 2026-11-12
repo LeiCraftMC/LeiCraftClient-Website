@@ -6,9 +6,16 @@ const route = useRoute();
 const user = await useUserInfoStore().use();
 
 const links = computed<NavigationMenuItem[]>(() => [
+	{ label: "Features", to: "/features", icon: "i-lucide-sparkles" },
 	{ label: "Shop", to: "/shop", icon: "i-lucide-shopping-bag" },
 	{ label: "Players", to: "/players", icon: "i-lucide-users" },
-	{ label: "Download", to: "/download", icon: "i-lucide-download" },
+	{ label: "Creators", to: "/creators", icon: "i-lucide-palette" },
+	{
+		label: "Docs",
+		to: "/docs",
+		icon: "i-lucide-book-open",
+		active: route.path === "/docs" || route.path.startsWith("/docs/"),
+	},
 ]);
 
 const loginRoute = computed(() =>
@@ -27,23 +34,45 @@ const loginRoute = computed(() =>
 		<UNavigationMenu :items="links" />
 
 		<template #body>
-			<UNavigationMenu :items="links" orientation="vertical" class="w-full" />
+			<div class="space-y-6">
+				<UNavigationMenu :items="links" orientation="vertical" class="w-full" />
+				<div class="flex flex-col gap-2">
+					<UButton to="/download" icon="i-lucide-download" block>Download</UButton>
+					<UButton
+						v-if="user"
+						to="/dashboard"
+						icon="i-lucide-layout-dashboard"
+						color="neutral"
+						variant="outline"
+						block
+					>
+						Dashboard
+					</UButton>
+				</div>
+			</div>
 		</template>
 
 		<template #right>
 			<div class="flex items-center gap-2">
+				<UButton
+					to="/download"
+					icon="i-lucide-download"
+					color="neutral"
+					variant="ghost"
+					class="hidden lg:flex"
+				>
+					Download
+				</UButton>
+
 				<template v-if="user">
-					<div class="hidden items-center gap-2 text-white sm:flex">
-						<UAvatar :src="user.avatar_url" :alt="user.display_name" size="xs" />
-						<span class="text-sm">{{ user.display_name }}</span>
-					</div>
 					<UButton
-						icon="i-lucide-layout-dashboard"
 						to="/dashboard"
 						color="primary"
 						variant="soft"
 						class="hidden sm:flex"
+						:aria-label="`Dashboard — ${user.display_name}`"
 					>
+						<UAvatar :src="user.avatar_url" :alt="user.display_name" size="2xs" />
 						Dashboard
 					</UButton>
 				</template>

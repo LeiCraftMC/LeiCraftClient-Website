@@ -11,10 +11,20 @@ export default defineNuxtConfig({
 	ssr: true,
 	css: ["~/assets/css/main.css"],
 
-	// Release changelogs are markdown (see ReleaseChangelog). Several render on one page, so their
-	// headings don't get anchor links — the page's anchors are the releases (`#v2.0.0`).
+	// Release changelogs and the docs (`content/docs/`, see useDocsPage) are markdown rendered by
+	// MDC. Several changelogs render on one page, so headings don't get anchor links — the page's
+	// anchors are the releases (`#v2.0.0`); docs headings keep their ids for the "On this page" list.
 	mdc: {
 		headings: { anchorLinks: false },
+	},
+
+	// Bundle the icons used in data files and docs markdown too (the default scan skips them).
+	icon: {
+		clientBundle: {
+			scan: {
+				globInclude: ["app/**/*.{vue,ts}", "content/**/*.md"],
+			},
+		},
 	},
 
 	nitro: {

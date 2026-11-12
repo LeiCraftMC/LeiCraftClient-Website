@@ -222,16 +222,16 @@ function assetLinks(entry: ModerationProduct) {
 				title="Review queue"
 				icon="i-lucide-inbox"
 				description="Approve community items and take down content that breaks the rules"
-			>
-				<template #right>
-					<USelect v-model="filters.category" :items="categoryItems" class="w-44" />
-					<USelect v-model="filters.status" :items="statusItems" class="w-36" />
-				</template>
-			</DashboardPageHeader>
+			/>
 		</template>
 
 		<template #body>
 			<DashboardPageBody>
+				<div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+					<USelect v-model="filters.category" :items="categoryItems" class="w-full sm:w-44" />
+					<USelect v-model="filters.status" :items="statusItems" class="w-full sm:w-36" />
+				</div>
+
 				<UAlert
 					v-if="pagesInReview.data.value"
 					color="warning"

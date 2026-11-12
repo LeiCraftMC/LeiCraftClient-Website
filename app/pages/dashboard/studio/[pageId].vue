@@ -121,20 +121,7 @@ useSeoMeta({
 			<DashboardPageHeader
 				icon="i-lucide-palette"
 				:breadcrumb-items="routePathDynamicValues.breadcrumbItems"
-			>
-				<template #right>
-					<UButton
-						v-if="page && page.status === 'active'"
-						:to="shopPagePath(page)"
-						target="_blank"
-						color="neutral"
-						variant="ghost"
-						icon="i-lucide-external-link"
-					>
-						View in shop
-					</UButton>
-				</template>
-			</DashboardPageHeader>
+			/>
 
 			<UDashboardToolbar v-if="!error">
 				<!-- `-mx-1` aligns the menu with the sidebar collapse button. -->
@@ -146,6 +133,18 @@ useSeoMeta({
 			<div class="flex w-full flex-col gap-6">
 				<UError v-if="error" :error="error" />
 				<template v-else>
+					<div v-if="page && page.status === 'active'" class="flex justify-end">
+						<UButton
+							:to="shopPagePath(page)"
+							target="_blank"
+							color="neutral"
+							variant="outline"
+							size="sm"
+							icon="i-lucide-external-link"
+						>
+							View in shop
+						</UButton>
+					</div>
 					<UAlert
 						v-if="page?.status === 'hidden'"
 						color="error"

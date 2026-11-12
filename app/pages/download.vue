@@ -175,7 +175,7 @@ const faq = [
 					<p class="text-sm text-primary-400">3</p>
 					<p class="mt-1 font-medium text-white">Link your account</p>
 					<p class="mt-1 text-sm text-slate-400">
-						Start the game, open the pause menu → LeiCraft Client → Link account.
+						Start the game, open the pause menu → LeiCraftClient → Link account.
 					</p>
 				</li>
 			</ol>

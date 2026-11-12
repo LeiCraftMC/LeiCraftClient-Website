@@ -4,6 +4,7 @@ import type {
 	GetAccountMinecraftByUuidLoadoutResponses,
 	GetAccountMinecraftResponses,
 	GetAccountResponses,
+	GetAccountWardrobeByProductIdResponses,
 	GetAccountWardrobeResponses,
 	GetAdminAuditLogsData,
 	GetAdminAuditLogsResponses,
@@ -22,6 +23,7 @@ import type {
 	GetModerationUsersByUserIdResponses,
 	GetModerationUsersResponses,
 	GetPlayersByUuidResponses,
+	GetPlayersShowcaseResponses,
 	GetReleasesResponses,
 	GetStudioPagesByPageIdCodesResponses,
 	GetStudioPagesByPageIdCollectionsResponses,
@@ -58,8 +60,10 @@ export type AssetRef = NonNullable<Product["texture"]>;
 export type MinecraftAccount = GetAccountMinecraftResponses["200"]["data"][number];
 export type Loadout = GetAccountMinecraftByUuidLoadoutResponses["200"]["data"];
 export type WardrobeItem = GetAccountWardrobeResponses["200"]["data"][number];
+export type WardrobeStatus = GetAccountWardrobeByProductIdResponses["200"]["data"];
 export type InventoryItem = GetAccountInventoryResponses["200"]["data"][number];
 export type PlayerProfile = GetPlayersByUuidResponses["200"]["data"];
+export type ShowcaseProfile = GetPlayersShowcaseResponses["200"]["data"][number];
 export type SkinModel = MinecraftAccount["skin_model"];
 
 // Studio

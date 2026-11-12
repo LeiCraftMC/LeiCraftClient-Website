@@ -369,7 +369,7 @@ const viewerCosmetics = computed(() =>
 							v-if="product.type === 'cape'"
 							label="Cape texture"
 							required
-							description="Standard Minecraft cape layout; animated or HD capes keep the 2:1 ratio."
+							description="Standard Minecraft cape layout, 2:1 — from 64×32 up to 2048×1024 (HD)."
 						>
 							<StudioAssetUpload
 								kind="cape_texture"

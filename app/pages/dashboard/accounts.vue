@@ -113,7 +113,7 @@ async function onUnlink() {
 							(<NuxtLink to="/download" class="text-primary hover:underline">download</NuxtLink>)
 							and start Minecraft with your Microsoft account.
 						</li>
-						<li>Open the pause menu and click <strong>LeiCraft Client</strong>.</li>
+						<li>Open the pause menu and click <strong>LeiCraftClient</strong>.</li>
 						<li>
 							Click <strong>Link account</strong> — your browser opens this website. Confirm the
 							account there. (Or type <code>/leicraftclient link</code> in the chat and click the

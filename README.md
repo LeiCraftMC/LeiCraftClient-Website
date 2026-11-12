@@ -47,18 +47,20 @@ bun run api-client:generate
 
 | Route | Who | What it is |
 | --- | --- | --- |
-| `/` | everyone | Landing page with a 3D preview of the newest cape |
+| `/` | everyone | Landing page: 3D showcase of random players' looks (`/v1/players/showcase`), compatibility, features, creators, FAQ |
+| `/features`, `/creators`, `/about` | everyone | Marketing pages: features, creator programme, philosophy and open source |
+| `/docs`, `/docs/**` | everyone | Docs: install guides (loaders, launchers, other clients), using the client, creating content |
 | `/shop` | everyone | Catalog overview |
 | `/shop/official` | everyone | The official LeiCraft Client page (there is only one) with its collections and items |
 | `/shop/partner`, `/shop/community`, `/shop/<category>/<slug>` | everyone | Partner and community pages |
-| `/shop/products/<id>`, `/shop/collections/<id>` | everyone | Item and collection pages with 3D preview and "Equip" |
+| `/shop/products/<id>`, `/shop/collections/<id>` | everyone | Item and collection pages with 3D preview, "Equip" and "Save to wardrobe" |
 | `/players`, `/players/<name>` | everyone | Player search and profiles (what a player wears) |
 | `/download` | everyone | Mod download (latest release, direct jar), all releases with markdown changelogs (`#v<version>` anchors), install guide |
 | `/auth/login`, `/auth/discord/callback` | signed out | Discord login (PKCE) |
 | `/link/minecraft?code=…` | signed in | Target of the clickable link in the mod: links a Minecraft account |
 | `/welcome` | signed in | One-time onboarding (install, link, find a cape) |
 | `/dashboard` | signed in | Overview |
-| `/dashboard/wardrobe` | signed in | Equip capes and cosmetics per Minecraft account, pick variants |
+| `/dashboard/wardrobe` | signed in | The user's wardrobe (owned exclusives + saved items): equip per Minecraft account, pick variants, remove saved items |
 | `/dashboard/inventory` | signed in | Redeem codes (`?code=` prefills) and owned exclusives |
 | `/dashboard/accounts` | signed in | Linked Minecraft accounts |
 | `/dashboard/settings`, `/dashboard/apikeys` | signed in | Account (Discord profile, delete account) and API keys |
@@ -66,10 +68,21 @@ bun run api-client:generate
 | `/dashboard/moderation`, `…/pages`, `…/reports`, `…/users` | moderators, admins | Review queue, page profile reviews, reports, bans |
 | `/dashboard/admin/users`, `/dashboard/admin/audit-log` | admins | Roles, account deletion, audit log |
 | `/dashboard/admin/releases`, `…/new`, `…/<version>` | admins | Publish mod releases (new GitLab release or import an existing one), changelog, build and Modrinth status, retry |
-| `/sitemap.xml` | everyone | Static pages, shop pages and listed items (cached for an hour) |
+| `/sitemap.xml` | everyone | Static and docs pages, shop pages and listed items (cached for an hour) |
 
 The access rules are the constants at the top of `app/middleware/auth.global.ts`. The guard is
 UX only: the API checks every role and page permission on its own.
+
+## Docs
+
+The docs are markdown in `content/docs/` with the same frontmatter and MDC components as the
+style guide's `static-site-with-docs` template (`::note`, `::steps`, `::tabs`, `::icon-card-grid`,
+…), and the same UI (`components/docs/`, sidebar data in `app/data/docs.ts`). They are rendered
+with `@nuxtjs/mdc` by `useDocsPage` instead of `@nuxt/content`: this site is an SSR app, where
+Content would need a writable SQLite file at runtime and a SQLite WASM download on client-side
+navigation. To add a page: create the `.md` file and add it to `app/data/docs.ts` —
+`tests/docs.test.ts` checks both directions, frontmatter, internal links, closed MDC blocks and
+icons. New markdown files need a dev-server restart (Vite globs).
 
 ## Scripts
 

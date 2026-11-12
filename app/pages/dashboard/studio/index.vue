@@ -144,17 +144,17 @@ async function create(event: FormSubmitEvent<CreateSchema>) {
 				title="Creator Studio"
 				icon="i-lucide-palette"
 				description="Pages you manage in the shop"
-			>
-				<template #right>
-					<UButton v-if="isAdmin || !ownCommunityPage" icon="i-lucide-plus" @click="openCreate">
-						{{ isAdmin ? "New page" : "Create my page" }}
-					</UButton>
-				</template>
-			</DashboardPageHeader>
+			/>
 		</template>
 
 		<template #body>
 			<DashboardPageBody>
+				<div v-if="isAdmin || !ownCommunityPage" class="flex justify-end">
+					<UButton icon="i-lucide-plus" class="w-full justify-center sm:w-auto" @click="openCreate">
+						{{ isAdmin ? "New page" : "Create my page" }}
+					</UButton>
+				</div>
+
 				<UAlert
 					v-if="!ownCommunityPage && !pages.loading.value"
 					color="primary"

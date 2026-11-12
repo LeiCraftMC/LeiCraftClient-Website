@@ -65,7 +65,7 @@ async function confirm() {
 				<h1 class="text-xl font-semibold text-white">This link doesn't work</h1>
 				<p class="mt-2 text-sm text-slate-400">
 					Link codes are valid for 10 minutes and work once. Create a new link in the game: pause
-					menu → LeiCraft Client → Link account.
+					menu → LeiCraftClient → Link account.
 				</p>
 			</div>
 			<UButton to="/dashboard/accounts" color="neutral" variant="soft">Back to my accounts</UButton>
@@ -90,7 +90,7 @@ async function confirm() {
 					variant="soft"
 					icon="i-lucide-check"
 					title="Linked!"
-					:description="`${preview.data.account.name} belongs to your account now. Back in the game, the LeiCraft Client options show it within a few seconds.`"
+					:description="`${preview.data.account.name} belongs to your account now. Back in the game, the LeiCraftClient options show it within a few seconds.`"
 				/>
 				<div class="flex flex-col gap-2">
 					<UButton to="/dashboard/wardrobe" icon="i-lucide-shirt" block>Open wardrobe</UButton>

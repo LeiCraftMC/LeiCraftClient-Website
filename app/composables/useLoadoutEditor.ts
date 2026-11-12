@@ -46,6 +46,24 @@ export function isEquipped(body: LoadoutBody, product: Pick<Product, "id" | "typ
 		: body.cosmetics.some((entry) => entry.product_id === product.id);
 }
 
+/**
+ * The user's wardrobe: owned exclusives (always there) plus saved free products. Equipping saves
+ * a product too; removing one takes it off every linked account (the API does both).
+ */
+export function useWardrobeAPI() {
+	return {
+		async status(productId: number) {
+			return await useAPI((api) => api.getAccountWardrobeByProductId({ path: { productId } }), true);
+		},
+		async save(productId: number) {
+			return await useAPI((api) => api.putAccountWardrobeByProductId({ path: { productId } }));
+		},
+		async remove(productId: number) {
+			return await useAPI((api) => api.deleteAccountWardrobeByProductId({ path: { productId } }));
+		},
+	};
+}
+
 /** Loads the loadout of one linked account and saves a changed version (both via `useAPI`). */
 export function useLoadoutAPI() {
 	return {
