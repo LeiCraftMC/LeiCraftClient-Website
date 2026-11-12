@@ -66,8 +66,8 @@ const currentYear = new Date().getFullYear();
 		<UFooterColumns
 			:columns="footerColumns"
 			:ui="{
-				root: 'grid gap-10 lg:grid-cols-[1fr_2fr] w-full',
-				center: 'grid grid-flow-row grid-cols-2 gap-8 sm:grid-cols-4 xl:col-span-1',
+				root: 'grid gap-10 w-full lg:grid-cols-3',
+				center: 'grid grid-flow-row auto-cols-auto grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-2',
 				label: 'text-slate-100 font-semibold text-base',
 				link: 'text-slate-400 hover:text-primary text-sm sm:text-base inline-block py-1 transition-colors',
 				left: 'mb-0',
