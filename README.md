@@ -47,7 +47,7 @@ bun run api-client:generate
 
 | Route | Who | What it is |
 | --- | --- | --- |
-| `/` | everyone | Landing page: 3D showcase of random players' looks (`/v1/players/showcase`), compatibility, features, creators, FAQ |
+| `/` | everyone | Landing page: 3D showcase of one random player's look (`/v1/players/showcase`), compatibility, features, creators, FAQ |
 | `/features`, `/creators`, `/about` | everyone | Marketing pages: features, creator programme, philosophy and open source |
 | `/docs`, `/docs/**` | everyone | Docs: install guides (loaders, launchers, other clients), using the client, creating content |
 | `/shop` | everyone | Catalog overview |
